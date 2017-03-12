@@ -1,0 +1,1 @@
+(cd /d/Hugo/Sites/Blog; hugo server --theme=academic --buildDrafts)
