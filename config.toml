@@ -23,9 +23,9 @@ defaultContentLanguageInSubdir = false
   role = "Research Associate / Game Dev hobbyist"
   organization = "Cardiff, UK"
   organization_url = ""
-  avatar = "portrait.jpg"
+  avatar = "portrait2.jpg"
   email = "geoffrey.megardon@outlook.com"
-  academic_webpage = "http://psych.cf.ac.uk/contactsandpeople/researchstaff/megardong.php"
+  academic_webpage = "http://psych.cf.ac.uk/contactsandpeople/megardong.php"
   address = ""
   office_hours = ""
   phone = ""
@@ -126,7 +126,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "geoffrey.megardon@outlook.com"
+    link = "mailto:geoffrey.megardon@outlook.com"
 
   # [[params.social]]
   #   icon = "twitter"
