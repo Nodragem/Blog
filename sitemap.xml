@@ -4,7 +4,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/post2/</loc>
+      <loc>https://nodragem.github.io/Blog/post/post2/</loc>
       <lastmod>2017-02-04T12:16:44+00:00</lastmod>
     </url>
     
@@ -12,7 +12,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/research/good-to-great/</loc>
+      <loc>https://nodragem.github.io/Blog/post/research/good-to-great/</loc>
       <lastmod>2017-02-04T12:16:44+00:00</lastmod>
     </url>
     
@@ -20,7 +20,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/</loc>
+      <loc>https://nodragem.github.io/Blog/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,7 +28,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/project/deep-learning/</loc>
+      <loc>https://nodragem.github.io/Blog/project/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +36,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/project/example-external-project/</loc>
+      <loc>https://nodragem.github.io/Blog/project/example-external-project/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -44,7 +44,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/gamedev/getting-started/</loc>
+      <loc>https://nodragem.github.io/Blog/post/gamedev/getting-started/</loc>
       <lastmod>2016-04-20T12:00:00+00:00</lastmod>
     </url>
     
@@ -52,7 +52,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/widgets/</loc>
+      <loc>https://nodragem.github.io/Blog/post/widgets/</loc>
       <lastmod>2016-04-20T11:00:00+00:00</lastmod>
     </url>
     
@@ -60,7 +60,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/managing-content/</loc>
+      <loc>https://nodragem.github.io/Blog/post/managing-content/</loc>
       <lastmod>2016-04-20T11:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +68,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/writing-markdown-latex/</loc>
+      <loc>https://nodragem.github.io/Blog/post/writing-markdown-latex/</loc>
       <lastmod>2016-04-20T10:00:00+00:00</lastmod>
     </url>
     
@@ -76,7 +76,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/post/migrate-from-jekyll/</loc>
+      <loc>https://nodragem.github.io/Blog/post/migrate-from-jekyll/</loc>
       <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -84,7 +84,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/academic/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/academic/</loc>
       <lastmod>2016-04-20T12:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -93,7 +93,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/categories/</loc>
+      <loc>https://nodragem.github.io/Blog/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -101,7 +101,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/deep-learning/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -110,7 +110,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/demo/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/demo/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -119,7 +119,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/categories/gamedev/</loc>
+      <loc>https://nodragem.github.io/Blog/categories/gamedev/</loc>
       <lastmod>2016-04-20T12:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -128,7 +128,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/home/</loc>
+      <loc>https://nodragem.github.io/Blog/home/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -137,7 +137,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/hugo/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/hugo/</loc>
       <lastmod>2016-04-20T12:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -146,7 +146,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/jekyll/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/jekyll/</loc>
       <lastmod>2014-03-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -155,7 +155,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/project/</loc>
+      <loc>https://nodragem.github.io/Blog/project/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -164,7 +164,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/categories/research/</loc>
+      <loc>https://nodragem.github.io/Blog/categories/research/</loc>
       <lastmod>2017-02-04T12:16:44+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -173,7 +173,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/tags/</loc>
+      <loc>https://nodragem.github.io/Blog/tags/</loc>
       <priority>0</priority>
     </url>
     
@@ -181,7 +181,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/bookshelf/</loc>
+      <loc>https://nodragem.github.io/Blog/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
