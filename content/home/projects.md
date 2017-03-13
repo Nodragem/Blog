@@ -27,11 +27,11 @@ view = 1
   
 [[filter]]
   name = "Video Games"
-  tag = ".deep-learning"
+  tag = ".videogame"
 
 [[filter]]
   name = "Research"
-  tag = ".demo"
+  tag = ".research"
 
 +++
 
