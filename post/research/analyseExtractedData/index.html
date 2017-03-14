@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.19" />
+  <meta name="author" content="Geoffrey Mégardon">
+  <meta name="description" content="Research Associate / Game Dev hobbyist">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/Blog/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/Blog/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Blog/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Blog/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/Blog/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="Yargeoff&#39;s Blog">
+  <link rel="feed" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="Yargeoff&#39;s Blog">
+
+  <link rel="icon" type="image/png" href="/Blog/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/Blog/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://nodragem.github.io/Blog/post/research/analyseExtractedData/">
+
+  
+
+  <title>Make a Data Generator From an Old Figure | Yargeoff&#39;s Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/Blog/">Yargeoff&#39;s Blog</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#gd-posts">
+            
+            <span>GameDev Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#posts">
+            
+            <span>Recent Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Make a Data Generator From an Old Figure</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-03-12 21:02:50 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Mar 12, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fresearch%2fanalyseExtractedData%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Make%20a%20Data%20Generator%20From%20an%20Old%20Figure&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fresearch%2fanalyseExtractedData%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fresearch%2fanalyseExtractedData%2f&amp;title=Make%20a%20Data%20Generator%20From%20an%20Old%20Figure"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fresearch%2fanalyseExtractedData%2f&amp;title=Make%20a%20Data%20Generator%20From%20an%20Old%20Figure"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Make%20a%20Data%20Generator%20From%20an%20Old%20Figure&amp;body=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fresearch%2fanalyseExtractedData%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="data-extraction-with-webplotdigitizer">Data extraction with WebPlotDigitizer</h2>
+
+<p>Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccade and I found the data from Troncoso et al. (2008) after some search.</p>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/main_sequence.png" width="500px" height="500px"/></p>
+
+<p><em>Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008). Microsaccades counteract perceptual filling-in. Journal of Vision, 8(14):15, 1-9</em> [ARVO is the copyright holder]</p>
+
+<p>There are two main problem though:</p>
+
+<ol>
+<li>there is many data points while the picture quality is quite poor,</li>
+<li>as the plot is in logscale, it might be hard to get an eyeball estimation of the regression line.</li>
+</ol>
+
+<p>WebPlotDigitizer (<a href="http://arohatgi.info/WebPlotDigitizer/" target="_blank">here</a>) is a data extractor that, among other things, allows us to calibrate the axis of the figure to extract in logspace. I tried it on Troconso et al.&rsquo;s figure, without real hope of obtaining something decent because of the jped compression (my real hope was to manually draw a regression line in that jpeg fog).</p>
+
+<p>Here are the steps, recorded with ScreenToGif.</p>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/webplotdigitizer.gif" alt="" /></p>
+
+<p>The result is quite impressive when considering the picture quality. Here is what I obtained with the automatic extraction! Let see how this looks like once exported in CSV and plotted in R:</p>
+
+<pre><code class="language-r">df1 &lt;- read.csv(&quot;extraction1.csv&quot;, header = FALSE) 
+setnames(df1, c('amplitude', 'duration'))
+head(df1, 5)
+</code></pre>
+
+<pre><code>##    amplitude duration
+## 1 0.07355096 6.124430
+## 2 0.08775247 5.467178
+## 3 0.08825364 6.549086
+## 4 0.08875767 5.453267
+## 5 0.08901076 6.557844
+</code></pre>
+
+<pre><code class="language-r">dim(df1)
+</code></pre>
+
+<pre><code>## [1] 5725    2
+</code></pre>
+
+<pre><code class="language-r">plot(df1$amplitude, df1$duration, xlim=c(0.01, 2), ylim=c(1, 30),
+     main='df1', pch='.' , log=&quot;xy&quot;)
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>That is very impressive for a data extraction from a jpeg fog. WebPlotDigitizer is not extracting &ldquo;real&rdquo; data points (which are almost invisible on this Figure), but still the density of the data points seems to correctly estimates the density of the original data. This should be enough to compute a good estimate of the regression line of the mean duration and of its standard deviation. So now, let us try to compute these regression lines and make a saccade duration generator.</p>
+
+<h2 id="compute-the-regression-model">Compute the Regression model</h2>
+
+<p>We should start with finding the regression line in logspace.</p>
+
+<pre><code class="language-r">df1$log_duration &lt;- log(df1$duration)
+df1$log_amplitude &lt;- log(df1$amplitude)
+log.model &lt;- lm( log_duration ~ log_amplitude, data=df1)
+new &lt;- data.frame(log_amplitude = seq(min(df1$log_amplitude), max(df1$log_amplitude), 0.01))
+y_values &lt;- predict(log.model, new, interval=&quot;predict&quot;)
+plot(df1$log_amplitude, df1$log_duration,
+     main='df1', pch='.')
+lines(new$log_amplitude, y_values[,1], lwd=2, col='red')
+lines(new$log_amplitude, y_values[,2], lwd=2, col='red')
+lines(new$log_amplitude, y_values[,3], lwd=2, col='red')
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-2-1.png" alt="" /></p>
+
+<p>In the linear space, we get this pretty curve and increasing standard deviation.</p>
+
+<pre><code class="language-r">plot(df1$amplitude, df1$duration,
+     main='df1', pch='.')
+lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col='red')
+lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col='red')
+lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col='red')
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-3-1.png" alt="" /></p>
+
+<h2 id="extract-the-equations">Extract the equations</h2>
+
+<p>To be able to generate data from the regression, we must extract the equations that describes :</p>
+
+<ul>
+<li>the mean duration of saccades according to their amplitude,</li>
+<li>the standard deviation according to their amplitude.</li>
+</ul>
+
+<p>That is a bit more complicated as usual because of the logspace, but it is feasible.</p>
+
+<h3 id="estimate-the-equation-of-the-mean">Estimate the equation of the mean</h3>
+
+<p>It is easy to get the coefficients from the regression line.</p>
+
+<pre><code class="language-r">b = log.model$coefficients[[1]]
+a = log.model$coefficients[[2]]
+
+x = new$log_amplitude
+reg_eq = a
+y = a*x + b
+
+plot(df1$log_amplitude, df1$log_duration,
+     main='df1', pch='.')
+lines(x, y, lwd=2, col='red')
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-4-1.png" alt="" /></p>
+
+<p>Let pass the regression line in linear space. We got:</p>
+
+<p>$$
+y_{log} = a.x_{log} + b \<br />
+$$</p>
+
+<p>and:
+$$
+y_{lin} = exp(y_{log})\<br />
+$$
+$$
+x_{lin} = exp(x_{log})\<br />
+$$
+ So that, when combined, that gives:
+$$
+y_{lin} = exp(ax_{log} + b) <br />
+$$
+$$
+= exp(ax_{log}) . exp(b) <br />
+$$
+$$
+= exp(x_{log})^a . exp(b) <br />
+$$
+$$
+= x_{lin}^a . exp(b)
+$$</p>
+
+<p>With we should be able to plot the regression line in linear space:</p>
+
+<pre><code class="language-r">cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
+cart_y = (cart_x^a) * exp(b)
+plot(df1$amplitude, df1$duration,
+     main='df1', pch='.')
+lines(cart_x, cart_y, lwd=2, col='red')
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-5-1.png" alt="" /></p>
+
+<p>Yeah! we got it. Now let us extract the equation for the standard deviation.</p>
+
+<h3 id="estimate-the-standard-deviations">Estimate the standard deviations</h3>
+
+<p>In logspace, we get a standard deviation that is rather flat, althought there may be a small irregularity on the right hand side.</p>
+
+<pre><code class="language-r">par(mfrow=c(1,2))
+log_sd = abs(log.model$residuals)
+# log_sd = log.model$residuals
+plot(df1$amplitude, log_sd, ylim=c(-1, 1), xlim=c(0, 1))
+sd_change = rollapply(log_sd, width = 200, FUN = median, fill = NA)
+plot(df1$amplitude, sd_change, ylim= c(-1, 1 ), xlim=c(0, 1))
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-6-1.png" alt="" /></p>
+
+<p>Unfortunately, to find the change in variance in the cartesian space is not as simple as taking the exponential of the logspace&rsquo;s variance.</p>
+
+<p>First, let us compute the standard deviation and its trends in the cartesian space.</p>
+
+<pre><code class="language-r"># remember that:
+# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
+# cart_y = (cart_x^a) * exp(b)
+
+cart_sd = abs(df1$duration - (df1$amplitude^a)*exp(b))
+
+par(mfrow=c(1,2))
+plot(df1$amplitude, cart_sd, xlim=c(0, 1))
+
+# moving windows that take the median of the duration's sd over saccade amplitude
+sd_change &lt;- rollapply(cart_sd, width = 200, FUN = median, fill = NA)
+plot(df1$amplitude, sd_change, xlim=c(0, 1))
+df1$sd_duration &lt;- sd_change
+
+# regression of the duration sd over amplitude
+var.model &lt;- lm(sd_duration ~ amplitude, data = df1)
+curve_y &lt;- predict(var.model, data.frame(amplitude=cart_x) )
+lines(cart_x, curve_y, lwd=2, col=2)
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-7-1.png" alt="" /></p>
+
+<pre><code class="language-r">sd_b &lt;- var.model$coefficients[[1]]
+sd_a &lt;- var.model$coefficients[[2]]
+var.model$coefficients
+</code></pre>
+
+<pre><code>## (Intercept)   amplitude 
+##   0.5487717   3.5581414
+</code></pre>
+
+<p>From the previous plot, it seems that a linear increase of SD with amplitude is a good approximation. However, we may not want the SD to diverge too much. Let us try with a model of variance that have a horizontal asymptote, for instance <code>1-exp(-amplitude)</code>.</p>
+
+<pre><code class="language-r">df1$exp_amplitude &lt;- (1-exp(-df1$amplitude))
+var.model &lt;- lm(sd_duration ~ exp_amplitude, data = df1)
+
+var.model$coefficients
+</code></pre>
+
+<pre><code>##   (Intercept) exp_amplitude 
+##      0.285162      5.240037
+</code></pre>
+
+<pre><code class="language-r">sd_eb &lt;- var.model$coefficients[[1]]
+sd_ea &lt;- var.model$coefficients[[2]]
+# we do the prediction ourselve:
+# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:
+curve_y &lt;- (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+
+plot(df1$amplitude, sd_change, xlim=c(0, 1))
+lines(cart_x, curve_y, lwd=2, col=2)
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-8-1.png" alt="" /></p>
+
+<p>A asymptotic equation seems to approximate the SD as well as the linear equation.</p>
+
+<p>To judge which is best, let us plot both the equations we estimated against the regression model we made earlier. Note that the regression model was showing a 95% prediction interval (in red), which depends on the SD that we formulated (in green and purple), but it is not expected to be equal to it.</p>
+
+<pre><code class="language-r">plot(df1$amplitude, df1$duration,
+     main='df1', pch='.')
+# regression fit:
+lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col='red')
+lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col='red')
+lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col='red')
+
+# our equations:
+lines(cart_x, cart_y, lwd=2, col='green', lty=2)
+## linear sd
+sd_y = 0.55 + 3.54 * cart_x
+lines(cart_x, cart_y+sd_y, lwd=2, col='green', lty=2)
+lines(cart_x, cart_y-sd_y, lwd=2, col='green', lty=2)
+## assymtotic sd:
+sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+lines(cart_x, cart_y+sd_y, lwd=2, col='purple', lty=2)
+lines(cart_x, cart_y-sd_y, lwd=2, col='purple', lty=2)
+legend('bottomright', legend=c('regresssion', 'linear SD equation', 'assymptotic SD equation'),lty=1, col=c('red', 'green', 'purple'))
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-9-1.png" alt="" /></p>
+
+<p>It seems that the assymptotic equation of SD do a better job than the linear equation. Furthermore, it is a wished property that the SD does not diverge. Thus, to summarize, our full model of the duration of saccade according to duration should follows: <!-- remember that:
+cart_y = (cart_x^a) * exp(b)
+sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+--></p>
+
+<p>$$
+E(Duration) \approx Amplitude^{0.51} \times exp(3.05) \<br />
+$$
+$$
+SD(Duration) \approx 5.53 - 3.56 exp(-Amplitude) \<br />
+$$</p>
+
+<!-- SD(Duration) = 0.55 + 3.54.Amp
+    E(Duration) = Amp^0.51 * exp(3.05)
+-->
+
+<h3 id="implement-a-stochastic-generator">Implement a Stochastic Generator</h3>
+
+<p>Let us try to generate data from these equations .</p>
+
+<pre><code class="language-r">getADuration &lt;- function(amp, n){
+  mean.Duration = (amp^a) * exp(b)
+  SD.Duration = (sd_ea + sd_eb) - sd_ea * exp(-amp)
+  return(rnorm(length(mean.Duration)*n, mean.Duration, SD.Duration))
+}
+
+amp_space &lt;- runif(5000, min=min(df1$amplitude), max=1)
+gen.duration &lt;- getADuration(amp_space, 1)
+
+red_col = rgb(200,100,100,50,maxColorValue=255)
+plot(df1$amplitude, df1$duration, ylim= c(4, 30), xlim=c(0, 1.2))
+points(amp_space, gen.duration, ylim = c(4, 30), xlim=c(0, 1.2), col=red_col)
+legend(&quot;bottomright&quot;, c('extracted data', 'model'), col=c('black', red_col), pch=1)
+</code></pre>
+
+<p><img src="/Blog/img/research/analyseExtractedData_files/unnamed-chunk-10-1.png" alt="" /></p>
+
+<p>We got a pretty cool stuff from a poor quality jpeg! We can, in fact, predict the durations of the saccade for amplitudes that Troconso et al. did not mesure. Now I am ready to use this saccade duration generator in my model of visuo-oculomotor movements :D.</p>
+
+<p>Hope this post was helpful, and see you soon!</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Geoffrey Mégardon &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/Blog/js/jquery-1.12.3.min.js"></script>
+    <script src="/Blog/js/bootstrap.min.js"></script>
+    <script src="/Blog/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/Blog/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+
