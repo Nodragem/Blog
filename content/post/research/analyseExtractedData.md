@@ -4,7 +4,7 @@ image = ""
 tags = []
 see_more_link = "/post/"
 date = "2017-03-12T21:02:50Z"
-title = "Make a Data Generator From an Old Figure"
+title = "Generate Data From an Old Figure"
 summary = " "
 highlight = true
 
