@@ -13,7 +13,7 @@ highlight = true
 Data extraction with WebPlotDigitizer
 -------------------------------------
 
-Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccade and I found the data from Troncoso et al. (2008) after some search.
+Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccades and I found this data from Troncoso et al. (2008) after some search.
 
 <img src="/Blog/img/research/analyseExtractedData_files/main_sequence.png" width="500px" height="500px"/>
 
