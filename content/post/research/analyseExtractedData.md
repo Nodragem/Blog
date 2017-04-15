@@ -1,13 +1,12 @@
 +++
 math = true
-image = ""
 tags = []
 see_more_link = "/post/"
 date = "2017-03-12T21:02:50Z"
 title = "Generate Data From an Old Figure"
 summary = " "
+thumbnail = "webplotdigitizer.gif"
 highlight = true
-
 +++
 
 Data extraction with WebPlotDigitizer
