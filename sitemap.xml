@@ -4,6 +4,22 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/project/catchthecrown/</loc>
+      <lastmod>2017-04-15T14:51:57+01:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</loc>
+      <lastmod>2017-04-14T12:43:08+01:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/post/research/analyseExtractedData/</loc>
       <lastmod>2017-03-12T21:02:50+00:00</lastmod>
     </url>
@@ -44,6 +60,14 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/tags/eye-movement/</loc>
       <lastmod>2017-03-12T20:22:11+00:00</lastmod>
       <priority>0</priority>
@@ -53,8 +77,17 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/categories/gamedev/</loc>
+      <lastmod>2017-04-14T12:43:08+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/project/</loc>
-      <lastmod>2017-03-12T20:22:11+00:00</lastmod>
+      <lastmod>2017-04-15T14:51:57+01:00</lastmod>
       <priority>0</priority>
     </url>
     

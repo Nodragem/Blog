@@ -11,6 +11,149 @@
     <atom:link href="/Blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Catch The Crown!</title>
+      <link>https://nodragem.github.io/Blog/project/catchthecrown/</link>
+      <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
+      <description>
+
+&lt;h2 id=&#34;download&#34;&gt;Download:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_win32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_linux32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_mac.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Catch The Crown is a multi-player arena platform game.
+Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
+
+&lt;p&gt;A competition starts between Prabbits to catch the crown and collect gold. When the timer ends, the richer Prabbit wins.&lt;/p&gt;
+
+&lt;h2 id=&#34;related-blog-posts&#34;&gt;Related blog posts:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34; target=&#34;_blank&#34;&gt;Release Post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;customization-and-notes&#34;&gt;Customization and Notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the preference files are in the folder &lt;code&gt;preference&lt;/code&gt; and it can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.&lt;/li&gt;
+&lt;li&gt;the assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to,&lt;/li&gt;
+&lt;li&gt;I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.&lt;/li&gt;
+&lt;li&gt;the zip files may be quite large as the packr library (used to distribute libGDX games) is crashing as soon as it is unable to delete a file in the JRE (the stuff to run Java on your PC).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;screenshot&#34;&gt;Screenshot:&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Game Release: Catch the Crow</title>
+      <link>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</link>
+      <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</guid>
+      <description>
+
+&lt;h2 id=&#34;release-and-then-move-on&#34;&gt;Release and then move on &amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD, more details &lt;a href=&#34;No page found with path or logical name &#34;blog/post.md&#34;.
+&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;How it feels like to ship a game!&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!).
+You can download it here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_win32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_linux32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_mac.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please find more details about customization on the &lt;a href=&#34;https://nodragem.github.io/Blog/Blog/project/catchthecrown/&#34; target=&#34;_blank&#34;&gt;Project Page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-story&#34;&gt;The Story&lt;/h2&gt;
+
+&lt;p&gt;I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot / half rabbit creatures - four teenagers are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Three teenager Prabbits chilling out before the Coming-of-Age ritual...&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;the-gameplay&#34;&gt;The Gameplay&lt;/h2&gt;
+
+&lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer in running. Once the Crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&amp;rsquo;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/timer.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;
+    &lt;figcaption&gt;
+        &lt;h4&gt;Only the Prabbit with the Crown can collect treasures&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A competition starts between Prabbits as everyone wants to catch the Crown and be able to collect gold. When the timer ends, it is the richer Prabbit that wins the turn; players need to win 3 turns to win the tournament and be declared King of the Tournament (see Screenshot1).&lt;/p&gt;
+
+&lt;h2 id=&#34;the-character-actions&#34;&gt;The Character Actions&lt;/h2&gt;
+
+&lt;p&gt;The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increase their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;what-was-not-implemented&#34;&gt;What was not implemented&lt;/h2&gt;
+
+&lt;p&gt;Originally, Catch The Crown was thought to be a cooperative and competitive 2D platform game. A Shaman would have explained the competitive rules to the teenager Prabbits. During a round, the players would have a common gold chest in addition to their own. The next level would be unlocked only if the common chest reaches a certain amount of Gold (you can still see this chest in the GUI).&lt;/p&gt;
+
+&lt;p&gt;The levels would have been designed to force cooperative behaviour to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay.&lt;/p&gt;
+
+&lt;p&gt;Maybe later I will do a sequel where I will implement more of the stuff I wanted originally. In any case, I will probably come back with new levels for this version of the game. Hope you enjoy the game!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Generate Data From an Old Figure</title>
       <link>https://nodragem.github.io/Blog/post/research/analyseExtractedData/</link>
       <pubDate>Sun, 12 Mar 2017 21:02:50 +0000</pubDate>
@@ -20,7 +163,7 @@
 
 &lt;h2 id=&#34;data-extraction-with-webplotdigitizer&#34;&gt;Data extraction with WebPlotDigitizer&lt;/h2&gt;
 
-&lt;p&gt;Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccade and I found the data from Troncoso et al. (2008) after some search.&lt;/p&gt;
+&lt;p&gt;Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccades and I found this data from Troncoso et al. (2008) after some search.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/main_sequence.png&#34; width=&#34;500px&#34; height=&#34;500px&#34;/&gt;&lt;/p&gt;
 
