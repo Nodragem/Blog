@@ -20,6 +20,8 @@ highlight = true
 - Linux, portable version ([zip-file](/Blog/download/catchthecrown_linux32.zip))
 - Mac OS, portable version ([zip-file](/Blog/download/catchthecrown_mac.zip))
 
+I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.
+
 ## Summary
 
 Catch The Crown is a multi-player arena platform game.
@@ -31,12 +33,61 @@ A competition starts between Prabbits to catch the crown and collect gold. When 
 
  - [Release Post]({{< relref "post/gamedev/catchthecrown_release.md" >}})
 
-## Customization and Notes:
+## Customization:
 
- - the preference files are in the folder `preference` and it can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.
- - the assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to,
- - I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.
- - the zip files may be quite large as the packr library (used to distribute libGDX games) is crashing as soon as it is unable to delete a file in the JRE (the stuff to run Java on your PC).
+### Asset folder
+The assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to.
+
+### Preference Files
+The preference files are in the folder `preference` and they can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.
+
+  * Use the **Keyboard and Mouse input**:
+    
+    Open the file `preferences.json` in `./preference` and replace, for instance:
+    ```
+    "input": "controller",
+    "id_input": 2
+    ```
+    with:
+    ```
+    "input": "keyboard",
+    "id_input": 1
+    ```
+    Note that the `id_input` of the keyboard must be set to 1.
+
+  * Change the **names of the Prabbits**:
+    
+    Open the file `preferences.json` in `./preference` and replace, for instance:
+    ```
+    "name": "Purple",
+    "color": "purple",
+    ```
+    with:
+    ```
+    "name": "MyNewName",
+    "color": "purple",
+    ```
+
+  * Change **FullScreen Mode and Resolution**:  
+    
+    Open the file `preferences.json` in `./preference` and replace, for instance:
+    ```
+    "full_screen": true,
+    "resolution": [1920, 1080],
+    ```
+    with:
+    ```
+    "full_screen": false,
+    "resolution": [800, 600],
+    ```
+
+  * Change the Controls:
+    
+    The controls are mapped to actions in the files `profileController.xml` and `profileKeyBoard.xml`. Note that the Mouse controls are hard coded and cannot be modified. The numbers mapped to the buttons of your controller depend on your controller.
+    Known mapping can be found [here](https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings).
+
+
+
 
 ## Screenshot: 
  <img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
