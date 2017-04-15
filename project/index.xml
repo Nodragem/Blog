@@ -26,6 +26,8 @@
 &lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/download/catchthecrown_mac.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.&lt;/p&gt;
+
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
 &lt;p&gt;Catch The Crown is a multi-player arena platform game.
@@ -39,13 +41,65 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
 &lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34; target=&#34;_blank&#34;&gt;Release Post&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;customization-and-notes&#34;&gt;Customization and Notes:&lt;/h2&gt;
+&lt;h2 id=&#34;customization&#34;&gt;Customization:&lt;/h2&gt;
+
+&lt;h3 id=&#34;asset-folder&#34;&gt;Asset folder&lt;/h3&gt;
+
+&lt;p&gt;The assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to.&lt;/p&gt;
+
+&lt;h3 id=&#34;preference-files&#34;&gt;Preference Files&lt;/h3&gt;
+
+&lt;p&gt;The preference files are in the folder &lt;code&gt;preference&lt;/code&gt; and they can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;the preference files are in the folder &lt;code&gt;preference&lt;/code&gt; and it can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.&lt;/li&gt;
-&lt;li&gt;the assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to,&lt;/li&gt;
-&lt;li&gt;I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.&lt;/li&gt;
-&lt;li&gt;the zip files may be quite large as the packr library (used to distribute libGDX games) is crashing as soon as it is unable to delete a file in the JRE (the stuff to run Java on your PC).&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use the &lt;strong&gt;Keyboard and Mouse input&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;input&amp;quot;: &amp;quot;controller&amp;quot;,
+&amp;quot;id_input&amp;quot;: 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;input&amp;quot;: &amp;quot;keyboard&amp;quot;,
+&amp;quot;id_input&amp;quot;: 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the &lt;code&gt;id_input&lt;/code&gt; of the keyboard must be set to 1.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Change the &lt;strong&gt;names of the Prabbits&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;name&amp;quot;: &amp;quot;Purple&amp;quot;,
+&amp;quot;color&amp;quot;: &amp;quot;purple&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;name&amp;quot;: &amp;quot;MyNewName&amp;quot;,
+&amp;quot;color&amp;quot;: &amp;quot;purple&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Change &lt;strong&gt;FullScreen Mode and Resolution&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;full_screen&amp;quot;: true,
+&amp;quot;resolution&amp;quot;: [1920, 1080],
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;full_screen&amp;quot;: false,
+&amp;quot;resolution&amp;quot;: [800, 600],
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Change the Controls:&lt;/p&gt;
+
+&lt;p&gt;The controls are mapped to actions in the files &lt;code&gt;profileController.xml&lt;/code&gt; and &lt;code&gt;profileKeyBoard.xml&lt;/code&gt;. Note that the Mouse controls are hard coded and cannot be modified. The numbers mapped to the buttons of your controller depend on your controller.
+Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;screenshot&#34;&gt;Screenshot:&lt;/h2&gt;

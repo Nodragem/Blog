@@ -211,6 +211,8 @@
 <li>Mac OS, portable version (<a href="/Blog/download/catchthecrown_mac.zip">zip-file</a>)</li>
 </ul>
 
+<p>I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.</p>
+
 <h2 id="summary">Summary</h2>
 
 <p>Catch The Crown is a multi-player arena platform game.
@@ -224,13 +226,65 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
 <li><a href="/Blog/post/gamedev/catchthecrown_release/" target="_blank">Release Post</a></li>
 </ul>
 
-<h2 id="customization-and-notes">Customization and Notes:</h2>
+<h2 id="customization">Customization:</h2>
+
+<h3 id="asset-folder">Asset folder</h3>
+
+<p>The assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to.</p>
+
+<h3 id="preference-files">Preference Files</h3>
+
+<p>The preference files are in the folder <code>preference</code> and they can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.</p>
 
 <ul>
-<li>the preference files are in the folder <code>preference</code> and it can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.</li>
-<li>the assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to,</li>
-<li>I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.</li>
-<li>the zip files may be quite large as the packr library (used to distribute libGDX games) is crashing as soon as it is unable to delete a file in the JRE (the stuff to run Java on your PC).</li>
+<li><p>Use the <strong>Keyboard and Mouse input</strong>:</p>
+
+<p>Open the file <code>preferences.json</code> in <code>./preference</code> and replace, for instance:</p>
+
+<pre><code>&quot;input&quot;: &quot;controller&quot;,
+&quot;id_input&quot;: 2
+</code></pre>
+
+<p>with:</p>
+
+<pre><code>&quot;input&quot;: &quot;keyboard&quot;,
+&quot;id_input&quot;: 1
+</code></pre>
+
+<p>Note that the <code>id_input</code> of the keyboard must be set to 1.</p></li>
+
+<li><p>Change the <strong>names of the Prabbits</strong>:</p>
+
+<p>Open the file <code>preferences.json</code> in <code>./preference</code> and replace, for instance:</p>
+
+<pre><code>&quot;name&quot;: &quot;Purple&quot;,
+&quot;color&quot;: &quot;purple&quot;,
+</code></pre>
+
+<p>with:</p>
+
+<pre><code>&quot;name&quot;: &quot;MyNewName&quot;,
+&quot;color&quot;: &quot;purple&quot;,
+</code></pre></li>
+
+<li><p>Change <strong>FullScreen Mode and Resolution</strong>:</p>
+
+<p>Open the file <code>preferences.json</code> in <code>./preference</code> and replace, for instance:</p>
+
+<pre><code>&quot;full_screen&quot;: true,
+&quot;resolution&quot;: [1920, 1080],
+</code></pre>
+
+<p>with:</p>
+
+<pre><code>&quot;full_screen&quot;: false,
+&quot;resolution&quot;: [800, 600],
+</code></pre></li>
+
+<li><p>Change the Controls:</p>
+
+<p>The controls are mapped to actions in the files <code>profileController.xml</code> and <code>profileKeyBoard.xml</code>. Note that the Mouse controls are hard coded and cannot be modified. The numbers mapped to the buttons of your controller depend on your controller.
+Known mapping can be found <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings" target="_blank">here</a>.</p></li>
 </ul>
 
 <h2 id="screenshot">Screenshot:</h2>
