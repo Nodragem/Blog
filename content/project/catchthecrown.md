@@ -4,8 +4,8 @@ external_link = ""
 image_preview = "catchthecrown_release.png"
 date = "2017-04-15T14:51:57+01:00"
 title = "Catch The Crown!"
-summary = ""
-tags = []
+summary = "Muti-player Arena game featuring Prabbits"
+tags = ["videogame"]
 highlight = true
 
 [header]
