@@ -23,9 +23,9 @@ Finally! After 3 years of uneven and chaotic development (partly due to a PhD, m
 Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!). 
 You can download it here:
 
-- Windows, portable version ([zip-file](/Blog/download/catchthecrown_win32.zip))
-- Linux, portable version ([zip-file](/Blog/download/catchthecrown_linux32.zip))
-- Mac OS, portable version ([zip-file](/Blog/download/catchthecrown_mac.zip))
+- Windows, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip))
+- Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
+- Mac OS, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip))
 
 Please find more details about customization on the [Project Page]({{< relref "project/catchthecrown.md" >}}).
 

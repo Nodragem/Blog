@@ -16,9 +16,9 @@ highlight = true
 
 ## Download:
 
-- Windows, portable version ([zip-file](/Blog/download/catchthecrown_win32.zip))
-- Linux, portable version ([zip-file](/Blog/download/catchthecrown_linux32.zip))
-- Mac OS, portable version ([zip-file](/Blog/download/catchthecrown_mac.zip))
+- Windows, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip))
+- Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
+- Mac OS, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip))
 
 I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.
 
