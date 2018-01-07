@@ -12,7 +12,7 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Psychology", "Game development",
+    "Psychology", "Game development", "HTML5",
     "Computational Modelling", "Data Analysis",
     "Decision making",
     "Cooperative Games"

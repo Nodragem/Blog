@@ -1,7 +1,7 @@
 baseurl = "https://nodragem.github.io/Blog/"
 title = "Yargeoff's Blog"
 copyright = "&copy; 2016 Geoffrey Mégardon"
-theme = "academic"
+theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
@@ -9,7 +9,7 @@ footnotereturnlinkcontents = "<sup>^</sup>"
 disqusShortname = ""
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+googleAnalytics = "UA-112020136-1"
 
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
@@ -20,7 +20,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Geoffrey Mégardon"
-  role = "Research Associate / Game Dev hobbyist"
+  role = "Research Associate / Game Dev"
   organization = "Cardiff, UK"
   organization_url = ""
   avatar = "portrait2.jpg"

@@ -16,7 +16,7 @@ caption = "Catch The Crown's Splash Screen"
 
 ## Release and then move on ...
 
-Finally! After 3 years of uneven and chaotic development (partly due to a PhD, more details [here]({{< relref "blog/post.md" >}})), it feels like that's the right time to finalize and ship my first video game. 
+Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that's the right time to finalize and ship my first video game. 
 
 {{< figure src="/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif" title="How it feels like to ship a game!" >}}
 

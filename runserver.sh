@@ -1,1 +1,1 @@
-hugo server --theme=academic --buildDrafts
+hugo server --theme=hugo-academic --buildDrafts --disableFastRender
