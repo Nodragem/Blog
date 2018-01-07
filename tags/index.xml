@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Yargeoff&#39;s Blog</title>
+    <link>https://nodragem.github.io/Blog/tags/</link>
+    <description>Recent content in Tags on Yargeoff&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
+    <lastBuildDate>Sun, 12 Mar 2017 20:22:11 +0000</lastBuildDate>
+    <atom:link href="/Blog/tags/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Eye Movement</title>
+      <link>https://nodragem.github.io/Blog/tags/eye-movement/</link>
+      <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/tags/eye-movement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://nodragem.github.io/Blog/tags/research/</link>
+      <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>https://nodragem.github.io/Blog/tags/tool/</link>
+      <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/tags/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Videogame</title>
+      <link>https://nodragem.github.io/Blog/tags/videogame/</link>
+      <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/tags/videogame/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vision</title>
+      <link>https://nodragem.github.io/Blog/tags/vision/</link>
+      <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/tags/vision/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

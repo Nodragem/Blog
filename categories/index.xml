@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Yargeoff&#39;s Blog</title>
+    <link>https://nodragem.github.io/Blog/categories/</link>
+    <description>Recent content in Categories on Yargeoff&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
+    <atom:link href="/Blog/categories/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gamedev</title>
+      <link>https://nodragem.github.io/Blog/categories/gamedev/</link>
+      <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/categories/gamedev/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

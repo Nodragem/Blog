@@ -20,7 +20,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/Blog/post/research/analyseExtractedData/</loc>
+      <loc>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</loc>
       <lastmod>2017-03-12T21:02:50+00:00</lastmod>
     </url>
     
@@ -95,6 +95,14 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/tags/research/</loc>
       <lastmod>2017-03-12T20:22:11+00:00</lastmod>
       <priority>0</priority>
@@ -105,6 +113,7 @@
     
     <url>
       <loc>https://nodragem.github.io/Blog/tags/</loc>
+      <lastmod>2017-03-12T20:22:11+00:00</lastmod>
       <priority>0</priority>
     </url>
     
