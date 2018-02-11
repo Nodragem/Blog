@@ -11,6 +11,365 @@
     <atom:link href="/Blog/post/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Data extraction with WebPlotDigitizer</title>
+      <link>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</link>
+      <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</guid>
+      <description>
+
+&lt;h2 id=&#34;when-we-ve-only-got-a-picture-to-create-a-model&#34;&gt;When we&amp;rsquo;ve only got a picture to create a model&lt;/h2&gt;
+
+&lt;p&gt;Recently, I wanted to generate realistic
+durations of fast eye movements (saccades) in a stochastic manner.&lt;/p&gt;
+
+&lt;p&gt;Few articles plot what we call &amp;ldquo;the main sequence&amp;rdquo; which describes the saccade
+duration against saccade magnitude (i.e. amplitude), such as in
+Troncoso et al. (2008):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png&#34; width=&#34;500px&#34; height=&#34;500px&#34;/&gt;&lt;/p&gt;
+
+&lt;p style=&#34;font-size:0.6rem;&#34;&gt;&lt;i&gt;Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008).
+Microsaccades counteract perceptual filling-in. Journal of Vision,
+8(14):15, 1-9&lt;/i&gt; [ARVO is the copyright holder]&lt;/p&gt;
+
+&lt;p&gt;There are 3 main problems though:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;we don&amp;rsquo;t have access to the original data used to generate this plot,&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;there is many data points and the picture quality is quite poor,&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the plot is in logscale, so it might be hard to get an eyeball
+estimation of the regression line.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Without at least an estimation of the data points, we cannot build a realistic model.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-data-extractor&#34;&gt;Using a Data Extractor&lt;/h2&gt;
+
+&lt;p&gt;WebPlotDigitizer (&lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;) is a
+data extractor that, among other things, allows us to calibrate the axis
+of the figure to extract in logspace. I tried it on Troncoso et al.&amp;rsquo;s
+figure, without real hope of obtaining something decent because of the
+jped compression (my real hope was to manually draw a regression line in
+that jpeg fog).&lt;/p&gt;
+
+&lt;p&gt;Here are the steps, recorded with ScreenToGif.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The result is quite impressive when considering the picture quality.
+Here is what I obtained with the automatic extraction! Let see how this
+looks like once exported in CSV and plotted in R.&lt;/p&gt;
+
+&lt;p&gt;We show the first lines of the file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1 &amp;lt;- read.csv(&amp;quot;extraction1.csv&amp;quot;, header = FALSE) 
+setnames(df1, c(&#39;amplitude&#39;, &#39;duration&#39;))
+head(df1, 5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##    amplitude duration
+## 1 0.07355096 6.124430
+## 2 0.08775247 5.467178
+## 3 0.08825364 6.549086
+## 4 0.08875767 5.453267
+## 5 0.08901076 6.557844
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We print the number of data points that have been extracted:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;dim(df1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] 5725    2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We plot the data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration, xlim=c(0.01, 2), ylim=c(1, 30),
+     main=&#39;df1&#39;, pch=&#39;.&#39; , log=&amp;quot;xy&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That looks quite impressive for a data extraction made on a blurry jpeg!&lt;/p&gt;
+
+&lt;p&gt;WebPlotDigitizer is not extracting &amp;ldquo;real&amp;rdquo; data points (which are almost
+invisible on the orginal figure), but still the density of the data points
+seems to correctly estimates the density of the original data. This
+should be enough to compute a good estimate of the regression line of
+the mean duration and of its standard deviation. So now, let us try to
+compute these regression lines and make a saccade duration generator.&lt;/p&gt;
+
+&lt;h2 id=&#34;compute-the-regression-model&#34;&gt;Compute the Regression model&lt;/h2&gt;
+
+&lt;p&gt;We should start with finding the regression line in logspace.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1$log_duration &amp;lt;- log(df1$duration)
+df1$log_amplitude &amp;lt;- log(df1$amplitude)
+log.model &amp;lt;- lm( log_duration ~ log_amplitude, data=df1)
+new &amp;lt;- data.frame(log_amplitude = seq(min(df1$log_amplitude), max(df1$log_amplitude), 0.01))
+y_values &amp;lt;- predict(log.model, new, interval=&amp;quot;predict&amp;quot;)
+plot(df1$log_amplitude, df1$log_duration,
+     main=&#39;df1&#39;, pch=&#39;.&#39;)
+lines(new$log_amplitude, y_values[,1], lwd=2, col=&#39;red&#39;)
+lines(new$log_amplitude, y_values[,2], lwd=2, col=&#39;red&#39;)
+lines(new$log_amplitude, y_values[,3], lwd=2, col=&#39;red&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the linear space, we get this pretty curve and increasing standard
+deviation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration,
+     main=&#39;df1&#39;, pch=&#39;.&#39;)
+lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
+lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
+lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;extract-the-equations&#34;&gt;Extract the equations&lt;/h2&gt;
+
+&lt;p&gt;To be able to generate data from the regression, we must extract the
+equations that describes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the mean duration of saccades according to their amplitude,&lt;/li&gt;
+&lt;li&gt;the standard deviation according to their amplitude.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That is a bit more complicated as usual because of the logspace, but it
+is feasible.&lt;/p&gt;
+
+&lt;h3 id=&#34;estimate-the-equation-of-the-mean&#34;&gt;Estimate the equation of the mean&lt;/h3&gt;
+
+&lt;p&gt;It is easy to get the coefficients from the regression line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;b = log.model$coefficients[[1]]
+a = log.model$coefficients[[2]]
+
+x = new$log_amplitude
+reg_eq = a
+y = a*x + b
+
+plot(df1$log_amplitude, df1$log_duration,
+     main=&#39;df1&#39;, pch=&#39;.&#39;)
+lines(x, y, lwd=2, col=&#39;red&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let pass the regression line in linear space. We got:&lt;/p&gt;
+
+&lt;p&gt;$$
+y_{ \text{log} } = a x_{ \text{log} } + b
+$$&lt;/p&gt;
+
+&lt;p&gt;and:&lt;/p&gt;
+
+&lt;p&gt;$$
+y_{lin} = exp(y_{log}) \\&lt;br /&gt;
+x_{lin} = exp(x_{log})
+$$&lt;/p&gt;
+
+&lt;p&gt;So that, when combined, that gives:&lt;/p&gt;
+
+&lt;p&gt;$$
+y_{lin} = exp(ax_{log} + b) = exp(ax_{log}) * exp(b) \\&lt;br /&gt;
+        = exp(x_{log})^a . exp(b) \\&lt;br /&gt;
+        = x_{lin}^a . exp(b)
+$$&lt;/p&gt;
+
+&lt;p&gt;With we should be able to plot the regression line in linear space:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
+cart_y = (cart_x^a) * exp(b)
+plot(df1$amplitude, df1$duration,
+     main=&#39;df1&#39;, pch=&#39;.&#39;)
+lines(cart_x, cart_y, lwd=2, col=&#39;red&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yeah! we got it. Now let us extract the equation for the standard
+deviation.&lt;/p&gt;
+
+&lt;h3 id=&#34;estimate-the-standard-deviations&#34;&gt;Estimate the standard deviations&lt;/h3&gt;
+
+&lt;p&gt;In logarithmic space, we get a standard deviation (SD) that is rather flat, althought
+there may be a small irregularity on the right hand side.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;par(mfrow=c(1,2))
+
+log_sd = abs(log.model$residuals)
+plot(df1$amplitude, log_sd, ylim=c(-1, 1), xlim=c(0, 1))
+
+sd_change = rollapply(log_sd, width = 200, FUN = median, fill = NA)
+plot(df1$amplitude, sd_change, ylim= c(-1, 1 ), xlim=c(0, 1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, to find the change in variance in the cartesian space is
+not as simple as taking the exponential of the logspace&amp;rsquo;s variance.&lt;/p&gt;
+
+&lt;p&gt;First, let us compute the standard deviation and its trends in the
+cartesian space.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;# remember that:
+# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
+# cart_y = (cart_x^a) * exp(b)
+
+cart_sd = abs(df1$duration - (df1$amplitude^a)*exp(b))
+
+par(mfrow=c(1,2))
+plot(df1$amplitude, cart_sd, xlim=c(0, 1))
+
+# moving windows that take the median of the duration&#39;s sd over saccade amplitude
+sd_change &amp;lt;- rollapply(cart_sd, width = 200, FUN = median, fill = NA)
+plot(df1$amplitude, sd_change, xlim=c(0, 1))
+df1$sd_duration &amp;lt;- sd_change
+
+# regression of the duration sd over amplitude
+var.model &amp;lt;- lm(sd_duration ~ amplitude, data = df1)
+curve_y &amp;lt;- predict(var.model, data.frame(amplitude=cart_x) )
+lines(cart_x, curve_y, lwd=2, col=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sd_b &amp;lt;- var.model$coefficients[[1]]
+sd_a &amp;lt;- var.model$coefficients[[2]]
+var.model$coefficients
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## (Intercept)   amplitude 
+##   0.5487717   3.5581414
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the previous plot, it seems that a linear increase of SD with
+amplitude is a good approximation. However, we may not want the SD to
+diverge too much. Let us try with a model of variance that have a
+horizontal asymptote, for instance &lt;code&gt;1-exp(-amplitude)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1$exp_amplitude &amp;lt;- (1-exp(-df1$amplitude))
+var.model &amp;lt;- lm(sd_duration ~ exp_amplitude, data = df1)
+
+var.model$coefficients
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##   (Intercept) exp_amplitude 
+##      0.285162      5.240037
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sd_eb &amp;lt;- var.model$coefficients[[1]]
+sd_ea &amp;lt;- var.model$coefficients[[2]]
+
+# we do the prediction ourselve:
+# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:
+curve_y &amp;lt;- (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+
+plot(df1$amplitude, sd_change, xlim=c(0, 1))
+lines(cart_x, curve_y, lwd=2, col=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The asymptotic equation seems to approximate the SD as well as the linear
+equation.&lt;/p&gt;
+
+&lt;p&gt;To judge which is best, let us plot both the equations we estimated
+against the regression model we made earlier. Note that the regression
+model was showing a 95% prediction interval (in red), which depends on
+the SD that we formulated (in green and purple), but it is not expected
+to be equal to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration,
+     main=&#39;df1&#39;, pch=&#39;.&#39;)
+
+## regression fit:
+lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
+lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
+lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
+
+## our equations:
+lines(cart_x, cart_y, lwd=2, col=&#39;green&#39;, lty=2)
+
+## linear sd
+sd_y = 0.55 + 3.54 * cart_x
+lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;green&#39;, lty=2)
+lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;green&#39;, lty=2)
+
+## assymtotic sd:
+sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
+lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
+legend(&#39;bottomright&#39;, legend=c(&#39;regresssion&#39;, &#39;linear SD equation&#39;, &#39;assymptotic SD equation&#39;),lty=1, col=c(&#39;red&#39;, &#39;green&#39;, &#39;purple&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It seems that the assymptotic equation of SD do a better job than the
+linear equation. Furthermore, it is a wished property that the SD does
+not diverge.&lt;/p&gt;
+
+&lt;p&gt;Thus, to summarize, our full model of the duration of
+saccade according to duration should follows:&lt;/p&gt;
+
+&lt;!-- remember that:
+cart_y = (cart_x^a) * exp(b)
+sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
+--&gt;
+
+&lt;p&gt;$$
+\text{E}(Duration) \approx Amplitude^{0.51} \times \exp(3.05) &lt;br /&gt;
+$$
+$$
+\text{SD}(Duration) \approx 5.53 - 3.56 \exp(-Amplitude) &lt;br /&gt;
+$$&lt;/p&gt;
+
+&lt;p&gt;with $E()$ the estimation of the mean and $SD()$ the estimation fo the standard deviation.
+&lt;!-- SD(Duration) = 0.55 + 3.54.Amp
+    E(Duration) = Amp^0.51 * exp(3.05)
+--&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;implement-a-stochastic-generator&#34;&gt;Implement a Stochastic Generator&lt;/h3&gt;
+
+&lt;p&gt;Let us try to generate data from these equations .&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;getADuration &amp;lt;- function(amp, n){
+  mean.Duration = (amp^a) * exp(b)
+  SD.Duration = (sd_ea + sd_eb) - sd_ea * exp(-amp)
+  return(rnorm(length(mean.Duration)*n, mean.Duration, SD.Duration))
+}
+
+amp_space &amp;lt;- runif(5000, min=min(df1$amplitude), max=1)
+gen.duration &amp;lt;- getADuration(amp_space, 1)
+
+red_col = rgb(200,100,100,50,maxColorValue=255)
+plot(df1$amplitude, df1$duration, ylim= c(4, 30), xlim=c(0, 1.2))
+points(amp_space, gen.duration, ylim = c(4, 30), xlim=c(0, 1.2), col=red_col)
+legend(&amp;quot;bottomright&amp;quot;, c(&#39;extracted data&#39;, &#39;model&#39;), col=c(&#39;black&#39;, red_col), pch=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
+predict saccade durations for amplitudes that Troncoso et al.
+did not mesure.&lt;/p&gt;
+
+&lt;p&gt;Hope this post was helpful, and see you soon!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Game Release: Catch the Crow</title>
       <link>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</link>
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
@@ -105,304 +464,6 @@ You can download it here:&lt;/p&gt;
 &lt;p&gt;The levels would have been designed to force cooperative behaviour to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay.&lt;/p&gt;
 
 &lt;p&gt;Maybe later I will do a sequel where I will implement more of the stuff I wanted originally. In any case, I will probably come back with new levels for this version of the game. Hope you enjoy the game!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Generate Data From an Old Figure</title>
-      <link>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</link>
-      <pubDate>Sun, 12 Mar 2017 21:02:50 +0000</pubDate>
-      
-      <guid>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</guid>
-      <description>
-
-&lt;h2 id=&#34;data-extraction-with-webplotdigitizer&#34;&gt;Data extraction with WebPlotDigitizer&lt;/h2&gt;
-
-&lt;p&gt;Recently, I was looking for generating stochastically fake saccade durations. Few articles show the main sequence in term of saccade duration against saccade magnitude (i.e. amplitude) for micro-saccades and I found this data from Troncoso et al. (2008) after some search.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/main_sequence.png&#34; width=&#34;500px&#34; height=&#34;500px&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Data from Troncoso, X. G., Macknik, S. L., &amp;amp; Martinez-Conde, S. (2008). Microsaccades counteract perceptual filling-in. Journal of Vision, 8(14):15, 1-9&lt;/em&gt; [ARVO is the copyright holder]&lt;/p&gt;
-
-&lt;p&gt;There are two main problem though:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;there is many data points while the picture quality is quite poor,&lt;/li&gt;
-&lt;li&gt;as the plot is in logscale, it might be hard to get an eyeball estimation of the regression line.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;WebPlotDigitizer (&lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;) is a data extractor that, among other things, allows us to calibrate the axis of the figure to extract in logspace. I tried it on Troconso et al.&amp;rsquo;s figure, without real hope of obtaining something decent because of the jped compression (my real hope was to manually draw a regression line in that jpeg fog).&lt;/p&gt;
-
-&lt;p&gt;Here are the steps, recorded with ScreenToGif.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/webplotdigitizer.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The result is quite impressive when considering the picture quality. Here is what I obtained with the automatic extraction! Let see how this looks like once exported in CSV and plotted in R:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df1 &amp;lt;- read.csv(&amp;quot;extraction1.csv&amp;quot;, header = FALSE) 
-setnames(df1, c(&#39;amplitude&#39;, &#39;duration&#39;))
-head(df1, 5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##    amplitude duration
-## 1 0.07355096 6.124430
-## 2 0.08775247 5.467178
-## 3 0.08825364 6.549086
-## 4 0.08875767 5.453267
-## 5 0.08901076 6.557844
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(df1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## [1] 5725    2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(df1$amplitude, df1$duration, xlim=c(0.01, 2), ylim=c(1, 30),
-     main=&#39;df1&#39;, pch=&#39;.&#39; , log=&amp;quot;xy&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That is very impressive for a data extraction from a jpeg fog. WebPlotDigitizer is not extracting &amp;ldquo;real&amp;rdquo; data points (which are almost invisible on this Figure), but still the density of the data points seems to correctly estimates the density of the original data. This should be enough to compute a good estimate of the regression line of the mean duration and of its standard deviation. So now, let us try to compute these regression lines and make a saccade duration generator.&lt;/p&gt;
-
-&lt;h2 id=&#34;compute-the-regression-model&#34;&gt;Compute the Regression model&lt;/h2&gt;
-
-&lt;p&gt;We should start with finding the regression line in logspace.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df1$log_duration &amp;lt;- log(df1$duration)
-df1$log_amplitude &amp;lt;- log(df1$amplitude)
-log.model &amp;lt;- lm( log_duration ~ log_amplitude, data=df1)
-new &amp;lt;- data.frame(log_amplitude = seq(min(df1$log_amplitude), max(df1$log_amplitude), 0.01))
-y_values &amp;lt;- predict(log.model, new, interval=&amp;quot;predict&amp;quot;)
-plot(df1$log_amplitude, df1$log_duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(new$log_amplitude, y_values[,1], lwd=2, col=&#39;red&#39;)
-lines(new$log_amplitude, y_values[,2], lwd=2, col=&#39;red&#39;)
-lines(new$log_amplitude, y_values[,3], lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the linear space, we get this pretty curve and increasing standard deviation.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;extract-the-equations&#34;&gt;Extract the equations&lt;/h2&gt;
-
-&lt;p&gt;To be able to generate data from the regression, we must extract the equations that describes :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the mean duration of saccades according to their amplitude,&lt;/li&gt;
-&lt;li&gt;the standard deviation according to their amplitude.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That is a bit more complicated as usual because of the logspace, but it is feasible.&lt;/p&gt;
-
-&lt;h3 id=&#34;estimate-the-equation-of-the-mean&#34;&gt;Estimate the equation of the mean&lt;/h3&gt;
-
-&lt;p&gt;It is easy to get the coefficients from the regression line.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;b = log.model$coefficients[[1]]
-a = log.model$coefficients[[2]]
-
-x = new$log_amplitude
-reg_eq = a
-y = a*x + b
-
-plot(df1$log_amplitude, df1$log_duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(x, y, lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let pass the regression line in linear space. We got:&lt;/p&gt;
-
-&lt;p&gt;$$
-y_{log} = a.x_{log} + b \&lt;br /&gt;
-$$&lt;/p&gt;
-
-&lt;p&gt;and:
-$$
-y_{lin} = exp(y_{log})\&lt;br /&gt;
-$$
-$$
-x_{lin} = exp(x_{log})\&lt;br /&gt;
-$$
- So that, when combined, that gives:
-$$
-y_{lin} = exp(ax_{log} + b) &lt;br /&gt;
-$$
-$$
-= exp(ax_{log}) . exp(b) &lt;br /&gt;
-$$
-$$
-= exp(x_{log})^a . exp(b) &lt;br /&gt;
-$$
-$$
-= x_{lin}^a . exp(b)
-$$&lt;/p&gt;
-
-&lt;p&gt;With we should be able to plot the regression line in linear space:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-cart_y = (cart_x^a) * exp(b)
-plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(cart_x, cart_y, lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yeah! we got it. Now let us extract the equation for the standard deviation.&lt;/p&gt;
-
-&lt;h3 id=&#34;estimate-the-standard-deviations&#34;&gt;Estimate the standard deviations&lt;/h3&gt;
-
-&lt;p&gt;In logspace, we get a standard deviation that is rather flat, althought there may be a small irregularity on the right hand side.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;par(mfrow=c(1,2))
-log_sd = abs(log.model$residuals)
-# log_sd = log.model$residuals
-plot(df1$amplitude, log_sd, ylim=c(-1, 1), xlim=c(0, 1))
-sd_change = rollapply(log_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, ylim= c(-1, 1 ), xlim=c(0, 1))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, to find the change in variance in the cartesian space is not as simple as taking the exponential of the logspace&amp;rsquo;s variance.&lt;/p&gt;
-
-&lt;p&gt;First, let us compute the standard deviation and its trends in the cartesian space.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# remember that:
-# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-# cart_y = (cart_x^a) * exp(b)
-
-cart_sd = abs(df1$duration - (df1$amplitude^a)*exp(b))
-
-par(mfrow=c(1,2))
-plot(df1$amplitude, cart_sd, xlim=c(0, 1))
-
-# moving windows that take the median of the duration&#39;s sd over saccade amplitude
-sd_change &amp;lt;- rollapply(cart_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-df1$sd_duration &amp;lt;- sd_change
-
-# regression of the duration sd over amplitude
-var.model &amp;lt;- lm(sd_duration ~ amplitude, data = df1)
-curve_y &amp;lt;- predict(var.model, data.frame(amplitude=cart_x) )
-lines(cart_x, curve_y, lwd=2, col=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sd_b &amp;lt;- var.model$coefficients[[1]]
-sd_a &amp;lt;- var.model$coefficients[[2]]
-var.model$coefficients
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## (Intercept)   amplitude 
-##   0.5487717   3.5581414
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;From the previous plot, it seems that a linear increase of SD with amplitude is a good approximation. However, we may not want the SD to diverge too much. Let us try with a model of variance that have a horizontal asymptote, for instance &lt;code&gt;1-exp(-amplitude)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df1$exp_amplitude &amp;lt;- (1-exp(-df1$amplitude))
-var.model &amp;lt;- lm(sd_duration ~ exp_amplitude, data = df1)
-
-var.model$coefficients
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##   (Intercept) exp_amplitude 
-##      0.285162      5.240037
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sd_eb &amp;lt;- var.model$coefficients[[1]]
-sd_ea &amp;lt;- var.model$coefficients[[2]]
-# we do the prediction ourselve:
-# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:
-curve_y &amp;lt;- (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-lines(cart_x, curve_y, lwd=2, col=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A asymptotic equation seems to approximate the SD as well as the linear equation.&lt;/p&gt;
-
-&lt;p&gt;To judge which is best, let us plot both the equations we estimated against the regression model we made earlier. Note that the regression model was showing a 95% prediction interval (in red), which depends on the SD that we formulated (in green and purple), but it is not expected to be equal to it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-# regression fit:
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
-
-# our equations:
-lines(cart_x, cart_y, lwd=2, col=&#39;green&#39;, lty=2)
-## linear sd
-sd_y = 0.55 + 3.54 * cart_x
-lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;green&#39;, lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;green&#39;, lty=2)
-## assymtotic sd:
-sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
-legend(&#39;bottomright&#39;, legend=c(&#39;regresssion&#39;, &#39;linear SD equation&#39;, &#39;assymptotic SD equation&#39;),lty=1, col=c(&#39;red&#39;, &#39;green&#39;, &#39;purple&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It seems that the assymptotic equation of SD do a better job than the linear equation. Furthermore, it is a wished property that the SD does not diverge. Thus, to summarize, our full model of the duration of saccade according to duration should follows: &lt;!-- remember that:
-cart_y = (cart_x^a) * exp(b)
-sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
---&gt;&lt;/p&gt;
-
-&lt;p&gt;$$
-E(Duration) \approx Amplitude^{0.51} \times exp(3.05) \&lt;br /&gt;
-$$
-$$
-SD(Duration) \approx 5.53 - 3.56 exp(-Amplitude) \&lt;br /&gt;
-$$&lt;/p&gt;
-
-&lt;!-- SD(Duration) = 0.55 + 3.54.Amp
-    E(Duration) = Amp^0.51 * exp(3.05)
---&gt;
-
-&lt;h3 id=&#34;implement-a-stochastic-generator&#34;&gt;Implement a Stochastic Generator&lt;/h3&gt;
-
-&lt;p&gt;Let us try to generate data from these equations .&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;getADuration &amp;lt;- function(amp, n){
-  mean.Duration = (amp^a) * exp(b)
-  SD.Duration = (sd_ea + sd_eb) - sd_ea * exp(-amp)
-  return(rnorm(length(mean.Duration)*n, mean.Duration, SD.Duration))
-}
-
-amp_space &amp;lt;- runif(5000, min=min(df1$amplitude), max=1)
-gen.duration &amp;lt;- getADuration(amp_space, 1)
-
-red_col = rgb(200,100,100,50,maxColorValue=255)
-plot(df1$amplitude, df1$duration, ylim= c(4, 30), xlim=c(0, 1.2))
-points(amp_space, gen.duration, ylim = c(4, 30), xlim=c(0, 1.2), col=red_col)
-legend(&amp;quot;bottomright&amp;quot;, c(&#39;extracted data&#39;, &#39;model&#39;), col=c(&#39;black&#39;, red_col), pch=1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We got a pretty cool stuff from a poor quality jpeg! We can, in fact, predict the durations of the saccade for amplitudes that Troconso et al. did not mesure. Now I am ready to use this saccade duration generator in my model of visuo-oculomotor movements :D.&lt;/p&gt;
-
-&lt;p&gt;Hope this post was helpful, and see you soon!&lt;/p&gt;
 </description>
     </item>
     

@@ -12,7 +12,7 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</loc>
+      <loc>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</loc>
       <lastmod>2017-04-14T12:43:08+01:00</lastmod>
     </url>
     
@@ -20,8 +20,8 @@
     
     
     <url>
-      <loc>https://nodragem.github.io/Blog/post/research/analyseextracteddata/</loc>
-      <lastmod>2017-03-12T21:02:50+00:00</lastmod>
+      <loc>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</loc>
+      <lastmod>2017-04-14T12:43:08+01:00</lastmod>
     </url>
     
   
@@ -103,6 +103,15 @@
     
     <url>
       <loc>https://nodragem.github.io/Blog/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>https://nodragem.github.io/Blog/categories/research/</loc>
+      <lastmod>2017-04-14T12:43:08+01:00</lastmod>
       <priority>0</priority>
     </url>
     
