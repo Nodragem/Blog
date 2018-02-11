@@ -380,12 +380,15 @@ ul.share li:hover .fa {
 article {
   animation: intro 0.3s both;
   animation-delay: 0.15s;
+  font-size: 0.75rem;
+  background-color: #a3bac5;
 }
 
 .article-container {
   max-width: 760px;
   padding: 1rem 20px 0 20px;
   margin: 0 auto 0 auto;
+  background-color: #ffffff;
 }
 
 .article-header {
@@ -425,6 +428,7 @@ article {
 
 .article-title {
   font-size: 1.75rem;
+  color: #03396c;
 }
 
 .article-title a {
