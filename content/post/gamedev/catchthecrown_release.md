@@ -30,12 +30,12 @@ You can download it here:
 Please find more details about customization on the [Project Page]({{< relref "project/catchthecrown.md" >}}).
 
 ## The Story
-I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot / half rabbit creatures - four teenagers are undertaking their "Coming-of-Age" ritual. 
+I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their "Coming-of-Age" ritual. 
 
-{{< figure src="/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif" title="Three teenager Prabbits chilling out before the Coming-of-Age ritual..." >}}
+{{<figure src="/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif" title="Three teenager Prabbits chilling out before the Coming-of-Age ritual..." >}}
 
 ## The Gameplay
-The Prabbits are spawned on a map where there is one Crown while a timer in running. Once the Crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit's gold chest while the other part goes in the Crown itself. 
+The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit's gold chest while the other part goes in the Crown itself. 
 
 ![](/Blog/img/gamedev/catchthecrown_release/timer.gif) 
 
@@ -50,15 +50,14 @@ A competition starts between Prabbits as everyone wants to catch the Crown and b
 
 
 ## The Character Actions
-The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increase their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.
+The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.
 
-{{< figure src="/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif" title="Spear, Slap, Trap Combo! I was alone recording, that's why Red is not moving :P" >}}
+{{<figure src="/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif" title="Spear, Slap, Trap Combo! I was alone recording, that's why Red is not moving :P" >}}
 
 
 ## What was not implemented
-Originally, Catch The Crown was thought to be a cooperative and competitive 2D platform game. A Shaman would have explained the competitive rules to the teenager Prabbits. During a round, the players would have a common gold chest in addition to their own. The next level would be unlocked only if the common chest reaches a certain amount of Gold (you can still see this chest in the GUI). 
+Originally, Catch The Crown was thought to be a cooperative and competitive 2D platform game. A Shaman would have explained the competition rules to the teenager Prabbits. During a round, the players would have a common gold chest in addition to their own. The next level would be unlocked only if the common chest reaches a certain amount of Gold (you can still see this chest in the GUI). 
 
-The levels would have been designed to force cooperative behaviour to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay. 
+The levels would have been designed to force cooperative behavior to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay. 
 
 Maybe later I will do a sequel where I will implement more of the stuff I wanted originally. In any case, I will probably come back with new levels for this version of the game. Hope you enjoy the game!
-
