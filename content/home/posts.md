@@ -11,7 +11,7 @@ widget = "posts"
 see_more_link = "/post/"
 
 # Order that this section will appear in.
-weight = 40
+weight = 1
 
 # Show posts that contain the following tags. Default to any tags.
 tags = []

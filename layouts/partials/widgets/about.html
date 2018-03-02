@@ -1,0 +1,82 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<!-- About widget -->
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="col-xs-12 col-md-12 section-heading">
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div id="profile">
+
+      {{ with $page.Params.avatar }}
+      <div class="portrait" itemprop="image"
+           style="background-image: url('{{ "/img/" | relURL }}{{ . }}');">
+      </div>
+      {{ end }}
+
+      <div class="portrait-title">
+        <h2 itemprop="name">{{ $page.Params.name }}</h2>
+        <h3 itemprop="jobTitle">{{ $page.Params.role }}</h3>
+        {{ if $page.Params.organization }}
+        <h3 itemprop="worksFor">
+          {{ with $page.Params.organization_url }}<a href="{{ . }}" target="_blank">{{ end }}
+          {{ $page.Params.organization }}
+          {{ if $page.Params.organization_url }}</a>{{ end }}
+        </h3>
+        {{ end }}
+      </div>
+
+      {{ with $page.Params.params }}
+      <ul class="social-icon" aria-hidden="true">
+        {{ range .social }}
+        {{ $pack := or .icon_pack "fa" }}
+        <li>
+          <a href="{{ .link | safeURL }}" target="_blank">
+            <i class="{{ $pack }} {{ $pack }}-{{ .icon }} big-icon"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{end}}
+
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12" itemprop="description">
+    <div class="about-description">
+    {{ $page.Content }}
+    </div>
+    <div class="row">
+
+      {{ with $page.Params.interests }}
+      <div class="col-sm-5">
+        <h3>{{ i18n "interests" | markdownify }}</h3>
+        <ul class="ul-interests">
+          {{ range .interests }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+      {{ with $page.Params.education }}
+      <div class="col-sm-7">
+        <h3>{{ i18n "education" | markdownify }}</h3>
+        <ul class="ul-edu fa-ul">
+          {{ range .courses }}
+          <li>
+            <i class="fa-li fa fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">{{ .course }}{{ with .year }}, {{ . }}{{ end }}</p>
+              <p class="institution">{{ .institution }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</div>

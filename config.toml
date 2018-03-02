@@ -1,5 +1,5 @@
 baseurl = "https://nodragem.github.io/Blog/"
-title = "Yargeoff's Blog"
+title = "NODRAGEM GAMES - Blog"
 copyright = "&copy; 2016 Geoffrey Mégardon"
 theme = "hugo-academic"
 enableEmoji = true
@@ -19,15 +19,15 @@ defaultContentLanguageInSubdir = false
   hrefTargetBlank = true
 
 [params]
-  name = "Geoffrey Mégardon"
-  role = "Research Associate / Game Dev"
-  organization = "Cardiff, UK"
+  name = "Nodragem Games"
+  role = ""
+  organization = "Sole Trader"
   organization_url = ""
-  avatar = "portrait2.jpg"
+  logo = "logo.jpg"
   email = "geoffrey.megardon@outlook.com"
-  academic_webpage = "http://psych.cf.ac.uk/contactsandpeople/megardong.php"
-  address = ""
-  office_hours = ""
+  github = "http://psych.cf.ac.uk/contactsandpeople/megardong.php"
+  address = "Cardiff, UK"
+  office_hours = "Thursday-Saturday, 9am - 6pm"
   phone = ""
   skype = ""
   telegram = ""
@@ -124,36 +124,10 @@ defaultContentLanguageInSubdir = false
   #
   #   Full list: https://jpswalsh.github.io/academicons/
 
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fa"
-    link = "mailto:geoffrey.megardon@outlook.com"
-
-  # [[params.social]]
-  #   icon = "twitter"
-  #   icon_pack = "fa"
-  #   link = "//twitter.com/GeorgeCushen"
-
-  [[params.social]]
-    icon = "google-scholar"
-    icon_pack = "ai"
-    link = "https://scholar.google.com/citations?hl=en&user=mvRffiQAAAAJ"
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "https://github.com/Nodragem"
-
-
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
-
-[[menu.main]]
-  name = "Home"
-  url = "#about"
-  weight = 1
 
 [[menu.main]]
   name = "Recent Posts"
@@ -161,14 +135,14 @@ defaultContentLanguageInSubdir = false
   weight = 3
 
 [[menu.main]]
-  name = "GameDev Posts"
-  url = "#gd-posts"
-  weight = 3
-
-[[menu.main]]
-  name = "Projects"
+  name = "Games & Projects"
   url = "#projects"
   weight = 4
+
+[[menu.main]]
+  name = "About"
+  url = "#about"
+  weight = 5
 
 [[menu.main]]
   name = "Contact"

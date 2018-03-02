@@ -10,7 +10,7 @@ subtitle = ""
 widget = "projects"
 
 # Order that this section will appear in.
-weight = 50
+weight = 2
 
 # View.
 # Customize how projects are displayed.
@@ -21,10 +21,7 @@ view = 1
 # Add or remove as many filters (`[[filter]]` instances) as you like.
 # Use "*" tag to show all projects or an existing tag prefixed with "." to filter by specific tag.
 # To remove toolbar, delete/comment all instances of `[[filter]]` below.
-[[filter]]
-  name = "All"
-  tag = "*"
-  
+ 
 [[filter]]
   name = "Video Games"
   tag = ".videogame"
@@ -32,6 +29,10 @@ view = 1
 [[filter]]
   name = "Research"
   tag = ".research"
+
+[[filter]]
+  name = "All"
+  tag = "*"
 
 +++
 
