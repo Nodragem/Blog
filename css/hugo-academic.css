@@ -67,10 +67,17 @@ ul, ol, dl {
   text-rendering: optimizeLegibility;
 }
 
+.view-all {
+  float: right;
+  color: #ffffff;
+  margin-right: 30px;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  text-align: left;
   margin-bottom: .5rem;
   line-height: 1.25;
   color: #313131;
@@ -157,8 +164,25 @@ blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
   color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  background-color: #dfe4e9;
+  border-left: .25rem solid #a1c0da;
+  font-size: 0.8rem;
+  quotes: "\201C""\201D""\2018""\2019";
 }
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
 blockquote p:last-child {
   margin-bottom: 0;
 }
@@ -204,18 +228,28 @@ blockquote p:last-child {
 }
 
 .home-section {
-  background-color: rgb(255, 255, 255);
-  padding: 110px 0 110px 0;
+  background-color: #a3bac5;
+  padding: 30px 0px 10px 0px;
   animation: intro 0.3s both;
   animation-delay: 0.15s;
 }
 
+.container {
+  background-color: #ffffff;
+  max-width: 900px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3)
+}
+
 .home-section:first-of-type {
   padding-top: 50px;
+  
 }
 
 .home-section:nth-of-type(even) {
-  background-color: rgb(247, 247, 247);
+  background-color: #a3bac5;
 }
 
 @media screen and (max-width: 768px) {
@@ -229,6 +263,10 @@ blockquote p:last-child {
 
 .section-heading h1 {
   margin: 0 0 10px 0;
+  padding: 10px 10px 10px 15px;
+  color: #282e31;
+  background-color: #808e99;
+  border-radius: 0 0px 100px 15px;
 }
 
 .section-heading p {
@@ -385,10 +423,12 @@ article {
 }
 
 .article-container {
-  max-width: 760px;
-  padding: 1rem 20px 0 20px;
+  max-width: 800px;
+  padding: 1rem 2.5rem 0 2.5rem;
   margin: 0 auto 0 auto;
   background-color: #ffffff;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .article-header {
@@ -397,8 +437,19 @@ article {
 }
 
 .article-banner {
+  /* width: 50%; */
+  height: auto;
+  padding: 0 20px 0 0px;
+  max-width: 200px;
+  float: left;
+}
+
+.article-banner2 {
   width: 100%;
   height: auto;
+  max-width: 800px;
+  /* padding: 1rem 20px 0 20px; */
+  margin: 0 auto 0 auto;
 }
 
 .article-header-caption {
@@ -432,7 +483,7 @@ article {
 }
 
 .article-title a {
-  color: #151515;
+  color: #3c4750;
   transition: color 0.6s ease;
 }
 
@@ -706,6 +757,16 @@ article {
 }
 
 /*************************************************
+ *  About
+ **************************************************/
+
+ .about-description {
+   padding-left: 5%;
+   padding-right: 5%;
+   font-size:18px;
+ }
+
+/*************************************************
  *  Contact
  **************************************************/
 
@@ -735,8 +796,9 @@ article {
  **************************************************/
 
 footer {
-  margin: 4rem 0 0;
+  margin: 0 0 0;
   padding: 2rem 0;
+  background-color: #a3bac5;
   width: 100%;
 }
 
@@ -747,7 +809,7 @@ footer p {
 
 .site-footer,
 footer a#back_to_top i {
-  color: #899596;
+  color: #2b3036;
 }
 
 /*************************************************

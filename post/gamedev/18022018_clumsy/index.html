@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.32.2" />
+  <meta name="author" content="Nodragem Games">
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github-gist.min.css">
+    
+  
+  <link rel="stylesheet" href="/Blog/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Blog/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Blog/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/Blog/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="NODRAGEM GAMES - Blog">
+  <link rel="feed" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="NODRAGEM GAMES - Blog">
+
+  <link rel="icon" type="image/png" href="/Blog/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/Blog/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/">
+
+  
+
+  <title>Simulating Lag and Drop when Debugging Multiplayer Games | NODRAGEM GAMES - Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container-navbar">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/Blog/">NODRAGEM GAMES - Blog</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#posts">
+            
+            <span>Recent Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#projects">
+            
+            <span>Games &amp; Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#about">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Blog/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Simulating Lag and Drop when Debugging Multiplayer Games</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-02-18 17:14:08 &#43;0100 &#43;0100" itemprop="datePublished">
+      Sun, Feb 18, 2018
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/Blog/categories/gamedev">gamedev</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2f18022018_clumsy%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Simulating%20Lag%20and%20Drop%20when%20Debugging%20Multiplayer%20Games&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2f18022018_clumsy%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2f18022018_clumsy%2f&amp;title=Simulating%20Lag%20and%20Drop%20when%20Debugging%20Multiplayer%20Games"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2f18022018_clumsy%2f&amp;title=Simulating%20Lag%20and%20Drop%20when%20Debugging%20Multiplayer%20Games"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Simulating%20Lag%20and%20Drop%20when%20Debugging%20Multiplayer%20Games&amp;body=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2f18022018_clumsy%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="debugging-multiplayer-games-locally">Debugging multiplayer games locally</h2>
+
+<p>These days, I&rsquo;m playing around with making online multiplayer prototype games.</p>
+
+<p>Most of the time, when we debug our video games for online multiplayer, we run a local server on <code>localhost</code>. This server acts as:</p>
+
+<ul>
+<li>a file server - sending the game files to the client,</li>
+<li>a game server - transferring information between clients, authorizing transactions, etc.</li>
+</ul>
+
+<p>You can debug your code logic on server side and client side very easily nowadays. For instance, I use VS Code, with NodeJS to debug the server side and the Chrome debugger plug-in to debug the client side.</p>
+
+<p>However, once your game works perfectly with your local server, it only means that it works perfectly with <em>perfect network condition!</em> You are still miles away from having a game working in real world network conditions.</p>
+
+<p>When released, your multiplayer code will have to deal with:</p>
+
+<ul>
+<li>variable delays of communication between clients and server,</li>
+<li>variable number of dropped messages/packages.</li>
+</ul>
+
+<p>Although software like Unity offers to simulate this kind of disruptions, we are not all and/or always using Unity :D ! I am using Phaser right now. After some research I found a little piece of software allowing to simulate real-word network condition locally, so I thought I will share.</p>
+
+<h2 id="clumsy-an-utility-to-simulate-broken-network">Clumsy an utility to simulate broken network</h2>
+
+<p>This piece of software is named <code>clumsy</code> and can be found <a href="https://jagt.github.io/clumsy/" target="_blank">here</a>. According to their website:</p>
+
+<blockquote>
+<p>clumsy makes your network condition on Windows significantly worse, but in a managed and interactive manner.</p>
+</blockquote>
+
+<p><img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png" alt="clumsy1" /></p>
+
+<p>What&rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, <code>clumsy</code> sits next to a file <code>config.txt</code> where you can specify exactly which part of the network you want to disrupt.</p>
+
+<p>For instance, if I host my server on <code>localhost:5000</code>, I can make a configuration that disrupt the access to <code>localhost:5000</code>. To do so, I added the following in <code>config.txt</code>:</p>
+
+<pre><code>HTML5 games: outbound and tcp.DstPort == 5000
+</code></pre>
+
+<p>After that, when you open Clumsy, you will be able to select the configuration <code>HTML5 games</code> from the droplist menu.</p>
+
+<p><img src="/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png" alt="clumsy1" /></p>
+
+<p>Note that the configuration <code>localhost ipv4 all</code> does roughlythe same as my config except that it disrupts <em>any</em> local hosts.</p>
+
+<h2 id="experimenting-with-delayed-and-dropped-packages">Experimenting with Delayed and Dropped Packages</h2>
+
+<p>To give you a better idea of how network dirupstion translates into your game, I tested <code>clumsy</code> on a prototype I made recently. I used a client authoritative network with two clients and one server to keep things simple.</p>
+
+<p>What I mean by Client Authoritative is that:</p>
+
+<ul>
+<li>Client 1 (on the top) applies the input of the player without delay,</li>
+<li>Client 1 sends the position of the charactor to the server,</li>
+<li>The server transmits the position to Client 2</li>
+<li>Client 2 (on the bottom) applies the position</li>
+</ul>
+
+<p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &rsquo;s ok for our example.</p>
+
+<p><img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif" alt="clumsy2" /></p>
+
+<p>Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.</p>
+
+<p><img src="/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif" alt="clumsy2" /></p>
+
+<p>When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, <code>clumsy</code>&rsquo;s delays seem to be <em>fixed</em>, as opposed to be <em>random</em>, which is most probably the case in real network.</p>
+
+<p>With <em>random</em> delays, you would experience bugs if your code relies on messages arriving to the server in the order they have been sent. For instance, something like that would lead to bugs:</p>
+
+<pre><code class="language-javascript">[Client Side]
+
+this._socket.emit('spawning_points_request');
+this._socket.emit('new_player_request');
+
+self = this;
+this._socket.on('spawning_points', function(data){
+            self.spawning_points = data.spawning_points;
+        });
+
+this._socket.on('new_player', function(data){
+            self.addPlayer(data.player, self.spawning_positions[0]);
+        });
+
+</code></pre>
+
+<p>In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in <code>clumsy</code>, you can emulate that behaviour with the <code>Out of order</code> option.</p>
+
+<p><img src="/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif" alt="clumsy2" /></p>
+
+<p>Finally, when we add dropped packages, things can become a big mess. In our example, Client 2 (bottom) always succeeds to catch up with Client 1 (top)  because Client 1 sends the <em>position</em> of the character and not the change in position.</p>
+
+<p>However, if your code relies on sending changes in state (i.e. delta method) or on sending an important message, you may experience bugs as these messages are dropped. For instance, in this simple example, I only send once the message to request a new player to the server. If it does not reach the server, I need to reload the page, until it does!</p>
+
+<p>Hope you will have fun debugging with <code>clumsy</code>. If you know other useful tools for debugging multiplayer online game, let us know!</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://nodragem.github.io/Blog/post/research/analyse_extracted_data/"><span
+      aria-hidden="true">&larr;</span> Data extraction with WebPlotDigitizer</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yargoeffs-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container2">
+    <p class="powered-by">
+
+      &copy; 2016 Geoffrey Mégardon &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/Blog/js/jquery-1.12.3.min.js"></script>
+    <script src="/Blog/js/bootstrap.min.js"></script>
+    <script src="/Blog/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/Blog/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-112020136-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+
