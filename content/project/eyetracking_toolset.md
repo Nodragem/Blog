@@ -9,14 +9,13 @@ title = "Eye tracking toolset"
 summary = "Toolset to extract and analyse eye movements from eye tracking recording."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "DataCleaningWindow.png"
+thumbnail = "DataCleaningWindow.png"
 
 # Optional image to display on project detail page (relative to `static/img/` folder).
 image = ""
 
 # Tags: can be used for filtering projects.
-# Example: `tags = ["eye tracking", "tool"]`
-tags = ["research", "eye movement", "tool"]
+project_type = ["research"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://github.com/Nodragem/Eyetracking-Analysis-tools"

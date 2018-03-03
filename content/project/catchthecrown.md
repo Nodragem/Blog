@@ -1,18 +1,19 @@
 +++
 math = false
 external_link = ""
-image_preview = "catchthecrown_release.png"
+thumbnail = "catchthecrown_release.png"
 date = "2017-04-15T14:51:57+01:00"
 title = "Catch The Crown!"
 summary = "Muti-player Arena game featuring Prabbits"
-tags = ["videogame"]
+project_type = ["videogame"]
 highlight = true
 
 [header]
-  image = ""
+  image = "catchthecrown_release_banner.png"
   caption = ""
 
 +++
+<img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
 
 ## Download:
 
@@ -89,7 +90,7 @@ The preference files are in the folder `preference` and they can be modified to 
 
 
 
-## Screenshot: 
- <img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
+<!-- ## Screenshot: 
+ <img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/> -->
 
 

@@ -4,7 +4,7 @@ highlight = true
 math = false
 summary = " "
 image = ""
-categories = ["gamedev"]
+post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2017-04-14T12:43:08+01:00"
 thumbnail = "catchthecrown_release.png"
@@ -18,7 +18,7 @@ caption = "Catch The Crown's Splash Screen"
 
 Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that's the right time to finalize and ship my first video game. 
 
-{{< figure src="/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif" title="How it feels like to ship a game!" >}}
+{{< figure src="/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif" caption="How it feels like to ship a game!" >}}
 
 Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!). 
 You can download it here:
@@ -32,17 +32,16 @@ Please find more details about customization on the [Project Page]({{< relref "p
 ## The Story
 I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their "Coming-of-Age" ritual. 
 
-{{<figure src="/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif" title="Three teenager Prabbits chilling out before the Coming-of-Age ritual..." >}}
+{{<figure src="/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif" caption="Three teenager Prabbits chilling out before the Coming-of-Age ritual..." >}}
 
 ## The Gameplay
 The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit's gold chest while the other part goes in the Crown itself. 
 
-![](/Blog/img/gamedev/catchthecrown_release/timer.gif) 
-
 <figure>
+    <img src="/Blog/img/gamedev/catchthecrown_release/timer.gif" width="100%"/>
     <img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
     <figcaption>
-        <h4>Only the Prabbit with the Crown can collect treasures</h4>
+        Only the Prabbit with the Crown can collect treasures
     </figcaption>
 </figure>
 
@@ -52,7 +51,7 @@ A competition starts between Prabbits as everyone wants to catch the Crown and b
 ## The Character Actions
 The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.
 
-{{<figure src="/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif" title="Spear, Slap, Trap Combo! I was alone recording, that's why Red is not moving :P" >}}
+{{<figure src="/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif" caption="Spear, Slap, Trap Combo! I was alone recording, that's why Red is not moving :P" >}}
 
 
 ## What was not implemented

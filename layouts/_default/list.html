@@ -1,41 +1,29 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-<div class="universal-wrapper">
-  <div class = "row">
-    <div class="col-md-8">
-      <h1>{{ .Title | default "Posts" }}</h1>
-        
-      {{ with .Content }}
-      <div class="article-style" itemprop="articleBody">{{ . }}</div>
-      {{ end }}      
+<div class="home-section">
+  <div class="container-allpost">
+    <div class = "row">
+      <div class="col-md-8 col-xs-12 section-heading">
+        <h1>{{ .Title | default "Posts" }}</h1>
+          
+        {{ with .Content }}
+        <div class="article-style" itemprop="articleBody">{{ . }}</div>
+        {{ end }}      
 
-      {{ $paginator := .Paginate .Data.Pages }}
-      {{ range $paginator.Pages }}
-      <div>
-        <!--{{ if .Params.image }}
-        <a href="{{ .Permalink }}">
-          <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner">
-        </a>
-        {{end}}-->
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
-        <div class="article-style"><p>
-          {{ if .Params.summary }}
-          {{ printf "%s" .Params.summary | markdownify }}
-          {{ else if .Truncated }}
-          {{ printf "%s" .Summary | markdownify }}
-          {{ else }}
-          {{ .Content }}
-          {{ end }}
-        </p></div>
-      </div>
-    {{ end }}
+        {{ $paginator := .Paginate .Data.Pages }}
+      {{ range $i, $page := $paginator.Pages }}
+          <!-- <div class="col-md-12 col-sm-12 col-xs-12"> -->
+          {{ $params := dict "post" $page }}
+          {{ partial "post_li" $params }}
+          <!-- </div>             -->
+      {{ end }}
 
-    {{ partial "pagination" . }}
-  </div>
-  <div class="col-md-4">
-    {{ partial "sidebar.html" . }}
+      {{ partial "pagination" . }}
+    </div>
+    <div class="col-md-4 col-xs-12">
+      {{ partial "sidebar.html" . }}
+    </div>
   </div>
 </div>
 <div class = "row">

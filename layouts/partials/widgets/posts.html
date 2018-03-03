@@ -6,10 +6,7 @@
 <div class="blog-list">
 <div class="row">
   <div class="col-xs-12 col-md-12 section-heading">
-      <a class="view-all" href="{{ $page.Params.see_more_link | relURL }}">
-          Show All
-          <!-- <i class="fa fa-angle-double-right"></i> -->
-        </a>
+      
     <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
     {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
 
@@ -38,8 +35,14 @@
       {{ end }}
     {{ end }}
   </div>
+  <a class="view-all" href="{{ $page.Params.see_more_link | relURL }}">
+      Show All
+      <i class="fa fa-plus-square"></i>
+    </a>
+  
   <!-- {{ partial "disqus.html" . }} -->
 </div>
+
 </div>
 
 

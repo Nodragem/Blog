@@ -39,7 +39,7 @@
         </li>
 
         {{ else }}
-
+        <!-- NOTE: only this part is used ^^ -->
         <li class="nav-item">
           <a href="{{ .URL | relURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
             {{ .Pre }}

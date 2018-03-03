@@ -151,9 +151,9 @@ defaultContentLanguageInSubdir = false
 
 # Taxonomies.
 [taxonomies]
-  tag = "tags"
-  category = "categories"
-  publication_type = "publication_types"
+  project_type = "project_type"
+  post_type = "post_type"
+  # tag = "tags"
 
 # Languages
 #   Create a [languages.X] block for each language you want, where X is the language ID.
