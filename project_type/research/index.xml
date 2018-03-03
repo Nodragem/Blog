@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on NODRAGEM GAMES - Blog</title>
+    <link>https://nodragem.github.io/Blog/project_type/research/</link>
+    <description>Recent content in Research on NODRAGEM GAMES - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
+    <lastBuildDate>Sun, 12 Mar 2017 20:22:11 +0000</lastBuildDate>
+    <atom:link href="/Blog/project_type/research/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dynamic Neural Field toolset</title>
+      <link>https://nodragem.github.io/Blog/project/dnftool/</link>
+      <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brain Visual Space toolset</title>
+      <link>https://nodragem.github.io/Blog/project/sctovisualtrans/</link>
+      <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eye tracking toolset</title>
+      <link>https://nodragem.github.io/Blog/project/eyetracking_toolset/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

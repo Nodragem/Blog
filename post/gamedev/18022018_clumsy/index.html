@@ -66,7 +66,7 @@
         
 
         
-
+        
         <li class="nav-item">
           <a href="/Blog/#posts">
             
@@ -78,7 +78,7 @@
         
 
         
-
+        
         <li class="nav-item">
           <a href="/Blog/#projects">
             
@@ -90,7 +90,7 @@
         
 
         
-
+        
         <li class="nav-item">
           <a href="/Blog/#about">
             
@@ -102,7 +102,7 @@
         
 
         
-
+        
         <li class="nav-item">
           <a href="/Blog/#contact">
             
@@ -120,9 +120,9 @@
 
 
 <article class="article" itemscope itemtype="http://schema.org/Article">
-
+  <hr>
   
-
+  
   <div class="article-container">
     <h1 itemprop="name">Simulating Lag and Drop when Debugging Multiplayer Games</h1>
     
@@ -135,17 +135,6 @@
     </time>
   </span>
 
-  
-  
-  
-  <span class="article-categories">
-    <i class="fa fa-folder"></i>
-    
-    <a href="/Blog/categories/gamedev">gamedev</a
-    >
-    
-  </span>
-  
   
 
   
@@ -231,7 +220,14 @@
 <p>clumsy makes your network condition on Windows significantly worse, but in a managed and interactive manner.</p>
 </blockquote>
 
-<p><img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png" alt="clumsy1" /></p>
+
+<figure >
+    
+        <img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png" />
+    
+    
+</figure>
+
 
 <p>What&rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, <code>clumsy</code> sits next to a file <code>config.txt</code> where you can specify exactly which part of the network you want to disrupt.</p>
 
@@ -242,7 +238,14 @@
 
 <p>After that, when you open Clumsy, you will be able to select the configuration <code>HTML5 games</code> from the droplist menu.</p>
 
-<p><img src="/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png" alt="clumsy1" /></p>
+
+<figure >
+    
+        <img src="/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png" />
+    
+    
+</figure>
+
 
 <p>Note that the configuration <code>localhost ipv4 all</code> does roughlythe same as my config except that it disrupts <em>any</em> local hosts.</p>
 
@@ -261,11 +264,25 @@
 
 <p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &rsquo;s ok for our example.</p>
 
-<p><img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif" alt="clumsy2" /></p>
+
+<figure >
+    
+        <img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif" />
+    
+    
+</figure>
+
 
 <p>Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.</p>
 
-<p><img src="/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif" alt="clumsy2" /></p>
+
+<figure >
+    
+        <img src="/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif" />
+    
+    
+</figure>
+
 
 <p>When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, <code>clumsy</code>&rsquo;s delays seem to be <em>fixed</em>, as opposed to be <em>random</em>, which is most probably the case in real network.</p>
 
@@ -289,34 +306,44 @@ this._socket.on('new_player', function(data){
 
 <p>In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in <code>clumsy</code>, you can emulate that behaviour with the <code>Out of order</code> option.</p>
 
-<p><img src="/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif" alt="clumsy2" /></p>
+
+<figure >
+    
+        <img src="/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif" />
+    
+    
+</figure>
+
 
 <p>Finally, when we add dropped packages, things can become a big mess. In our example, Client 2 (bottom) always succeeds to catch up with Client 1 (top)  because Client 1 sends the <em>position</em> of the character and not the change in position.</p>
 
 <p>However, if your code relies on sending changes in state (i.e. delta method) or on sending an important message, you may experience bugs as these messages are dropped. For instance, in this simple example, I only send once the message to request a new player to the server. If it does not reach the server, I need to reload the page, until it does!</p>
 
-<p>Hope you will have fun debugging with <code>clumsy</code>. If you know other useful tools for debugging multiplayer online game, let us know!</p>
+<p>Hope you will have fun debugging with <code>clumsy</code>. If you know other useful tools for debugging multiplayer online game, let us know in the comments below!</p>
 
     </div>
   </div>
 
-</article>
-
-<div class="container">
+  
+<div class="article-pager"></div>
+  <hr>
+<div class="pager">
+  <h3>Also in Recent Posts</h3>
   <nav>
-  <ul class="pager">
-    
-    <li class="previous"><a href="https://nodragem.github.io/Blog/post/research/analyse_extracted_data/"><span
-      aria-hidden="true">&larr;</span> Data extraction with WebPlotDigitizer</a></li>
-    
+    <ul >
+      
+      <li class="previous"><a href="https://nodragem.github.io/Blog/post/research/analyse_extracted_data/"><span
+        aria-hidden="true">&larr;</span> Data extraction with WebPlotDigitizer</a></li>
+      
 
-    
-  </ul>
-</nav>
+      
+    </ul>
+  </nav>
+</div>
 
 </div>
 
-<div class="article-container">
+<div class="article-comment">
   
 <section id="comments">
   <div id="disqus_thread">
@@ -345,6 +372,7 @@ this._socket.on('new_player', function(data){
 
 
 </div>
+</article>
 
 <footer class="site-footer">
   <div class="container2">

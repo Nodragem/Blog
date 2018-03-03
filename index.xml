@@ -50,7 +50,14 @@
 &lt;p&gt;clumsy makes your network condition on Windows significantly worse, but in a managed and interactive manner.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34; alt=&#34;clumsy1&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;What&amp;rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, &lt;code&gt;clumsy&lt;/code&gt; sits next to a file &lt;code&gt;config.txt&lt;/code&gt; where you can specify exactly which part of the network you want to disrupt.&lt;/p&gt;
 
@@ -61,7 +68,14 @@
 
 &lt;p&gt;After that, when you open Clumsy, you will be able to select the configuration &lt;code&gt;HTML5 games&lt;/code&gt; from the droplist menu.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png&#34; alt=&#34;clumsy1&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Note that the configuration &lt;code&gt;localhost ipv4 all&lt;/code&gt; does roughlythe same as my config except that it disrupts &lt;em&gt;any&lt;/em&gt; local hosts.&lt;/p&gt;
 
@@ -80,11 +94,25 @@
 
 &lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;rsquo;s ok for our example.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34; alt=&#34;clumsy2&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34; alt=&#34;clumsy2&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, &lt;code&gt;clumsy&lt;/code&gt;&amp;rsquo;s delays seem to be &lt;em&gt;fixed&lt;/em&gt;, as opposed to be &lt;em&gt;random&lt;/em&gt;, which is most probably the case in real network.&lt;/p&gt;
 
@@ -108,13 +136,20 @@ this._socket.on(&#39;new_player&#39;, function(data){
 
 &lt;p&gt;In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in &lt;code&gt;clumsy&lt;/code&gt;, you can emulate that behaviour with the &lt;code&gt;Out of order&lt;/code&gt; option.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif&#34; alt=&#34;clumsy2&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Finally, when we add dropped packages, things can become a big mess. In our example, Client 2 (bottom) always succeeds to catch up with Client 1 (top)  because Client 1 sends the &lt;em&gt;position&lt;/em&gt; of the character and not the change in position.&lt;/p&gt;
 
 &lt;p&gt;However, if your code relies on sending changes in state (i.e. delta method) or on sending an important message, you may experience bugs as these messages are dropped. For instance, in this simple example, I only send once the message to request a new player to the server. If it does not reach the server, I need to reload the page, until it does!&lt;/p&gt;
 
-&lt;p&gt;Hope you will have fun debugging with &lt;code&gt;clumsy&lt;/code&gt;. If you know other useful tools for debugging multiplayer online game, let us know!&lt;/p&gt;
+&lt;p&gt;Hope you will have fun debugging with &lt;code&gt;clumsy&lt;/code&gt;. If you know other useful tools for debugging multiplayer online game, let us know in the comments below!&lt;/p&gt;
 </description>
     </item>
     
@@ -125,6 +160,8 @@ this._socket.on(&#39;new_player&#39;, function(data){
       
       <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
       <description>
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;download&#34;&gt;Download:&lt;/h2&gt;
 
@@ -210,9 +247,8 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
 Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;screenshot&#34;&gt;Screenshot:&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
+&lt;!-- ## Screenshot: 
+ &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt; --&gt;
 </description>
     </item>
     
@@ -590,12 +626,16 @@ did not mesure.&lt;/p&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34; /&gt;
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34; alt=&#34;How it feels like to ship a game!&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;How it feels like to ship a game!&lt;/h4&gt;
+        &lt;p&gt;
+        How it feels like to ship a game!
         
+            
+        
+        &lt;/p&gt; 
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
@@ -619,12 +659,16 @@ You can download it here:&lt;/p&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34; /&gt;
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34; alt=&#34;Three teenager Prabbits chilling out before the Coming-of-Age ritual...&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Three teenager Prabbits chilling out before the Coming-of-Age ritual...&lt;/h4&gt;
+        &lt;p&gt;
+        Three teenager Prabbits chilling out before the Coming-of-Age ritual...
         
+            
+        
+        &lt;/p&gt; 
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
@@ -634,12 +678,11 @@ You can download it here:&lt;/p&gt;
 
 &lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&amp;rsquo;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/timer.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
 &lt;figure&gt;
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/timer.gif&#34; width=&#34;100%&#34;/&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;
     &lt;figcaption&gt;
-        &lt;h4&gt;Only the Prabbit with the Crown can collect treasures&lt;/h4&gt;
+        Only the Prabbit with the Crown can collect treasures
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -652,12 +695,16 @@ You can download it here:&lt;/p&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34; /&gt;
+        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34; alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&lt;/h4&gt;
+        &lt;p&gt;
+        Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P
         
+            
+        
+        &lt;/p&gt; 
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
