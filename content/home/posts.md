@@ -9,6 +9,7 @@ title = "Recent Posts"
 subtitle = ""
 widget = "posts"
 see_more_link = "/post/"
+logo = "logo_posts.png"
 
 # Order that this section will appear in.
 weight = 1

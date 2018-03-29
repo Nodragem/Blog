@@ -4,6 +4,7 @@
 <!-- Projects widget -->
 <div class="row">
   <div class="col-xs-12 col-md-12 section-heading">
+    <img src="{{ "/img/" | relURL }}{{ $page.Params.logo }}" itemprop="image" class="home-section-logo">
     <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
     {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
   </div>

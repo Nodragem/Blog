@@ -6,9 +6,11 @@
 <div class="blog-list">
 <div class="row">
   <div class="col-xs-12 col-md-12 section-heading">
-      
-    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
-    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+      <img src="{{ "/img/" | relURL }}{{ $page.Params.logo }}" itemprop="image" class="home-section-logo">
+    <h1>
+      {{ with $page.Title }}{{ . | markdownify }}{{ end }}
+    </h1>
+      {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
 
 
   
@@ -19,7 +21,7 @@
 
     {{ if $page.Params.category }}
       {{ range $i, $p := first $page.Params.count (where (where (where $.Data.Pages "Type" "post") ".Params.categories" "intersect" $page.Params.category) ".Params.notonhomepage" nil) }}
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
         {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
         <!-- </div>
@@ -27,7 +29,7 @@
       {{ end }}
     {{ else }}
       {{ range $i, $p := first $page.Params.count (where (where $.Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
         {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
         </div>

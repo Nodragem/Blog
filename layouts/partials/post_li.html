@@ -11,13 +11,13 @@ if $post.Params.external_link
 <div class="row article-list-item" itemscope itemprop="blogPost">
   {{if $post.Params.external_link}}
     {{ if $post.Params.thumbnail }}
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-12 article-thumbnail">
       <a href="{{ $post.Params.external_link }}">
-        <img src="{{ "/img/" | relURL }}{{ $post.Params.thumbnail }}" class="article-thumbnail" itemprop="image">
+        <img src="{{ "/img/" | relURL }}{{ $post.Params.thumbnail }}" itemprop="image">
       </a>
     </div>
     {{end}}
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-12">
       <h3 class="article-title" itemprop="name">
         <a href="{{ $post.Params.external_link }}" itemprop="url">{{ $post.Title }}</a>
       </h3>
@@ -34,13 +34,13 @@ if $post.Params.external_link
     </div>
   {{else}}
   {{ if $post.Params.thumbnail }}
-  <div class="col-xs-12 col-sm-4">
+  <div class="col-xs-12 col-sm-12 article-thumbnail">
     <a href="{{ $post.Permalink }}">
-      <img src="{{ "/img/" | relURL }}{{ $post.Params.thumbnail }}" class="article-thumbnail" itemprop="image">
+      <img src="{{ "/img/" | relURL }}{{ $post.Params.thumbnail }}" itemprop="image">
     </a>
   </div>
   {{end}}
-  <div class="col-xs-12 col-sm-8">
+  <div class="col-xs-12 col-sm-12">
     <h3 class="article-title" itemprop="name">
       <a href="{{ $post.Permalink }}" itemprop="url">{{ $post.Title }}</a>
     </h3>

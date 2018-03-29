@@ -1,5 +1,5 @@
 baseurl = "https://nodragem.github.io/Blog/"
-title = "NODRAGEM GAMES - Blog"
+title = "NODRAGEM GAMES"
 copyright = "&copy; 2016 Geoffrey Mégardon"
 theme = "hugo-academic"
 enableEmoji = true

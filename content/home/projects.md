@@ -8,6 +8,7 @@ draft = false
 title = "Game & Projects"
 subtitle = ""
 widget = "projects"
+logo = "logo_games.png"
 
 # Order that this section will appear in.
 weight = 2
