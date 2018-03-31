@@ -11,14 +11,151 @@
     <atom:link href="/Blog/project/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Bubble Troop</title>
+      <link>https://nodragem.github.io/Blog/project/proto-bubble-squad/</link>
+      <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/proto-bubble-squad/</guid>
+      <description>
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-bubble-squad.herokuapp.com&#34; allowfullscreen=&#34;&#34; width=&#34;1000&#34; height=&#34;700&#34;&gt;
+ &lt;p&gt;Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com &lt;/p&gt;
+
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;This is a multiplayer game, you can open two tabs to play it against yourselve.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;p&gt;This game is compatible with mobile devices and desktop computers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click on the ground and drag to move the camera&lt;/li&gt;
+&lt;li&gt;Click on a bubble and drag to catapult it&lt;/li&gt;
+&lt;li&gt;Click on the top-left icon to enable fullscreen&lt;/li&gt;
+&lt;li&gt;Collide with a friend to heal it&lt;/li&gt;
+&lt;li&gt;Collide with an ennemy to hurt it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;This prototype was developped to test the ideas of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Adrien Lebouc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Game made with:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34; target=&#34;_blank&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34; target=&#34;_blank&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tiled map&lt;/strong&gt; (Level Editor): &lt;a href=&#34;http://www.mapeditor.org/&#34; target=&#34;_blank&#34;&gt;http://www.mapeditor.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34; target=&#34;_blank&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cannon Shooter</title>
+      <link>https://nodragem.github.io/Blog/project/cannon-shooter/</link>
+      <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/cannon-shooter/</guid>
+      <description>
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-cannon-shooter.herokuapp.com/&#34; allowfullscreen=&#34;&#34; width=&#34;650&#34; height=&#34;480&#34;&gt;
+ &lt;p&gt;Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/ &lt;/p&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;It may take few seconds for the server to wake up, please wait&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LEFT and RIGHT to move&lt;/li&gt;
+&lt;li&gt;SPACE to shoot&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Software used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34; target=&#34;_blank&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DragonBones&lt;/strong&gt; (Animation): &lt;a href=&#34;http://dragonbones.com/en/index.html&#34; target=&#34;_blank&#34;&gt;http://dragonbones.com/en/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34; target=&#34;_blank&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34; target=&#34;_blank&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s a Match!</title>
+      <link>https://nodragem.github.io/Blog/project/its-a-match/</link>
+      <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/its-a-match/</guid>
+      <description>
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822309?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;960&#34; height=&#34;540&#34;&gt;
+ &lt;p&gt;Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space &lt;/p&gt;
+&lt;/iframe&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;KEYBOARD ARROWS to move&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Karl Jones&lt;/li&gt;
+&lt;li&gt;Steven Sparkes&lt;/li&gt;
+&lt;li&gt;Jonathan Raymond Westlake&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Software used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unity&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://unity3d.com/&#34; target=&#34;_blank&#34;&gt;https://unity3d.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blender&lt;/strong&gt; (3D Graphics): &lt;a href=&#34;https://www.blender.org/&#34; target=&#34;_blank&#34;&gt;https://www.blender.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Catch The Crown!</title>
       <link>https://nodragem.github.io/Blog/project/catchthecrown/</link>
       <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
       <description>
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;download&#34;&gt;Download:&lt;/h2&gt;
 
@@ -28,14 +165,43 @@
 &lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;Catch The Crown is a multi-player arena platform game.
-Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
+&lt;p&gt;Catch The Crown is a multi-player arena platform game.&lt;/p&gt;
+
+&lt;p&gt;Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
 
 &lt;p&gt;A competition starts between Prabbits to catch the crown and collect gold. When the timer ends, the richer Prabbit wins.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;I need to thank my friends for their ideas and feedback, especially:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Arthur Portron&lt;/li&gt;
+&lt;li&gt;Lukas Wolf&lt;/li&gt;
+&lt;li&gt;Atanaska Nikolova&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Software used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34; target=&#34;_blank&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34; target=&#34;_blank&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Krita&lt;/strong&gt; (2D Graphics/Painting): &lt;a href=&#34;https://krita.org/en/&#34; target=&#34;_blank&#34;&gt;https://krita.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aseprite&lt;/strong&gt; (2D Graphics/Animation): &lt;a href=&#34;https://www.aseprite.org/&#34; target=&#34;_blank&#34;&gt;https://www.aseprite.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34; target=&#34;_blank&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audacity&lt;/strong&gt; (Voice Recording and Editing): &lt;a href=&#34;https://www.audacityteam.org/&#34; target=&#34;_blank&#34;&gt;https://www.audacityteam.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;related-blog-posts&#34;&gt;Related blog posts:&lt;/h2&gt;
 
@@ -115,7 +281,8 @@ Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
-      <description></description>
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/DynamicNeuralField-RateBased&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/DynamicNeuralField-RateBased&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -124,7 +291,8 @@ Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
-      <description></description>
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Model-SCtoVisualSpace&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/Model-SCtoVisualSpace&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -133,7 +301,46 @@ Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
-      <description></description>
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Eyetracking-Analysis-tools&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/Eyetracking-Analysis-tools&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>John Space</title>
+      <link>https://nodragem.github.io/Blog/project/john-space/</link>
+      <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
+      <description>
+
+&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822796?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;968&#34; height=&#34;540&#34;&gt;
+ &lt;p&gt;Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space &lt;/p&gt;
+
+&lt;/iframe&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LEFT and RIGHT to move&lt;/li&gt;
+&lt;li&gt;SPACE to jump&lt;/li&gt;
+&lt;li&gt;LEFT CONTROL to sprint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Made with:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34; target=&#34;_blank&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34; target=&#34;_blank&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34; target=&#34;_blank&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
