@@ -4,7 +4,7 @@ external_link = ""
 thumbnail = "catchthecrown_release.png"
 date = "2017-04-15T14:51:57+01:00"
 title = "Catch The Crown!"
-summary = "Muti-player Arena game featuring Prabbits"
+summary = "Muti-player Arena game featuring Prabbits. All assets made from scratch."
 project_type = ["videogame"]
 highlight = true
 
@@ -13,7 +13,6 @@ highlight = true
   caption = ""
 
 +++
-<img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
 
 ## Download:
 
@@ -21,14 +20,38 @@ highlight = true
 - Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
 - Mac OS, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip))
 
-I could not actually test the Mac / Linux version. Please let me now if the game does not run on your platform.
+{{% alert note %}}
+I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
+{{% /alert %}}
+
+<img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
+
 
 ## Summary
 
 Catch The Crown is a multi-player arena platform game.
+
 Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their "Coming-of-Age" ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them. 
 
 A competition starts between Prabbits to catch the crown and collect gold. When the timer ends, the richer Prabbit wins.
+
+## Credits
+
+I need to thank my friends for their ideas and feedback, especially:
+
+- Arthur Portron
+- Lukas Wolf
+- Atanaska Nikolova
+
+Software used:
+
+- **libGDX** (Game Engine): https://libgdx.badlogicgames.com/
+- **Gimp** (2D Graphics): https://www.gimp.org/
+- **Krita** (2D Graphics/Painting): https://krita.org/en/
+- **Aseprite** (2D Graphics/Animation): https://www.aseprite.org/
+- **sfxr/bfxr** (Sound FX): https://www.bfxr.net/ http://www.drpetter.se/project_sfxr.html
+- **Audacity** (Voice Recording and Editing): https://www.audacityteam.org/
+- **LMMS** (Music): https://lmms.io/
 
 ## Related blog posts:
 

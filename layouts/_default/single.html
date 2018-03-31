@@ -10,7 +10,11 @@
   </div>
   {{end}}
   
+  {{ if (.Params.large) }}
+  <div class="article-container-large">
+  {{else}}
   <div class="article-container">
+  {{end}}
     <h1 itemprop="name">{{ .Title }}</h1>
     {{ partial "article_metadata" (dict "content" . "is_list" 0) }}
     <div class="article-style" itemprop="articleBody">

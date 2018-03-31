@@ -14,3 +14,4 @@ thumbnail = "DNF_small.gif"
 
 +++
 
+Find the project at: https://github.com/Nodragem/DynamicNeuralField-RateBased
