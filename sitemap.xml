@@ -4,6 +4,22 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</loc>
+      <lastmod>2019-12-12T21:27:08+01:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>https://nodragem.github.io/Blog/project/released-happy-dogfight/</loc>
+      <lastmod>2019-12-08T14:51:57+01:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/project/proto-bubble-squad/</loc>
       <lastmod>2018-03-12T14:50:11+00:00</lastmod>
     </url>
@@ -108,8 +124,17 @@
     
     
     <url>
+      <loc>https://nodragem.github.io/Blog/project_type/experimental/</loc>
+      <lastmod>2018-03-12T14:50:11+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>https://nodragem.github.io/Blog/post_type/gamedev/</loc>
-      <lastmod>2018-02-18T17:14:08+01:00</lastmod>
+      <lastmod>2019-12-12T21:27:08+01:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -127,7 +152,7 @@
     
     <url>
       <loc>https://nodragem.github.io/Blog/post_type/</loc>
-      <lastmod>2018-02-18T17:14:08+01:00</lastmod>
+      <lastmod>2019-12-12T21:27:08+01:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -136,6 +161,16 @@
     
     <url>
       <loc>https://nodragem.github.io/Blog/project_type/</loc>
+      <lastmod>2018-03-12T14:50:11+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>https://nodragem.github.io/Blog/project_type/released/</loc>
+      <lastmod>2019-12-08T14:51:57+01:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -154,15 +189,6 @@
     <url>
       <loc>https://nodragem.github.io/Blog/post_type/research/</loc>
       <lastmod>2017-04-14T12:43:08+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-      <loc>https://nodragem.github.io/Blog/project_type/videogame/</loc>
-      <lastmod>2018-03-12T14:50:11+00:00</lastmod>
       <priority>0</priority>
     </url>
     

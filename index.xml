@@ -11,6 +11,189 @@
     <atom:link href="/Blog/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Release Notes: Happy Dogfight 0.2.0</title>
+      <link>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</link>
+      <pubDate>Thu, 12 Dec 2019 21:27:08 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</guid>
+      <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Major Update!&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-new-level-and-a-newsletter&#34;&gt;A New Level and a Newsletter&lt;/h2&gt;
+
+&lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&amp;rsquo;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-level4-2.gif&#34; alt=&#34;demo-level4-2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is inspired by ironworkers and the giant crane hook they use to raise beams of steel up to the sky. Watch for the iron ball as it will be deadly.
+I also designed an in-game form for players to join the newsletter.
+Hopefully, I will be speaking to you soon about the development of the game and my new gameplay and game mode ideas :) !&lt;/p&gt;
+
+&lt;h2 id=&#34;change-to-the-gameplay&#34;&gt;Change to the Gameplay&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/newbomb-demo.gif&#34; alt=&#34;newbomb-demo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Bomb does not eliminate a player for the whole tournament any more. This was judged too punitive; now, a bomb will eliminate a player for the next round only. Hence if you only play at two players, the player who used the bomb will win two rounds at once.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-bomb-small.gif&#34; alt=&#34;demo-bomb-small&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The radius of the Bomb is now shown on the screen with a red semi-transparent circle.
+The bomb will explode at the end of its timer (instead of simply disappearing); when the time comes close, the red circle will flicker.&lt;/p&gt;
+
+&lt;p&gt;I also reduced the number of hearts and increased the time before they respawn: there were too many hearts, that made the dogfights too long.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/control-scheme.gif&#34; alt=&#34;control-scheme&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally the controls have changed a bit, it is now left to turn the plane anti-clockwise and right to turn the plane clockwise. The player can now control the speed of the plane with the vertical axis of the second thumbstick.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-local-multiplayer&#34;&gt;New Local Multiplayer&lt;/h2&gt;
+
+&lt;p&gt;You can play locally without being connected to the internet! Sounds quite normal, but before this release the game needed to connect to internet :) !&lt;/p&gt;
+
+&lt;p&gt;Although that&amp;rsquo;s not a new feature, note that you can play at two on the same keyboard!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/image-20191208193326587.png&#34; alt=&#34;image-20191208193326587&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;updated-online-multiplayer&#34;&gt;Updated Online Multiplayer&lt;/h2&gt;
+
+&lt;p&gt;The online multiplayer is now much closer to what exists elsewhere, with a lobby and rooms. It is still &lt;strong&gt;experimental&lt;/strong&gt;; as I am using a free server for this free demo, &lt;strong&gt;&lt;em&gt;only 20 concurrent clients can play at the same time&lt;/em&gt;&lt;/strong&gt;. Here what&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;new Lobby and Rooms system&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;create a room with its unique name for your friends to find you easily&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-createroom.gif&#34; alt=&#34;demo-createroom&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;use the search button to find the room of your friend&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-lobby.gif&#34; alt=&#34;demo-lobby&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Master client needs to wait for other clients&amp;rsquo; players to be ready&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the game still allows several players to play from the same machine&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;graphic-updates-and-readability&#34;&gt;Graphic Updates and Readability&lt;/h2&gt;
+
+&lt;p&gt;I realised that some players did not always follow what was going on during a tournament. For instance, some players did not know who was currently leading the tournament (and hence who should be hunted). I tried to make the game more readable.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Level 1 and Level 2 were redecorated (see below)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;a crown was added on the head of the Prabbit who won the most rounds:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/Unity_A2VkcE6cq4.png&#34; alt=&#34;Unity_A2VkcE6cq4&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;an arrow pointing forward was added to help the player aim when shooting&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;players can test which slot they are in the player list by pressing START:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/pressSTART.gif&#34; alt=&#34;pressSTART&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;textual announcement of who is not playing next round&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;planes will emit smoke based on their remaining life (white for 50% life, black for 1% life)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;more readable leaderboard, the text &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt; wins&amp;rdquo; was replaced with a row of stars that is easier to read&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-leaderboard2.gif&#34; alt=&#34;demo-leaderboard2&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;the star animation makes the winner more visible&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;ldquo;Out Next Round&amp;rdquo; is displayed in the leaderboard when players are eliminated for the next round&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ui-improvement&#34;&gt;UI improvement&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-fume2menu.gif&#34; alt=&#34;demo-fume2menu&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A new in-game menu allows players to go back to the level selection/lobby or see the controls.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/controls-demo.gif&#34; alt=&#34;controls-demo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A new help panel was added to familiarise players with the control schemes and rules.&lt;/p&gt;
+
+&lt;h2 id=&#34;bug-corrections&#34;&gt;Bug corrections&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ghost plane: after a plane was destroyed, its collision box could still be active and destroy your plane&lt;/li&gt;
+&lt;li&gt;sometimes, to kill the last player with a bomb would make the player win the tournament&lt;/li&gt;
+&lt;li&gt;many more&amp;hellip; in a few words, the game should be more stable now!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Prabbits: Happy Dogfights!</title>
+      <link>https://nodragem.github.io/Blog/project/released-happy-dogfight/</link>
+      <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
+      <description>
+
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
+
+&lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
+
+&lt;p&gt;You can find the detail of the last updates here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.&lt;/p&gt;
+
+&lt;p&gt;You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.&lt;/p&gt;
+
+&lt;p&gt;The rules are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;be the last prabbit standing to win a round&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;win 5 rounds to win a tournament&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;be killed by a bomb and you won&amp;rsquo;t play the next round&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;collect coins to buy more bullets and bombs&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make temporary alliances and plot against the tournament leader to avoid a premature defeat. Use your bombs wisely to send a player away for one round and dash to victory!&lt;/p&gt;
+
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Software used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unity.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Unity&lt;/strong&gt;&lt;/a&gt; (Game Engine):&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.blender.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Blender&lt;/strong&gt;&lt;/a&gt; (3D Graphics/Painting)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://krita.org/en/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Krita&lt;/strong&gt;&lt;/a&gt; (2D Graphics/Painting)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;sfxr&lt;/strong&gt;&lt;/a&gt;/&lt;a href=&#34;https://www.bfxr.net&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;bfxr&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;LabChirp&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.audacityteam.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Audacity&lt;/strong&gt;&lt;/a&gt; (Voice Recording and Editing)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;LMMS&lt;/strong&gt;&lt;/a&gt; (Music)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bubble Troop</title>
       <link>https://nodragem.github.io/Blog/project/proto-bubble-squad/</link>
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
@@ -149,7 +332,7 @@
 &lt;/blockquote&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34; /&gt;
     
@@ -167,7 +350,7 @@
 &lt;p&gt;After that, when you open Clumsy, you will be able to select the configuration &lt;code&gt;HTML5 games&lt;/code&gt; from the droplist menu.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png&#34; /&gt;
     
@@ -193,7 +376,7 @@
 &lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;rsquo;s ok for our example.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34; /&gt;
     
@@ -204,7 +387,7 @@
 &lt;p&gt;Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34; /&gt;
     
@@ -235,7 +418,7 @@ this._socket.on(&#39;new_player&#39;, function(data){
 &lt;p&gt;In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in &lt;code&gt;clumsy&lt;/code&gt;, you can emulate that behaviour with the &lt;code&gt;Out of order&lt;/code&gt; option.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif&#34; /&gt;
     
@@ -300,7 +483,7 @@ this._socket.on(&#39;new_player&#39;, function(data){
       <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
       <description>
 
-&lt;h2 id=&#34;download&#34;&gt;Download:&lt;/h2&gt;
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Windows, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
@@ -314,11 +497,15 @@ this._socket.on(&#39;new_player&#39;, function(data){
 &lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34; target=&#34;_blank&#34;&gt;Relase Notes of The Prabbits: Catch the Crown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;Catch The Crown is a multi-player arena platform game.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Prabbits: Catch The Crown&lt;/strong&gt; is a local multiplayer arena platform game.&lt;/p&gt;
 
 &lt;p&gt;Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
 
@@ -346,13 +533,7 @@ this._socket.on(&#39;new_player&#39;, function(data){
 &lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;related-blog-posts&#34;&gt;Related blog posts:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34; target=&#34;_blank&#34;&gt;Release Post&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;customization&#34;&gt;Customization:&lt;/h2&gt;
+&lt;h2 id=&#34;customization&#34;&gt;Customization&lt;/h2&gt;
 
 &lt;h3 id=&#34;asset-folder&#34;&gt;Asset folder&lt;/h3&gt;
 
@@ -790,7 +971,7 @@ did not mesure.&lt;/p&gt;
 &lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34; alt=&#34;How it feels like to ship a game!&#34; /&gt;
     
@@ -823,7 +1004,7 @@ You can download it here:&lt;/p&gt;
 &lt;p&gt;I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34; alt=&#34;Three teenager Prabbits chilling out before the Coming-of-Age ritual...&#34; /&gt;
     
@@ -859,7 +1040,7 @@ You can download it here:&lt;/p&gt;
 &lt;p&gt;The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34; alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&#34; /&gt;
     

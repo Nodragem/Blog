@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.32.2" />
+  <meta name="generator" content="Hugo 0.49.2" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -68,18 +68,6 @@
         
         
         <li class="nav-item">
-          <a href="/Blog/#posts">
-            
-            <span>Recent Posts</span>
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        <li class="nav-item">
           <a href="/Blog/#projects">
             
             <span>Games &amp; Projects</span>
@@ -92,9 +80,9 @@
         
         
         <li class="nav-item">
-          <a href="/Blog/#about">
+          <a href="/Blog/#posts">
             
-            <span>About</span>
+            <span>Recent Posts</span>
           </a>
         </li>
 
@@ -104,9 +92,9 @@
         
         
         <li class="nav-item">
-          <a href="/Blog/#contact">
+          <a href="/Blog/#about">
             
-            <span>Contact</span>
+            <span>About</span>
           </a>
         </li>
 
@@ -223,7 +211,7 @@
 </blockquote>
 
 
-<figure >
+<figure>
     
         <img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png" />
     
@@ -241,7 +229,7 @@
 <p>After that, when you open Clumsy, you will be able to select the configuration <code>HTML5 games</code> from the droplist menu.</p>
 
 
-<figure >
+<figure>
     
         <img src="/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png" />
     
@@ -267,7 +255,7 @@
 <p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &rsquo;s ok for our example.</p>
 
 
-<figure >
+<figure>
     
         <img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif" />
     
@@ -278,7 +266,7 @@
 <p>Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.</p>
 
 
-<figure >
+<figure>
     
         <img src="/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif" />
     
@@ -309,7 +297,7 @@ this._socket.on('new_player', function(data){
 <p>In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in <code>clumsy</code>, you can emulate that behaviour with the <code>Out of order</code> option.</p>
 
 
-<figure >
+<figure>
     
         <img src="/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif" />
     
@@ -339,6 +327,9 @@ this._socket.on('new_player', function(data){
       
 
       
+      <li class="next"><a href="https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/">Release Notes: Happy Dogfight 0.2.0 <span
+        aria-hidden="true">&rarr;</span></a></li>
+      
     </ul>
   </nav>
 </div>
@@ -350,7 +341,7 @@ this._socket.on('new_player', function(data){
 <section id="comments">
   <div id="disqus_thread">
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

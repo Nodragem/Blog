@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Released on NODRAGEM GAMES</title>
+    <link>https://nodragem.github.io/Blog/project_type/released/</link>
+    <description>Recent content in Released on NODRAGEM GAMES</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
+    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate>
+    
+	<atom:link href="https://nodragem.github.io/Blog/project_type/released/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Prabbits: Happy Dogfights!</title>
+      <link>https://nodragem.github.io/Blog/project/released-happy-dogfight/</link>
+      <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
+      <description>Download  Release Notes You can find the detail of the last updates here:
+ What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0  Summary This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.
+You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.</description>
+    </item>
+    
+    <item>
+      <title>Catch The Crown!</title>
+      <link>https://nodragem.github.io/Blog/project/catchthecrown/</link>
+      <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
+      <description>Download  Windows, portable version (zip-file) Linux, portable version (zip-file) Mac OS, portable version (zip-file)  I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
+Release Notes  Relase Notes of The Prabbits: Catch the Crown  Summary The Prabbits: Catch The Crown is a local multiplayer arena platform game.
+Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.</description>
+    </item>
+    
+  </channel>
+</rss>
