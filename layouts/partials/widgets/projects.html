@@ -16,7 +16,7 @@
         <div class="btn-toolbar">
           <div class="btn-group">
           {{ range $page.Params.filter }}
-            <a href="#" data-filter="{{ .tag }}" class="btn btn-primary btn-large{{ if eq .tag "*" }} active{{ end }}">{{ .name }}</a>
+            <a href="#" data-filter="{{ .tag }}" class="btn btn-primary btn-large{{ if eq .tag ".released" }} active{{ end }}">{{ .name }}</a>
           {{ end }}
           </div>
         </div>

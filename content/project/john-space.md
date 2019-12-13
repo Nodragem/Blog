@@ -2,7 +2,7 @@
 title = "John Space"
 highlight = true
 summary = "John Space is a space traveller seeking adventures and galactic beers. Platformer prototype made with LibGDX. All assets made from scratch."
-project_type = ["videogame"]
+project_type = ["experimental"]
 date = "2016-11-09T11:42:01Z"
 math = false
 thumbnail = "john-space_thumbnail.png"

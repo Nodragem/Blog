@@ -1,0 +1,33 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<!-- About widget -->
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  {{ with $page.Params.params }}
+  <div class="col-xs-12 col-md-12">
+    <div id="landing-content">
+        {{ with $page.Params.logo }}
+        <!-- <div class="background" itemprop="image"
+          style="background-image: url('{{ "/img/" | relURL }}{{ . }}');">
+        </div> -->
+        {{ end }}
+        <!-- <div class="portrait-title">
+            <h2 itemprop="name">{{ $page.Params.name }}</h2>
+            <h3 itemprop="punchline">{{ $page.Params.punchline }}</h3>
+        </div> -->
+
+      <ul class="social-icon" aria-hidden="true">
+        {{ range .social }}
+        {{ $pack := or .icon_pack "fa" }}
+        <li>
+          <a href="{{ .link | safeURL }}" target="_blank">
+            <i class="{{ $pack }} {{ $pack }}-{{ .icon }} big-icon"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{end}}
+    </div>
+  </div>
+  
+</div>

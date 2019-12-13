@@ -12,7 +12,7 @@ see_more_link = "/post/"
 logo = "logo_posts.png"
 
 # Order that this section will appear in.
-weight = 1
+weight = 3
 
 # Show posts that contain the following tags. Default to any tags.
 tags = []

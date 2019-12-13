@@ -278,7 +278,8 @@ blockquote p:last-child {
   padding-left: 30px;
   margin-bottom: 0px;
   margin-top: 30px;
-  /* border-radius: 5px; */
+  border-radius: 10px;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3); 
 }
 
 
@@ -291,7 +292,7 @@ blockquote p:last-child {
   padding-left: 20px;
   margin-bottom: 0px;
   border-radius: 5px;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3)
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.3);
 }
 
 
@@ -325,6 +326,91 @@ blockquote p:last-child {
   font-weight: 400;
   font-size: 1.1rem;
   color: #b2b2b2;
+}
+
+/*************************************************
+ *  Landing page
+ **************************************************/
+
+#landing-container {
+  background-image: url('../img/landing-blue.jpg');
+  text-align: center;
+  padding: 30px 10px;
+  width: 100%;
+  height: 500px;
+  /* Center and scale the image nicely */
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+}
+
+#landing-content {
+  /* background-image: url('../img/final.jpg'); */
+  /* padding: 30px 10px;
+  margin: 0px 0px;*/
+  width: 100%;
+  height: 400px;
+  /* Center and scale the image nicely */
+  /* background-attachment: fixed; */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  position: relative;
+}
+
+#landing .background {
+  background-image: url('../img/portrait2.jpg');
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 0%;
+  background-position: center -100px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+
+#landing .portrait-title h2 {
+  font-size: 1.75em;
+  font-weight: 300;
+  color: #000000;
+  margin: 20px 0 10px 0;
+}
+
+#landing .portrait-title h3 {
+  font-size: 1.13em;
+  font-weight: 300;
+  color: #AAAAAA;
+  margin: 0px 0 10px 0;
+}
+
+#landing ul.social-icon {
+  
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  /* margin-top: 30px; */
+  margin-top: auto;
+  position: absolute;
+  bottom:1%;
+  right:45%;
+}
+
+#landing .social-icon li {
+  margin-right: 10px;
+  
+}
+
+#landing .social-icon li:last-of-type {
+  margin-right: 0;
+}
+
+#landing .social-icon li:hover {
+  transform: scale(1.2);
 }
 
 /*************************************************
@@ -381,7 +467,7 @@ blockquote p:last-child {
 }
 
 #profile .social-icon li:hover {
-  transform: scale(1.2)
+  transform: scale(1.2);
 }
 
 .big-icon {
@@ -470,7 +556,7 @@ ul.share li:hover .fa {
 article {
   animation: intro 0.3s both;
   animation-delay: 0.15s;
-  font-size: 0.75rem;
+  font-size: 1rem;
   /* background-color: #a3bac5; */
 }
 
@@ -481,6 +567,10 @@ article {
   background-color: #ffffff;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.article-container li {
+  text-align: left;
 }
 
 .article-container-large {
@@ -536,9 +626,18 @@ hr {
 .article-banner {
   width: 100%;
   height: auto;
+  background-size:cover;
   max-width: 900px;
   /* padding: 1rem 20px 0 20px; */
   margin: 0 auto 0 auto;
+}
+
+.article-banner h1 {
+  color:#ffffff;
+  margin-left:20px;
+  padding-top:40px;
+  font-size: 4rem;
+  text-shadow: 0 4px 4px rgba(0,0,0,0.7);
 }
 
 .article-header-caption {
@@ -608,20 +707,16 @@ hr {
 
 .article-thumbnail img {
   max-height: 100%;  
-    max-width: 100%; 
-    width: auto;
-    height: auto;
-    position: absolute;  
-    top: 0;  
-    bottom: 0;  
-    left: 0;  
-    right: 0;  
-    margin: auto;
-
-    
-  
-  /* float: right; */
-  /* background-color: #090; */
+  max-width: 100%; 
+  width: auto;
+  object-fit: cover;
+  height: 100%;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
 }
 
 /* .article-list-item:first-child{
@@ -683,8 +778,8 @@ hr {
   box-shadow: 1px 1px 0px #edefed, -1px -1px 0px #edefed, 1px -1px 0px #edefed, -1px 1px 0px #edefed;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-left: 0;
   padding-right: 0;
 }

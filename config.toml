@@ -130,24 +130,19 @@ defaultContentLanguageInSubdir = false
 #   The weight parameter defines the order that the links will appear in.
 
 [[menu.main]]
+  name = "Games & Projects"
+  url = "#projects"
+  weight = 1
+
+[[menu.main]]
   name = "Recent Posts"
   url = "#posts"
   weight = 3
 
 [[menu.main]]
-  name = "Games & Projects"
-  url = "#projects"
-  weight = 4
-
-[[menu.main]]
   name = "About"
   url = "#about"
   weight = 5
-
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 6
 
 # Taxonomies.
 [taxonomies]

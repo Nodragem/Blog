@@ -24,8 +24,6 @@
         <div class="col-md-4 col-sm-4 col-xs-12">
         {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
-        <!-- </div>
-        {{ if eq (mod (add $i 1) 2) 0 }}<div class="col-sm-12">jkfdshfhdf</div>{{ end }} -->
       {{ end }}
     {{ else }}
       {{ range $i, $p := first $page.Params.count (where (where $.Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
@@ -33,7 +31,6 @@
         {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
         </div>
-        <!--{{ if eq (mod (add $i 1) 2) 0 }}<div class="col-sm-12">jjdsflkdjlfakds</div>{{ end }}-->
       {{ end }}
     {{ end }}
   </div>
@@ -41,8 +38,7 @@
       Show All
       <i class="fa fa-plus-square"></i>
     </a>
-  
-  <!-- {{ partial "disqus.html" . }} -->
+
 </div>
 
 </div>

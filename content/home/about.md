@@ -8,7 +8,7 @@ subtitle = "Currently, _Nodragem Games_ is a business run as a sole trader by:"
 widget = "about"
 
 # Order that this section will appear in.
-weight = 10
+weight = 4
 
 # Who are you
 name = "Geoffrey Mégardon, Ph.D."

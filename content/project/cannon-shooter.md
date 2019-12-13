@@ -2,7 +2,7 @@
 title = "Cannon Shooter"
 highlight = true
 summary = "A 6-days prototype made with Phaser.io. All assets made from scratch."
-project_type = ["videogame"]
+project_type = ["experimental"]
 date = "2018-03-12T13:48:11Z"
 math = false
 thumbnail = "cannon-shooter_thumbnail.png"

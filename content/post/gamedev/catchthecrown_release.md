@@ -27,7 +27,7 @@ You can download it here:
 - Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
 - Mac OS, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip))
 
-Please find more details about customization on the [Project Page]({{< relref "project/catchthecrown.md" >}}).
+Please find more details about customization on the [Project Page]({{< relref "/project/catchthecrown.md" >}}).
 
 ## The Story
 I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their "Coming-of-Age" ritual. 

@@ -4,9 +4,10 @@ external_link = ""
 thumbnail = "catchthecrown_release.png"
 date = "2017-04-15T14:51:57+01:00"
 title = "Catch The Crown!"
-summary = "Muti-player Arena game featuring Prabbits. All assets made from scratch."
-project_type = ["videogame"]
+summary = "A mutiplayer arena game featuring Prabbits. All assets made from scratch."
+project_type = ["released"]
 highlight = true
+image_folder = "/gamedev/catchthecrown_release"
 
 [header]
   image = "catchthecrown_release_banner.png"
@@ -14,7 +15,7 @@ highlight = true
 
 +++
 
-## Download:
+## Download
 
 - Windows, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip))
 - Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
@@ -24,12 +25,14 @@ highlight = true
 I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
 {{% /alert %}}
 
-<img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
+## Release Notes
+
+ - [Relase Notes of The Prabbits: Catch the Crown]({{< relref "/post/gamedev/catchthecrown_release.md" >}})
 
 
 ## Summary
 
-Catch The Crown is a multi-player arena platform game.
+**The Prabbits: Catch The Crown** is a local multiplayer arena platform game.
 
 Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their "Coming-of-Age" ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them. 
 
@@ -53,11 +56,7 @@ Software used:
 - **Audacity** (Voice Recording and Editing): https://www.audacityteam.org/
 - **LMMS** (Music): https://lmms.io/
 
-## Related blog posts:
-
- - [Release Post]({{< relref "post/gamedev/catchthecrown_release.md" >}})
-
-## Customization:
+## Customization
 
 ### Asset folder
 The assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to.
