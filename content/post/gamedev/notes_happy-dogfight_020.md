@@ -113,3 +113,15 @@ A new help panel was added to familiarise players with the control schemes and r
 - ghost plane: after a plane was destroyed, its collision box could still be active and destroy your plane
 - sometimes, to kill the last player with a bomb would make the player win the tournament
 - many more... in a few words, the game should be more stable now!
+
+## Download
+
+You can grab the demo here:  
+
+- [Free Early Access of Happy Dogfigths 0.2.0](/Blog/project/released-happy-dogfight/)
+
+Or directly from here:
+
+<iframe src="https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM" frameborder="0" width="500" height="145"></iframe>
+
+Don't hesitate to leave your feedback!
