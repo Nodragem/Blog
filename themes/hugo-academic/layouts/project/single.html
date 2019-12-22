@@ -1,0 +1,52 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+{{ if .Params.header.image }}
+    <!-- <img src="{{ $.Site.BaseURL }}img/{{ .Params.header.image }}" class="article-banner" itemprop="image"> -->
+    <div class="article-banner" style="background-image: url('{{ $.Site.BaseURL }}img/{{ .Params.header.image }}');">
+{{else}}
+    <div class="article-banner" style="background-image: url('{{ $.Site.BaseURL }}img/default-banner.jpg');">
+{{end}}
+    <h1 itemprop="name">{{ .Title }}</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+      <span class="pull-right">
+        {{ partial "share.html" . }}
+      </span>
+    </div>
+
+<div class="article-container">
+  <div class = "row">
+    {{if .Params.image_folder}}
+    <div class="col-md-8 col-xs-12">
+    {{end}}
+      <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+        
+
+
+
+        {{ with .Params.external_link }}
+        <a class="btn btn-primary btn-outline" href="{{ . }}" target="_blank">{{ i18n "open_project_site" }}</a>
+        {{ end }}
+
+        <div class="article-style" itemprop="articleBody">
+          {{ .Content }}
+        </div>
+      </article>
+    {{if .Params.image_folder}}
+    </div>
+    {{end}}
+
+    {{if .Params.image_folder}}
+    <div class="col-md-4 col-xs-12">
+        {{ partial "album.html" . }}
+    </div>
+    {{end}}
+  </div>
+</div>
+
+<div class="container">
+  {{ partial "section_pager.html" . }}
+</div>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
