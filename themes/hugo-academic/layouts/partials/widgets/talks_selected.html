@@ -11,12 +11,12 @@
     {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
     {{ if $page.Params.detailed_list }}
-    {{ range (where (where $.Data.Pages "Type" "talk") ".Params.selected" true) }}
+    {{ range (where (where $.Site.RegularPages "Type" "talk") ".Params.selected" true) }}
     {{ partial "talk_li_detailed" . }}
     {{ end }}
     {{ else }}
     <ul class="fa-ul">
-      {{ range (where (where $.Data.Pages "Type" "talk") ".Params.selected" true) }}
+      {{ range (where (where $.Site.RegularPages "Type" "talk") ".Params.selected" true) }}
       {{ partial "talk_li_simple" . }}
       {{ end }}
     </ul>

@@ -11,12 +11,12 @@
     {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
     {{ if $page.Params.detailed_list }}
-    {{ range (where (where $.Data.Pages "Type" "publication") ".Params.selected" true) }}
+    {{ range (where (where $.Site.RegularPages "Type" "publication") ".Params.selected" true) }}
     {{ partial "publication_li_detailed" . }}
     {{ end }}
     {{ else }}
     <ul class="fa-ul">
-      {{ range (where (where $.Data.Pages "Type" "publication") ".Params.selected" true) }}
+      {{ range (where (where $.Site.RegularPages "Type" "publication") ".Params.selected" true) }}
       {{ partial "publication_li_simple" . }}
       {{ end }}
     </ul>

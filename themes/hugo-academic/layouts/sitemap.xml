@@ -1,5 +1,5 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{ range (where .Data.Pages "Section" "!=" "home") }}
+  {{ range (where .Site.RegularPages "Section" "!=" "home") }}
     {{ $perm := add $.Site.LanguagePrefix "/home/" }}
     {{ if ne .RelPermalink $perm }}
     <url>

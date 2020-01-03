@@ -1,6 +1,6 @@
 {{ $ := .root }}
 {{ $page := .page }}
-{{ $pubs_len := len (where $.Data.Pages "Type" "publication") }}
+{{ $pubs_len := len (where $.Site.RegularPages "Type" "publication") }}
 
 <!-- Publications widget -->
 <div class="row">
@@ -20,12 +20,12 @@
     {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
     {{ if $page.Params.detailed_list }}
-    {{ range first $page.Params.count (where $.Data.Pages "Type" "publication") }}
+    {{ range first $page.Params.count (where $.Site.RegularPages "Type" "publication") }}
     {{ partial "publication_li_detailed" . }}
     {{ end }}
     {{ else }}
     <ul class="fa-ul">
-      {{ range first $page.Params.count (where $.Data.Pages "Type" "publication") }}
+      {{ range first $page.Params.count (where $.Site.RegularPages "Type" "publication") }}
       {{ partial "publication_li_simple" . }}
       {{ end }}
     </ul>

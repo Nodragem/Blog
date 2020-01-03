@@ -2,7 +2,7 @@
 {{ partial "navbar.html" . }}
 <div class="universal-wrapper">
 
-  {{ $paginator := .Paginate .Data.Pages }}
+  {{ $paginator := .Paginate .Site.RegularPages }}
   {{ range $paginator.Pages }}
   <div>
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
