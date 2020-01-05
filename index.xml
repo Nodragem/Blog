@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NODRAGEM GAMES on NODRAGEM GAMES</title>
@@ -7,8 +6,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/Blog/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2019 21:27:08 +0100</lastBuildDate>
+    <atom:link href="https://nodragem.github.io/Blog/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Release Notes: Happy Dogfight 0.2.0</title>
@@ -16,138 +15,105 @@
       <pubDate>Thu, 12 Dec 2019 21:27:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</guid>
-      <description>
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Major Update!&lt;/p&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  
+Major Update!
 
 &lt;/div&gt;
 
-
 &lt;p&gt;Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.&lt;/p&gt;
-
 &lt;h2 id=&#34;a-new-level-and-a-newsletter&#34;&gt;A New Level and a Newsletter&lt;/h2&gt;
-
-&lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&amp;rsquo;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-level4-2.gif&#34; alt=&#34;demo-level4-2&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&#39;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-level4-2.gif&#34; alt=&#34;demo-level4-2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It is inspired by ironworkers and the giant crane hook they use to raise beams of steel up to the sky. Watch for the iron ball as it will be deadly.
-I also designed an in-game form for players to join the newsletter.
+I also designed an in-game form for players to join the newsletter. 
 Hopefully, I will be speaking to you soon about the development of the game and my new gameplay and game mode ideas :) !&lt;/p&gt;
-
 &lt;h2 id=&#34;change-to-the-gameplay&#34;&gt;Change to the Gameplay&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/newbomb-demo.gif&#34; alt=&#34;newbomb-demo&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/newbomb-demo.gif&#34; alt=&#34;newbomb-demo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Bomb does not eliminate a player for the whole tournament any more. This was judged too punitive; now, a bomb will eliminate a player for the next round only. Hence if you only play at two players, the player who used the bomb will win two rounds at once.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-bomb-small.gif&#34; alt=&#34;demo-bomb-small&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-bomb-small.gif&#34; alt=&#34;demo-bomb-small&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The radius of the Bomb is now shown on the screen with a red semi-transparent circle.
 The bomb will explode at the end of its timer (instead of simply disappearing); when the time comes close, the red circle will flicker.&lt;/p&gt;
-
 &lt;p&gt;I also reduced the number of hearts and increased the time before they respawn: there were too many hearts, that made the dogfights too long.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/control-scheme.gif&#34; alt=&#34;control-scheme&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/control-scheme.gif&#34; alt=&#34;control-scheme&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Finally the controls have changed a bit, it is now left to turn the plane anti-clockwise and right to turn the plane clockwise. The player can now control the speed of the plane with the vertical axis of the second thumbstick.&lt;/p&gt;
-
 &lt;h2 id=&#34;new-local-multiplayer&#34;&gt;New Local Multiplayer&lt;/h2&gt;
-
 &lt;p&gt;You can play locally without being connected to the internet! Sounds quite normal, but before this release the game needed to connect to internet :) !&lt;/p&gt;
-
-&lt;p&gt;Although that&amp;rsquo;s not a new feature, note that you can play at two on the same keyboard!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/image-20191208193326587.png&#34; alt=&#34;image-20191208193326587&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;Although that&#39;s not a new feature, note that you can play at two on the same keyboard!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/image-20191208193326587.png&#34; alt=&#34;image-20191208193326587&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;updated-online-multiplayer&#34;&gt;Updated Online Multiplayer&lt;/h2&gt;
-
-&lt;p&gt;The online multiplayer is now much closer to what exists elsewhere, with a lobby and rooms. It is still &lt;strong&gt;experimental&lt;/strong&gt;; as I am using a free server for this free demo, &lt;strong&gt;&lt;em&gt;only 20 concurrent clients can play at the same time&lt;/em&gt;&lt;/strong&gt;. Here what&amp;rsquo;s new:&lt;/p&gt;
-
+&lt;p&gt;The online multiplayer is now much closer to what exists elsewhere, with a lobby and rooms. It is still &lt;strong&gt;experimental&lt;/strong&gt;; as I am using a free server for this free demo, &lt;em&gt;&lt;strong&gt;only 20 concurrent clients can play at the same time&lt;/strong&gt;&lt;/em&gt;. Here what&#39;s new:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;new Lobby and Rooms system&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;create a room with its unique name for your friends to find you easily&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;new Lobby and Rooms system&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;create a room with its unique name for your friends to find you easily&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-createroom.gif&#34; alt=&#34;demo-createroom&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use the search button to find the room of your friend&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-lobby.gif&#34; alt=&#34;demo-lobby&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Master client needs to wait for other clients&amp;rsquo; players to be ready&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the game still allows several players to play from the same machine&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-createroom.gif&#34; alt=&#34;demo-createroom&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;use the search button to find the room of your friend&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-lobby.gif&#34; alt=&#34;demo-lobby&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Master client needs to wait for other clients&amp;rsquo; players to be ready&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;the game still allows several players to play from the same machine&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h2 id=&#34;graphic-updates-and-readability&#34;&gt;Graphic Updates and Readability&lt;/h2&gt;
-
 &lt;p&gt;I realised that some players did not always follow what was going on during a tournament. For instance, some players did not know who was currently leading the tournament (and hence who should be hunted). I tried to make the game more readable.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Level 1 and Level 2 were redecorated (see below)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;a crown was added on the head of the Prabbit who won the most rounds:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Level 1 and Level 2 were redecorated (see below)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a crown was added on the head of the Prabbit who won the most rounds:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/Unity_A2VkcE6cq4.png&#34; alt=&#34;Unity_A2VkcE6cq4&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;an arrow pointing forward was added to help the player aim when shooting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;players can test which slot they are in the player list by pressing START:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/pressSTART.gif&#34; alt=&#34;pressSTART&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;textual announcement of who is not playing next round&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;planes will emit smoke based on their remaining life (white for 50% life, black for 1% life)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more readable leaderboard, the text &amp;ldquo;1/5 wins&amp;rdquo; was replaced with a row of stars that is easier to read&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-leaderboard2.gif&#34; alt=&#34;demo-leaderboard2&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the star animation makes the winner more visible&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Out Next Round&amp;rdquo; is displayed in the leaderboard when players are eliminated for the next round&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/Unity_A2VkcE6cq4.png&#34; alt=&#34;Unity_A2VkcE6cq4&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;an arrow pointing forward was added to help the player aim when shooting&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;players can test which slot they are in the player list by pressing START:&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/pressSTART.gif&#34; alt=&#34;pressSTART&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;textual announcement of who is not playing next round&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;planes will emit smoke based on their remaining life (white for 50% life, black for 1% life)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;more readable leaderboard, the text &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt; wins&amp;rdquo; was replaced with a row of stars that is easier to read&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-leaderboard2.gif&#34; alt=&#34;demo-leaderboard2&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;the star animation makes the winner more visible&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&amp;ldquo;Out Next Round&amp;rdquo; is displayed in the leaderboard when players are eliminated for the next round&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h2 id=&#34;ui-improvement&#34;&gt;UI improvement&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-fume2menu.gif&#34; alt=&#34;demo-fume2menu&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-fume2menu.gif&#34; alt=&#34;demo-fume2menu&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A new in-game menu allows players to go back to the level selection/lobby or see the controls.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/controls-demo.gif&#34; alt=&#34;controls-demo&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/controls-demo.gif&#34; alt=&#34;controls-demo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A new help panel was added to familiarise players with the control schemes and rules.&lt;/p&gt;
-
 &lt;h2 id=&#34;bug-corrections&#34;&gt;Bug corrections&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;ghost plane: after a plane was destroyed, its collision box could still be active and destroy your plane&lt;/li&gt;
 &lt;li&gt;sometimes, to kill the last player with a bomb would make the player win the tournament&lt;/li&gt;
 &lt;li&gt;many more&amp;hellip; in a few words, the game should be more stable now!&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
-
 &lt;p&gt;You can grab the demo here:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/project/released-happy-dogfight/&#34;&gt;Free Early Access of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Or directly from here:&lt;/p&gt;
-
 &lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Don&amp;rsquo;t hesitate to leave your feedback!&lt;/p&gt;
+&lt;p&gt;Don&#39;t hesitate to leave your feedback!&lt;/p&gt;
 </description>
     </item>
     
@@ -157,52 +123,42 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
-      <description>
-
-&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 &lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
-
 &lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
-
 &lt;p&gt;You can find the detail of the last updates here:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34;&gt;What&#39;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
 &lt;p&gt;This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.&lt;/p&gt;
-
 &lt;p&gt;You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.&lt;/p&gt;
-
 &lt;p&gt;The rules are:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;be the last prabbit standing to win a round&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;win 5 rounds to win a tournament&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;be killed by a bomb and you won&amp;rsquo;t play the next round&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;collect coins to buy more bullets and bombs&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;be the last prabbit standing to win a round&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;win 5 rounds to win a tournament&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;be killed by a bomb and you won&#39;t play the next round&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;collect coins to buy more bullets and bombs&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Make temporary alliances and plot against the tournament leader to avoid a premature defeat. Use your bombs wisely to send a player away for one round and dash to victory!&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;Software used:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unity.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Unity&lt;/strong&gt;&lt;/a&gt; (Game Engine):&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.blender.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Blender&lt;/strong&gt;&lt;/a&gt; (3D Graphics/Painting)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://krita.org/en/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Krita&lt;/strong&gt;&lt;/a&gt; (2D Graphics/Painting)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;sfxr&lt;/strong&gt;&lt;/a&gt;/&lt;a href=&#34;https://www.bfxr.net&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;bfxr&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;LabChirp&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.audacityteam.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Audacity&lt;/strong&gt;&lt;/a&gt; (Voice Recording and Editing)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;LMMS&lt;/strong&gt;&lt;/a&gt; (Music)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unity.com/&#34;&gt;&lt;strong&gt;Unity&lt;/strong&gt;&lt;/a&gt; (Game Engine):&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.blender.org/&#34;&gt;&lt;strong&gt;Blender&lt;/strong&gt;&lt;/a&gt; (3D Graphics/Painting)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://krita.org/en/&#34;&gt;&lt;strong&gt;Krita&lt;/strong&gt;&lt;/a&gt; (2D Graphics/Painting)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34;&gt;&lt;strong&gt;sfxr&lt;/strong&gt;&lt;/a&gt;/&lt;a href=&#34;https://www.bfxr.net&#34;&gt;&lt;strong&gt;bfxr&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://labbed.net/software/labchirp/&#34;&gt;&lt;strong&gt;LabChirp&lt;/strong&gt;&lt;/a&gt; (Sound FX)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.audacityteam.org/&#34;&gt;&lt;strong&gt;Audacity&lt;/strong&gt;&lt;/a&gt; (Voice Recording and Editing)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lmms.io/&#34;&gt;&lt;strong&gt;LMMS&lt;/strong&gt;&lt;/a&gt; (Music)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -213,28 +169,23 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/proto-bubble-squad/</guid>
-      <description>
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-bubble-squad.herokuapp.com&#34; allowfullscreen=&#34;&#34; width=&#34;1000&#34; height=&#34;700&#34;&gt;
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-bubble-squad.herokuapp.com&#34; allowfullscreen=&#34;&#34; width=&#34;1000&#34; height=&#34;700&#34;&gt;
  &lt;p&gt;Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com &lt;/p&gt;
-
 &lt;/iframe&gt;
-
 &lt;p&gt;&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;p&gt;Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.&lt;/p&gt;
+  
+Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.
 
 &lt;/div&gt;
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;This is a multiplayer game, you can open two tabs to play it against yourselve.&lt;/p&gt;
+  
+This is a multiplayer game, you can open two tabs to play it against yourselve.
 
 &lt;/div&gt;
 &lt;/p&gt;
-
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;p&gt;This game is compatible with mobile devices and desktop computers:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Click on the ground and drag to move the camera&lt;/li&gt;
 &lt;li&gt;Click on a bubble and drag to catapult it&lt;/li&gt;
@@ -242,25 +193,19 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;li&gt;Collide with a friend to heal it&lt;/li&gt;
 &lt;li&gt;Collide with an ennemy to hurt it&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;This prototype was developped to test the ideas of:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Adrien Lebouc&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Game made with:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34; target=&#34;_blank&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34; target=&#34;_blank&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tiled map&lt;/strong&gt; (Level Editor): &lt;a href=&#34;http://www.mapeditor.org/&#34; target=&#34;_blank&#34;&gt;http://www.mapeditor.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34; target=&#34;_blank&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tiled map&lt;/strong&gt; (Level Editor): &lt;a href=&#34;http://www.mapeditor.org/&#34;&gt;http://www.mapeditor.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -271,36 +216,26 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/cannon-shooter/</guid>
-      <description>
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-cannon-shooter.herokuapp.com/&#34; allowfullscreen=&#34;&#34; width=&#34;650&#34; height=&#34;480&#34;&gt;
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://proto-cannon-shooter.herokuapp.com/&#34; allowfullscreen=&#34;&#34; width=&#34;650&#34; height=&#34;480&#34;&gt;
  &lt;p&gt;Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/ &lt;/p&gt;
 &lt;/iframe&gt;
-
 &lt;p&gt;It may take few seconds for the server to wake up, please wait&amp;hellip;&lt;/p&gt;
-
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;LEFT and RIGHT to move&lt;/li&gt;
 &lt;li&gt;SPACE to shoot&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;Software used:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34; target=&#34;_blank&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DragonBones&lt;/strong&gt; (Animation): &lt;a href=&#34;http://dragonbones.com/en/index.html&#34; target=&#34;_blank&#34;&gt;http://dragonbones.com/en/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34; target=&#34;_blank&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34; target=&#34;_blank&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34; target=&#34;_blank&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phaser&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://phaser.io/&#34;&gt;https://phaser.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DragonBones&lt;/strong&gt; (Animation): &lt;a href=&#34;http://dragonbones.com/en/index.html&#34;&gt;http://dragonbones.com/en/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inkscape&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://inkscape.org/en/&#34;&gt;https://inkscape.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LabChirp&lt;/strong&gt; (Sound FX): &lt;a href=&#34;http://labbed.net/software/labchirp/&#34;&gt;http://labbed.net/software/labchirp/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TexturePacker (Free Version)&lt;/strong&gt; (Texture Atlas): &lt;a href=&#34;https://www.codeandweb.com/texturepacker&#34;&gt;https://www.codeandweb.com/texturepacker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -311,139 +246,81 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       <pubDate>Sun, 18 Feb 2018 17:14:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/</guid>
-      <description>
-
-&lt;h2 id=&#34;debugging-multiplayer-games-locally&#34;&gt;Debugging multiplayer games locally&lt;/h2&gt;
-
-&lt;p&gt;These days, I&amp;rsquo;m playing around with making online multiplayer prototype games.&lt;/p&gt;
-
+      <description>&lt;h2 id=&#34;debugging-multiplayer-games-locally&#34;&gt;Debugging multiplayer games locally&lt;/h2&gt;
+&lt;p&gt;These days, I&#39;m playing around with making online multiplayer prototype games.&lt;/p&gt;
 &lt;p&gt;Most of the time, when we debug our video games for online multiplayer, we run a local server on &lt;code&gt;localhost&lt;/code&gt;. This server acts as:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;a file server - sending the game files to the client,&lt;/li&gt;
 &lt;li&gt;a game server - transferring information between clients, authorizing transactions, etc.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;You can debug your code logic on server side and client side very easily nowadays. For instance, I use VS Code, with NodeJS to debug the server side and the Chrome debugger plug-in to debug the client side.&lt;/p&gt;
-
 &lt;p&gt;However, once your game works perfectly with your local server, it only means that it works perfectly with &lt;em&gt;perfect network condition!&lt;/em&gt; You are still miles away from having a game working in real world network conditions.&lt;/p&gt;
-
 &lt;p&gt;When released, your multiplayer code will have to deal with:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;variable delays of communication between clients and server,&lt;/li&gt;
 &lt;li&gt;variable number of dropped messages/packages.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Although software like Unity offers to simulate this kind of disruptions, we are not all and/or always using Unity :D ! I am using Phaser right now. After some research I found a little piece of software allowing to simulate real-word network condition locally, so I thought I will share.&lt;/p&gt;
-
 &lt;h2 id=&#34;clumsy-an-utility-to-simulate-broken-network&#34;&gt;Clumsy an utility to simulate broken network&lt;/h2&gt;
-
-&lt;p&gt;This piece of software is named &lt;code&gt;clumsy&lt;/code&gt; and can be found &lt;a href=&#34;https://jagt.github.io/clumsy/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. According to their website:&lt;/p&gt;
-
+&lt;p&gt;This piece of software is named &lt;code&gt;clumsy&lt;/code&gt; and can be found [here] (&lt;a href=&#34;https://jagt.github.io/clumsy/)&#34;&gt;https://jagt.github.io/clumsy/)&lt;/a&gt;. According to their website:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;clumsy makes your network condition on Windows significantly worse, but in a managed and interactive manner.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34; /&gt;
-    
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34;/&gt; 
 &lt;/figure&gt;
 
-
-&lt;p&gt;What&amp;rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, &lt;code&gt;clumsy&lt;/code&gt; sits next to a file &lt;code&gt;config.txt&lt;/code&gt; where you can specify exactly which part of the network you want to disrupt.&lt;/p&gt;
-
+&lt;p&gt;What&#39;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, &lt;code&gt;clumsy&lt;/code&gt; sits next to a file &lt;code&gt;config.txt&lt;/code&gt; where you can specify exactly which part of the network you want to disrupt.&lt;/p&gt;
 &lt;p&gt;For instance, if I host my server on &lt;code&gt;localhost:5000&lt;/code&gt;, I can make a configuration that disrupt the access to &lt;code&gt;localhost:5000&lt;/code&gt;. To do so, I added the following in &lt;code&gt;config.txt&lt;/code&gt;:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;HTML5 games: outbound and tcp.DstPort == 5000
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After that, when you open Clumsy, you will be able to select the configuration &lt;code&gt;HTML5 games&lt;/code&gt; from the droplist menu.&lt;/p&gt;
-
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After that, when you open Clumsy, you will be able to select the configuration &lt;code&gt;HTML5 games&lt;/code&gt; from the droplist menu.&lt;/p&gt;
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png&#34; /&gt;
-    
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png&#34;/&gt; 
 &lt;/figure&gt;
-
 
 &lt;p&gt;Note that the configuration &lt;code&gt;localhost ipv4 all&lt;/code&gt; does roughlythe same as my config except that it disrupts &lt;em&gt;any&lt;/em&gt; local hosts.&lt;/p&gt;
-
 &lt;h2 id=&#34;experimenting-with-delayed-and-dropped-packages&#34;&gt;Experimenting with Delayed and Dropped Packages&lt;/h2&gt;
-
 &lt;p&gt;To give you a better idea of how network dirupstion translates into your game, I tested &lt;code&gt;clumsy&lt;/code&gt; on a prototype I made recently. I used a client authoritative network with two clients and one server to keep things simple.&lt;/p&gt;
-
 &lt;p&gt;What I mean by Client Authoritative is that:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Client 1 (on the top) applies the input of the player without delay,&lt;/li&gt;
 &lt;li&gt;Client 1 sends the position of the charactor to the server,&lt;/li&gt;
 &lt;li&gt;The server transmits the position to Client 2&lt;/li&gt;
 &lt;li&gt;Client 2 (on the bottom) applies the position&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;rsquo;s ok for our example.&lt;/p&gt;
-
-
+&lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;lsquo;s ok for our example.&lt;/p&gt;
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34; /&gt;
-    
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34;/&gt; 
 &lt;/figure&gt;
-
 
 &lt;p&gt;Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.&lt;/p&gt;
-
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34; /&gt;
-    
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34;/&gt; 
 &lt;/figure&gt;
 
-
-&lt;p&gt;When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, &lt;code&gt;clumsy&lt;/code&gt;&amp;rsquo;s delays seem to be &lt;em&gt;fixed&lt;/em&gt;, as opposed to be &lt;em&gt;random&lt;/em&gt;, which is most probably the case in real network.&lt;/p&gt;
-
+&lt;p&gt;When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, &lt;code&gt;clumsy&lt;/code&gt;&#39;s delays seem to be &lt;em&gt;fixed&lt;/em&gt;, as opposed to be &lt;em&gt;random&lt;/em&gt;, which is most probably the case in real network.&lt;/p&gt;
 &lt;p&gt;With &lt;em&gt;random&lt;/em&gt; delays, you would experience bugs if your code relies on messages arriving to the server in the order they have been sent. For instance, something like that would lead to bugs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;[&lt;span style=&#34;color:#06b6ef&#34;&gt;Client&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;Side&lt;/span&gt;]
 
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[Client Side]
+&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;_socket&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;emit&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;spawning_points_request&amp;#39;&lt;/span&gt;);
+&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;_socket&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;emit&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;new_player_request&amp;#39;&lt;/span&gt;);
 
-this._socket.emit(&#39;spawning_points_request&#39;);
-this._socket.emit(&#39;new_player_request&#39;);
-
-self = this;
-this._socket.on(&#39;spawning_points&#39;, function(data){
-            self.spawning_points = data.spawning_points;
+&lt;span style=&#34;color:#06b6ef&#34;&gt;self&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;;
+&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;_socket&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;on&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;spawning_points&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;data&lt;/span&gt;){
+            &lt;span style=&#34;color:#06b6ef&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;spawning_points&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;spawning_points&lt;/span&gt;;
         });
 
-this._socket.on(&#39;new_player&#39;, function(data){
-            self.addPlayer(data.player, self.spawning_positions[0]);
+&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;_socket&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;on&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;new_player&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;data&lt;/span&gt;){
+            &lt;span style=&#34;color:#06b6ef&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;addPlayer&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;player&lt;/span&gt;, &lt;span style=&#34;color:#06b6ef&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;spawning_positions&lt;/span&gt;[&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;]);
         });
 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in &lt;code&gt;clumsy&lt;/code&gt;, you can emulate that behaviour with the &lt;code&gt;Out of order&lt;/code&gt; option.&lt;/p&gt;
-
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in &lt;code&gt;clumsy&lt;/code&gt;, you can emulate that behaviour with the &lt;code&gt;Out of order&lt;/code&gt; option.&lt;/p&gt;
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif&#34; /&gt;
-    
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif&#34;/&gt; 
 &lt;/figure&gt;
-
 
 &lt;p&gt;Finally, when we add dropped packages, things can become a big mess. In our example, Client 2 (bottom) always succeeds to catch up with Client 1 (top)  because Client 1 sends the &lt;em&gt;position&lt;/em&gt; of the character and not the change in position.&lt;/p&gt;
-
 &lt;p&gt;However, if your code relies on sending changes in state (i.e. delta method) or on sending an important message, you may experience bugs as these messages are dropped. For instance, in this simple example, I only send once the message to request a new player to the server. If it does not reach the server, I need to reload the page, until it does!&lt;/p&gt;
-
 &lt;p&gt;Hope you will have fun debugging with &lt;code&gt;clumsy&lt;/code&gt;. If you know other useful tools for debugging multiplayer online game, let us know in the comments below!&lt;/p&gt;
 </description>
     </item>
@@ -454,37 +331,26 @@ this._socket.on(&#39;new_player&#39;, function(data){
       <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/its-a-match/</guid>
-      <description>
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822309?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;960&#34; height=&#34;540&#34;&gt;
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822309?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;960&#34; height=&#34;540&#34;&gt;
  &lt;p&gt;Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space &lt;/p&gt;
 &lt;/iframe&gt;
-
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;KEYBOARD ARROWS to move&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Karl Jones&lt;/li&gt;
 &lt;li&gt;Steven Sparkes&lt;/li&gt;
 &lt;li&gt;Jonathan Raymond Westlake&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Software used:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Unity&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://unity3d.com/&#34; target=&#34;_blank&#34;&gt;https://unity3d.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Blender&lt;/strong&gt; (3D Graphics): &lt;a href=&#34;https://www.blender.org/&#34; target=&#34;_blank&#34;&gt;https://www.blender.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unity&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://unity3d.com/&#34;&gt;https://unity3d.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blender&lt;/strong&gt; (3D Graphics): &lt;a href=&#34;https://www.blender.org/&#34;&gt;https://www.blender.org/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -495,119 +361,83 @@ this._socket.on(&#39;new_player&#39;, function(data){
       <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
-      <description>
-
-&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.&lt;/p&gt;
+  
+I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34; target=&#34;_blank&#34;&gt;Relase Notes of The Prabbits: Catch the Crown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34;&gt;Relase Notes of The Prabbits: Catch the Crown&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
 &lt;p&gt;&lt;strong&gt;The Prabbits: Catch The Crown&lt;/strong&gt; is a local multiplayer arena platform game.&lt;/p&gt;
-
 &lt;p&gt;Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
-
 &lt;p&gt;A competition starts between Prabbits to catch the crown and collect gold. When the timer ends, the richer Prabbit wins.&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;I need to thank my friends for their ideas and feedback, especially:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Arthur Portron&lt;/li&gt;
 &lt;li&gt;Lukas Wolf&lt;/li&gt;
 &lt;li&gt;Atanaska Nikolova&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Software used:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34; target=&#34;_blank&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34; target=&#34;_blank&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Krita&lt;/strong&gt; (2D Graphics/Painting): &lt;a href=&#34;https://krita.org/en/&#34; target=&#34;_blank&#34;&gt;https://krita.org/en/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aseprite&lt;/strong&gt; (2D Graphics/Animation): &lt;a href=&#34;https://www.aseprite.org/&#34; target=&#34;_blank&#34;&gt;https://www.aseprite.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34; target=&#34;_blank&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Audacity&lt;/strong&gt; (Voice Recording and Editing): &lt;a href=&#34;https://www.audacityteam.org/&#34; target=&#34;_blank&#34;&gt;https://www.audacityteam.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Krita&lt;/strong&gt; (2D Graphics/Painting): &lt;a href=&#34;https://krita.org/en/&#34;&gt;https://krita.org/en/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aseprite&lt;/strong&gt; (2D Graphics/Animation): &lt;a href=&#34;https://www.aseprite.org/&#34;&gt;https://www.aseprite.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audacity&lt;/strong&gt; (Voice Recording and Editing): &lt;a href=&#34;https://www.audacityteam.org/&#34;&gt;https://www.audacityteam.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;customization&#34;&gt;Customization&lt;/h2&gt;
-
 &lt;h3 id=&#34;asset-folder&#34;&gt;Asset folder&lt;/h3&gt;
-
 &lt;p&gt;The assets are accessible and can be modified, that means you can add new levels and change the animations or sounds if you wanted to.&lt;/p&gt;
-
 &lt;h3 id=&#34;preference-files&#34;&gt;Preference Files&lt;/h3&gt;
-
 &lt;p&gt;The preference files are in the folder &lt;code&gt;preference&lt;/code&gt; and they can be modified to make the game windowed or fullscreen, change the name of the characters, or even use the keyboard as input.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Use the &lt;strong&gt;Keyboard and Mouse input&lt;/strong&gt;:&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;Use the &lt;strong&gt;Keyboard and Mouse input&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;&amp;quot;input&amp;quot;: &amp;quot;controller&amp;quot;,
 &amp;quot;id_input&amp;quot;: 2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;with:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;with:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;quot;input&amp;quot;: &amp;quot;keyboard&amp;quot;,
 &amp;quot;id_input&amp;quot;: 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that the &lt;code&gt;id_input&lt;/code&gt; of the keyboard must be set to 1.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Change the &lt;strong&gt;names of the Prabbits&lt;/strong&gt;:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that the &lt;code&gt;id_input&lt;/code&gt; of the keyboard must be set to 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change the &lt;strong&gt;names of the Prabbits&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;&amp;quot;name&amp;quot;: &amp;quot;Purple&amp;quot;,
 &amp;quot;color&amp;quot;: &amp;quot;purple&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;with:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;with:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;quot;name&amp;quot;: &amp;quot;MyNewName&amp;quot;,
 &amp;quot;color&amp;quot;: &amp;quot;purple&amp;quot;,
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Change &lt;strong&gt;FullScreen Mode and Resolution&lt;/strong&gt;:&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;Change &lt;strong&gt;FullScreen Mode and Resolution&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;Open the file &lt;code&gt;preferences.json&lt;/code&gt; in &lt;code&gt;./preference&lt;/code&gt; and replace, for instance:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;&amp;quot;full_screen&amp;quot;: true,
 &amp;quot;resolution&amp;quot;: [1920, 1080],
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;with:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;with:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;quot;full_screen&amp;quot;: false,
 &amp;quot;resolution&amp;quot;: [800, 600],
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Change the Controls:&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;Change the Controls:&lt;/p&gt;
 &lt;p&gt;The controls are mapped to actions in the files &lt;code&gt;profileController.xml&lt;/code&gt; and &lt;code&gt;profileKeyBoard.xml&lt;/code&gt;. Note that the Mouse controls are hard coded and cannot be modified. The numbers mapped to the buttons of your controller depend on your controller.
-Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;!-- ## Screenshot: 
  &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt; --&gt;
 </description>
@@ -619,355 +449,264 @@ Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/research/analyse_extracted_data/</guid>
-      <description>
-
-&lt;h2 id=&#34;when-we-ve-only-got-a-picture-to-create-a-model&#34;&gt;When we&amp;rsquo;ve only got a picture to create a model&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;when-weve-only-got-a-picture-to-create-a-model&#34;&gt;When we&#39;ve only got a picture to create a model&lt;/h2&gt;
 &lt;p&gt;Recently, I wanted to generate realistic
 durations of fast eye movements (saccades) in a stochastic manner.&lt;/p&gt;
-
 &lt;p&gt;Few articles plot what we call &amp;ldquo;the main sequence&amp;rdquo; which describes the saccade
 duration against saccade magnitude (i.e. amplitude), such as in
 Troncoso et al. (2008):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png&#34; width=&#34;500px&#34; height=&#34;500px&#34;/&gt;&lt;/p&gt;
-
+&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png&#34; width=&#34;500px&#34; height=&#34;500px&#34;/&gt;
 &lt;p style=&#34;font-size:0.6rem;&#34;&gt;&lt;i&gt;Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008).
 Microsaccades counteract perceptual filling-in. Journal of Vision,
 8(14):15, 1-9&lt;/i&gt; [ARVO is the copyright holder]&lt;/p&gt;
-
 &lt;p&gt;There are 3 main problems though:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;we don&amp;rsquo;t have access to the original data used to generate this plot,&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;there is many data points and the picture quality is quite poor,&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;the plot is in logscale, so it might be hard to get an eyeball
-estimation of the regression line.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;we don&#39;t have access to the original data used to generate this plot,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;there is many data points and the picture quality is quite poor,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the plot is in logscale, so it might be hard to get an eyeball
+estimation of the regression line.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Without at least an estimation of the data points, we cannot build a realistic model.&lt;/p&gt;
-
 &lt;h2 id=&#34;using-a-data-extractor&#34;&gt;Using a Data Extractor&lt;/h2&gt;
-
-&lt;p&gt;WebPlotDigitizer (&lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;) is a
+&lt;p&gt;WebPlotDigitizer (&lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/&#34;&gt;here&lt;/a&gt;) is a
 data extractor that, among other things, allows us to calibrate the axis
-of the figure to extract in logspace. I tried it on Troncoso et al.&amp;rsquo;s
+of the figure to extract in logspace. I tried it on Troncoso et al.&amp;lsquo;s
 figure, without real hope of obtaining something decent because of the
 jped compression (my real hope was to manually draw a regression line in
 that jpeg fog).&lt;/p&gt;
-
 &lt;p&gt;Here are the steps, recorded with ScreenToGif.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The result is quite impressive when considering the picture quality.
 Here is what I obtained with the automatic extraction! Let see how this
 looks like once exported in CSV and plotted in R.&lt;/p&gt;
-
 &lt;p&gt;We show the first lines of the file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1 &amp;lt;- read.csv(&amp;quot;extraction1.csv&amp;quot;, header = FALSE) 
-setnames(df1, c(&#39;amplitude&#39;, &#39;duration&#39;))
-head(df1, 5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##    amplitude duration
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;df1 &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;read.csv&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;extraction1.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;FALSE&lt;/span&gt;) 
+&lt;span style=&#34;color:#06b6ef&#34;&gt;setnames&lt;/span&gt;(df1, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;amplitude&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;duration&amp;#39;&lt;/span&gt;))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;head&lt;/span&gt;(df1, &lt;span style=&#34;color:#f99b15&#34;&gt;5&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##    amplitude duration
 ## 1 0.07355096 6.124430
 ## 2 0.08775247 5.467178
 ## 3 0.08825364 6.549086
 ## 4 0.08875767 5.453267
 ## 5 0.08901076 6.557844
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;We print the number of data points that have been extracted:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;dim(df1)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;dim&lt;/span&gt;(df1)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## [1] 5725    2
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## [1] 5725    2
-&lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;We plot the data:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration, xlim=c(0.01, 2), ylim=c(1, 30),
-     main=&#39;df1&#39;, pch=&#39;.&#39; , log=&amp;quot;xy&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;), ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;),
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt; , log&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;xy&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;That looks quite impressive for a data extraction made on a blurry jpeg!&lt;/p&gt;
-
 &lt;p&gt;WebPlotDigitizer is not extracting &amp;ldquo;real&amp;rdquo; data points (which are almost
 invisible on the orginal figure), but still the density of the data points
 seems to correctly estimates the density of the original data. This
 should be enough to compute a good estimate of the regression line of
 the mean duration and of its standard deviation. So now, let us try to
 compute these regression lines and make a saccade duration generator.&lt;/p&gt;
-
 &lt;h2 id=&#34;compute-the-regression-model&#34;&gt;Compute the Regression model&lt;/h2&gt;
-
 &lt;p&gt;We should start with finding the regression line in logspace.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1$log_duration &amp;lt;- log(df1$duration)
-df1$log_amplitude &amp;lt;- log(df1$amplitude)
-log.model &amp;lt;- lm( log_duration ~ log_amplitude, data=df1)
-new &amp;lt;- data.frame(log_amplitude = seq(min(df1$log_amplitude), max(df1$log_amplitude), 0.01))
-y_values &amp;lt;- predict(log.model, new, interval=&amp;quot;predict&amp;quot;)
-plot(df1$log_amplitude, df1$log_duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(new$log_amplitude, y_values[,1], lwd=2, col=&#39;red&#39;)
-lines(new$log_amplitude, y_values[,2], lwd=2, col=&#39;red&#39;)
-lines(new$log_amplitude, y_values[,3], lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;log&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration)
+df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;log&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude)
+log.model &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;lm&lt;/span&gt;( log_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;~&lt;/span&gt; log_amplitude, data&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;df1)
+new &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;data.frame&lt;/span&gt;(log_amplitude &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;seq&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;min&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;max&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;))
+y_values &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;predict&lt;/span&gt;(log.model, new, interval&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;predict&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_duration,
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the linear space, we get this pretty curve and increasing standard
 deviation.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;extract-the-equations&#34;&gt;Extract the equations&lt;/h2&gt;
-
 &lt;p&gt;To be able to generate data from the regression, we must extract the
 equations that describes :&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;the mean duration of saccades according to their amplitude,&lt;/li&gt;
 &lt;li&gt;the standard deviation according to their amplitude.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;That is a bit more complicated as usual because of the logspace, but it
 is feasible.&lt;/p&gt;
-
 &lt;h3 id=&#34;estimate-the-equation-of-the-mean&#34;&gt;Estimate the equation of the mean&lt;/h3&gt;
-
 &lt;p&gt;It is easy to get the coefficients from the regression line.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;b &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; log.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[1]]
+a &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; log.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[2]]
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;b = log.model$coefficients[[1]]
-a = log.model$coefficients[[2]]
+x &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude
+reg_eq &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; a
+y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;x &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; b
 
-x = new$log_amplitude
-reg_eq = a
-y = a*x + b
-
-plot(df1$log_amplitude, df1$log_duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(x, y, lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_duration,
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(x, y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Let pass the regression line in linear space. We got:&lt;/p&gt;
-
 &lt;p&gt;$$
 y_{ \text{log} } = a x_{ \text{log} } + b
 $$&lt;/p&gt;
-
 &lt;p&gt;and:&lt;/p&gt;
-
 &lt;p&gt;$$
-y_{lin} = exp(y_{log}) \\&lt;br /&gt;
+y_{lin} = exp(y_{log}) \\\&lt;br&gt;
 x_{lin} = exp(x_{log})
 $$&lt;/p&gt;
-
 &lt;p&gt;So that, when combined, that gives:&lt;/p&gt;
-
 &lt;p&gt;$$
-y_{lin} = exp(ax_{log} + b) = exp(ax_{log}) * exp(b) \\&lt;br /&gt;
-        = exp(x_{log})^a . exp(b) \\&lt;br /&gt;
-        = x_{lin}^a . exp(b)
+y_{lin} = exp(ax_{log} + b) = exp(ax_{log}) * exp(b) \\\&lt;br&gt;
+= exp(x_{log})^a . exp(b) \\\&lt;br&gt;
+= x_{lin}^a . exp(b)
 $$&lt;/p&gt;
-
 &lt;p&gt;With we should be able to plot the regression line in linear space:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-cart_y = (cart_x^a) * exp(b)
-plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
-lines(cart_x, cart_y, lwd=2, col=&#39;red&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;cart_x &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;seq&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;min&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;max&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude), &lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;)
+cart_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (cart_x^a) &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(b)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Yeah! we got it. Now let us extract the equation for the standard
 deviation.&lt;/p&gt;
-
 &lt;h3 id=&#34;estimate-the-standard-deviations&#34;&gt;Estimate the standard deviations&lt;/h3&gt;
-
 &lt;p&gt;In logarithmic space, we get a standard deviation (SD) that is rather flat, althought
 there may be a small irregularity on the right hand side.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;par&lt;/span&gt;(mfrow&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;))
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;par(mfrow=c(1,2))
+log_sd &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;abs&lt;/span&gt;(log.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;residuals)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, log_sd, ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;-1&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
 
-log_sd = abs(log.model$residuals)
-plot(df1$amplitude, log_sd, ylim=c(-1, 1), xlim=c(0, 1))
-
-sd_change = rollapply(log_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, ylim= c(-1, 1 ), xlim=c(0, 1))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+sd_change &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;rollapply&lt;/span&gt;(log_sd, width &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;200&lt;/span&gt;, FUN &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; median, fill &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;NA&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;-1&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt; ), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Unfortunately, to find the change in variance in the cartesian space is
-not as simple as taking the exponential of the logspace&amp;rsquo;s variance.&lt;/p&gt;
-
+not as simple as taking the exponential of the logspace&#39;s variance.&lt;/p&gt;
 &lt;p&gt;First, let us compute the standard deviation and its trends in the
 cartesian space.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#776e71&#34;&gt;# remember that:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# cart_y = (cart_x^a) * exp(b)&lt;/span&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;# remember that:
-# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-# cart_y = (cart_x^a) * exp(b)
+cart_sd &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;abs&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; (df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude^a)&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(b))
 
-cart_sd = abs(df1$duration - (df1$amplitude^a)*exp(b))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;par&lt;/span&gt;(mfrow&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, cart_sd, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
 
-par(mfrow=c(1,2))
-plot(df1$amplitude, cart_sd, xlim=c(0, 1))
+&lt;span style=&#34;color:#776e71&#34;&gt;# moving windows that take the median of the duration&amp;#39;s sd over saccade amplitude&lt;/span&gt;
+sd_change &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;rollapply&lt;/span&gt;(cart_sd, width &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;200&lt;/span&gt;, FUN &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; median, fill &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;NA&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
+df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;sd_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; sd_change
 
-# moving windows that take the median of the duration&#39;s sd over saccade amplitude
-sd_change &amp;lt;- rollapply(cart_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-df1$sd_duration &amp;lt;- sd_change
-
-# regression of the duration sd over amplitude
-var.model &amp;lt;- lm(sd_duration ~ amplitude, data = df1)
-curve_y &amp;lt;- predict(var.model, data.frame(amplitude=cart_x) )
-lines(cart_x, curve_y, lwd=2, col=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sd_b &amp;lt;- var.model$coefficients[[1]]
-sd_a &amp;lt;- var.model$coefficients[[2]]
-var.model$coefficients
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## (Intercept)   amplitude 
+&lt;span style=&#34;color:#776e71&#34;&gt;# regression of the duration sd over amplitude&lt;/span&gt;
+var.model &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;lm&lt;/span&gt;(sd_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;~&lt;/span&gt; amplitude, data &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; df1)
+curve_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;predict&lt;/span&gt;(var.model, &lt;span style=&#34;color:#06b6ef&#34;&gt;data.frame&lt;/span&gt;(amplitude&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;cart_x) )
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, curve_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;sd_b &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[1]]
+sd_a &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[2]]
+var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## (Intercept)   amplitude 
 ##   0.5487717   3.5581414
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;From the previous plot, it seems that a linear increase of SD with
 amplitude is a good approximation. However, we may not want the SD to
 diverge too much. Let us try with a model of variance that have a
 horizontal asymptote, for instance &lt;code&gt;1-exp(-amplitude)&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;exp_amplitude &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; (&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude))
+var.model &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;lm&lt;/span&gt;(sd_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;~&lt;/span&gt; exp_amplitude, data &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; df1)
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;df1$exp_amplitude &amp;lt;- (1-exp(-df1$amplitude))
-var.model &amp;lt;- lm(sd_duration ~ exp_amplitude, data = df1)
-
-var.model$coefficients
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##   (Intercept) exp_amplitude 
+var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##   (Intercept) exp_amplitude 
 ##      0.285162      5.240037
 &lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;sd_eb &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[1]]
+sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[2]]
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sd_eb &amp;lt;- var.model$coefficients[[1]]
-sd_ea &amp;lt;- var.model$coefficients[[2]]
+&lt;span style=&#34;color:#776e71&#34;&gt;# we do the prediction ourselve:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:&lt;/span&gt;
+curve_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; (sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; sd_eb) &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; sd_ea&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;cart_x)
 
-# we do the prediction ourselve:
-# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:
-curve_y &amp;lt;- (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-lines(cart_x, curve_y, lwd=2, col=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, curve_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The asymptotic equation seems to approximate the SD as well as the linear
 equation.&lt;/p&gt;
-
 &lt;p&gt;To judge which is best, let us plot both the equations we estimated
 against the regression model we made earlier. Note that the regression
 model was showing a 95% prediction interval (in red), which depends on
 the SD that we formulated (in green and purple), but it is not expected
 to be equal to it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;plot(df1$amplitude, df1$duration,
-     main=&#39;df1&#39;, pch=&#39;.&#39;)
+&lt;span style=&#34;color:#776e71&#34;&gt;## regression fit:&lt;/span&gt;
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
 
-## regression fit:
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col=&#39;red&#39;)
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col=&#39;red&#39;)
+&lt;span style=&#34;color:#776e71&#34;&gt;## our equations:&lt;/span&gt;
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
 
-## our equations:
-lines(cart_x, cart_y, lwd=2, col=&#39;green&#39;, lty=2)
+&lt;span style=&#34;color:#776e71&#34;&gt;## linear sd&lt;/span&gt;
+sd_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;0.55&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;3.54&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; cart_x
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
 
-## linear sd
-sd_y = 0.55 + 3.54 * cart_x
-lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;green&#39;, lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;green&#39;, lty=2)
-
-## assymtotic sd:
-sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-lines(cart_x, cart_y+sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col=&#39;purple&#39;, lty=2)
-legend(&#39;bottomright&#39;, legend=c(&#39;regresssion&#39;, &#39;linear SD equation&#39;, &#39;assymptotic SD equation&#39;),lty=1, col=c(&#39;red&#39;, &#39;green&#39;, &#39;purple&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;span style=&#34;color:#776e71&#34;&gt;## assymtotic sd:&lt;/span&gt;
+sd_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; sd_eb) &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; sd_ea&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;cart_x)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;bottomright&amp;#39;&lt;/span&gt;, legend&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;regresssion&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;linear SD equation&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;assymptotic SD equation&amp;#39;&lt;/span&gt;),lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It seems that the assymptotic equation of SD do a better job than the
 linear equation. Furthermore, it is a wished property that the SD does
 not diverge.&lt;/p&gt;
-
 &lt;p&gt;Thus, to summarize, our full model of the duration of
 saccade according to duration should follows:&lt;/p&gt;
-
 &lt;!-- remember that:
 cart_y = (cart_x^a) * exp(b)
 sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
 --&gt;
-
 &lt;p&gt;$$
-\text{E}(Duration) \approx Amplitude^{0.51} \times \exp(3.05) &lt;br /&gt;
+\text{E}(Duration) \approx Amplitude^{0.51} \times \exp(3.05) \&lt;br&gt;
 $$
 $$
-\text{SD}(Duration) \approx 5.53 - 3.56 \exp(-Amplitude) &lt;br /&gt;
+\text{SD}(Duration) \approx 5.53 - 3.56 \exp(-Amplitude) \&lt;br&gt;
 $$&lt;/p&gt;
-
-&lt;p&gt;with $E()$ the estimation of the mean and $SD()$ the estimation fo the standard deviation.
+&lt;p&gt;with $E()$ the estimation of the mean and $SD()$ the estimation fo the standard deviation.&lt;/p&gt;
 &lt;!-- SD(Duration) = 0.55 + 3.54.Amp
     E(Duration) = Amp^0.51 * exp(3.05)
---&gt;&lt;/p&gt;
-
+--&gt;
 &lt;h3 id=&#34;implement-a-stochastic-generator&#34;&gt;Implement a Stochastic Generator&lt;/h3&gt;
-
 &lt;p&gt;Let us try to generate data from these equations .&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;getADuration &amp;lt;- function(amp, n){
-  mean.Duration = (amp^a) * exp(b)
-  SD.Duration = (sd_ea + sd_eb) - sd_ea * exp(-amp)
-  return(rnorm(length(mean.Duration)*n, mean.Duration, SD.Duration))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;getADuration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;function&lt;/span&gt;(amp, n){
+  mean.Duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (amp^a) &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(b)
+  SD.Duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; sd_eb) &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;amp)
+  &lt;span style=&#34;color:#06b6ef&#34;&gt;return&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;rnorm&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;length&lt;/span&gt;(mean.Duration)&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;n, mean.Duration, SD.Duration))
 }
 
-amp_space &amp;lt;- runif(5000, min=min(df1$amplitude), max=1)
-gen.duration &amp;lt;- getADuration(amp_space, 1)
+amp_space &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;runif&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;5000&lt;/span&gt;, min&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;min&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude), max&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;)
+gen.duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;getADuration&lt;/span&gt;(amp_space, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;)
 
-red_col = rgb(200,100,100,50,maxColorValue=255)
-plot(df1$amplitude, df1$duration, ylim= c(4, 30), xlim=c(0, 1.2))
-points(amp_space, gen.duration, ylim = c(4, 30), xlim=c(0, 1.2), col=red_col)
-legend(&amp;quot;bottomright&amp;quot;, c(&#39;extracted data&#39;, &#39;model&#39;), col=c(&#39;black&#39;, red_col), pch=1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+red_col &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;rgb&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;100&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;100&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;50&lt;/span&gt;,maxColorValue&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;255&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration, ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1.2&lt;/span&gt;))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;points&lt;/span&gt;(amp_space, gen.duration, ylim &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1.2&lt;/span&gt;), col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;red_col)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;bottomright&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;extracted data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;model&amp;#39;&lt;/span&gt;), col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;black&amp;#39;&lt;/span&gt;, red_col), pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.&lt;/p&gt;
-
-&lt;p&gt;We&amp;rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
+&lt;p&gt;We&#39;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
 predict saccade durations for amplitudes that Troncoso et al.
 did not mesure.&lt;/p&gt;
-
 &lt;p&gt;Hope this post was helpful, and see you soon!&lt;/p&gt;
 </description>
     </item>
@@ -978,67 +717,34 @@ did not mesure.&lt;/p&gt;
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</guid>
-      <description>
-
-&lt;h2 id=&#34;release-and-then-move-on&#34;&gt;Release and then move on &amp;hellip;&lt;/h2&gt;
-
-&lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.&lt;/p&gt;
-
-
+      <description>&lt;h2 id=&#34;release-and-then-move-on-&#34;&gt;Release and then move on &amp;hellip;&lt;/h2&gt;
+&lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&#39;s the right time to finalize and ship my first video game.&lt;/p&gt;
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34; alt=&#34;How it feels like to ship a game!&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;p&gt;
-        How it feels like to ship a game!
-        
-            
-        
-        &lt;/p&gt; 
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34;
+         alt=&#34;How it feels like to ship a game!&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;How it feels like to ship a game!&lt;/p&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-
-&lt;p&gt;Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!).
+&lt;p&gt;Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!). 
 You can download it here:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip&#34; target=&#34;_blank&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Windows, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Linux, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mac OS, portable version (&lt;a href=&#34;https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip&#34;&gt;zip-file&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Please find more details about customization on the &lt;a href=&#34;https://nodragem.github.io/Blog/Blog/project/catchthecrown/&#34; target=&#34;_blank&#34;&gt;Project Page&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;Please find more details about customization on the &lt;a href=&#34;https://nodragem.github.io/Blog/Blog/project/catchthecrown/&#34;&gt;Project Page&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;the-story&#34;&gt;The Story&lt;/h2&gt;
-
 &lt;p&gt;I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.&lt;/p&gt;
-
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34; alt=&#34;Three teenager Prabbits chilling out before the Coming-of-Age ritual...&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;p&gt;
-        Three teenager Prabbits chilling out before the Coming-of-Age ritual...
-        
-            
-        
-        &lt;/p&gt; 
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif&#34;
+         alt=&#34;Three teenager Prabbits chilling out before the Coming-of-Age ritual&amp;amp;hellip;&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Three teenager Prabbits chilling out before the Coming-of-Age ritual&amp;hellip;&lt;/p&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
-
 
 &lt;h2 id=&#34;the-gameplay&#34;&gt;The Gameplay&lt;/h2&gt;
-
-&lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&amp;rsquo;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
-
+&lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&#39;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/timer.gif&#34; width=&#34;100%&#34;/&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;
@@ -1046,37 +752,19 @@ You can download it here:&lt;/p&gt;
         Only the Prabbit with the Crown can collect treasures
     &lt;/figcaption&gt;
 &lt;/figure&gt;
-
 &lt;p&gt;A competition starts between Prabbits as everyone wants to catch the Crown and be able to collect gold. When the timer ends, it is the richer Prabbit that wins the turn; players need to win 3 turns to win the tournament and be declared King of the Tournament (see Screenshot1).&lt;/p&gt;
-
 &lt;h2 id=&#34;the-character-actions&#34;&gt;The Character Actions&lt;/h2&gt;
-
 &lt;p&gt;The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.&lt;/p&gt;
-
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34; alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;p&gt;
-        Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P
-        
-            
-        
-        &lt;/p&gt; 
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34;
+         alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Spear, Slap, Trap Combo! I was alone recording, that&#39;s why Red is not moving :P&lt;/p&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-
 &lt;h2 id=&#34;what-was-not-implemented&#34;&gt;What was not implemented&lt;/h2&gt;
-
 &lt;p&gt;Originally, Catch The Crown was thought to be a cooperative and competitive 2D platform game. A Shaman would have explained the competition rules to the teenager Prabbits. During a round, the players would have a common gold chest in addition to their own. The next level would be unlocked only if the common chest reaches a certain amount of Gold (you can still see this chest in the GUI).&lt;/p&gt;
-
 &lt;p&gt;The levels would have been designed to force cooperative behavior to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay.&lt;/p&gt;
-
 &lt;p&gt;Maybe later I will do a sequel where I will implement more of the stuff I wanted originally. In any case, I will probably come back with new levels for this version of the game. Hope you enjoy the game!&lt;/p&gt;
 </description>
     </item>
@@ -1087,7 +775,7 @@ You can download it here:&lt;/p&gt;
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
-      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/DynamicNeuralField-RateBased&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/DynamicNeuralField-RateBased&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/DynamicNeuralField-RateBased&#34;&gt;https://github.com/Nodragem/DynamicNeuralField-RateBased&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1097,7 +785,7 @@ You can download it here:&lt;/p&gt;
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
-      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Model-SCtoVisualSpace&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/Model-SCtoVisualSpace&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Model-SCtoVisualSpace&#34;&gt;https://github.com/Nodragem/Model-SCtoVisualSpace&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1107,7 +795,7 @@ You can download it here:&lt;/p&gt;
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
-      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Eyetracking-Analysis-tools&#34; target=&#34;_blank&#34;&gt;https://github.com/Nodragem/Eyetracking-Analysis-tools&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Eyetracking-Analysis-tools&#34;&gt;https://github.com/Nodragem/Eyetracking-Analysis-tools&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1117,34 +805,24 @@ You can download it here:&lt;/p&gt;
       <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
-      <description>
-
-&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822796?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;968&#34; height=&#34;540&#34;&gt;
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822796?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;968&#34; height=&#34;540&#34;&gt;
  &lt;p&gt;Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space &lt;/p&gt;
-
 &lt;/iframe&gt;
-
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;LEFT and RIGHT to move&lt;/li&gt;
 &lt;li&gt;SPACE to jump&lt;/li&gt;
 &lt;li&gt;LEFT CONTROL to sprint&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
-
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-
 &lt;p&gt;Made with:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34; target=&#34;_blank&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34; target=&#34;_blank&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34; target=&#34;_blank&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34; target=&#34;_blank&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34; target=&#34;_blank&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

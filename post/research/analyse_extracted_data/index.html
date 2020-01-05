@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.49.2" />
+  <meta name="generator" content="Hugo 0.61.0" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -18,7 +18,7 @@
   
     
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github-gist.min.css">
+    <link rel="stylesheet" href="/Blog/css/highlight.min.css">
     
   
   <link rel="stylesheet" href="/Blog/css/bootstrap.min.css">
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="/Blog/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="NODRAGEM GAMES">
-  <link rel="feed" href="https://nodragem.github.io/Blog/index.xml" type="application/rss+xml" title="NODRAGEM GAMES">
+  <link rel="alternate" href="" type="application/rss+xml" title="NODRAGEM GAMES">
+  <link rel="feed" href="" type="application/rss+xml" title="NODRAGEM GAMES">
 
   <link rel="icon" type="image/png" href="/Blog/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/Blog/img/apple-touch-icon.png">
@@ -176,355 +176,264 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h2 id="when-we-ve-only-got-a-picture-to-create-a-model">When we&rsquo;ve only got a picture to create a model</h2>
-
+      <h2 id="when-weve-only-got-a-picture-to-create-a-model">When we've only got a picture to create a model</h2>
 <p>Recently, I wanted to generate realistic
 durations of fast eye movements (saccades) in a stochastic manner.</p>
-
 <p>Few articles plot what we call &ldquo;the main sequence&rdquo; which describes the saccade
 duration against saccade magnitude (i.e. amplitude), such as in
 Troncoso et al. (2008):</p>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png" width="500px" height="500px"/></p>
-
+<img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png" width="500px" height="500px"/>
 <p style="font-size:0.6rem;"><i>Data from Troncoso, X. G., Macknik, S. L., & Martinez-Conde, S. (2008).
 Microsaccades counteract perceptual filling-in. Journal of Vision,
 8(14):15, 1-9</i> [ARVO is the copyright holder]</p>
-
 <p>There are 3 main problems though:</p>
-
 <ol>
-<li><p>we don&rsquo;t have access to the original data used to generate this plot,</p></li>
-
-<li><p>there is many data points and the picture quality is quite poor,</p></li>
-
-<li><p>the plot is in logscale, so it might be hard to get an eyeball
-estimation of the regression line.</p></li>
+<li>
+<p>we don't have access to the original data used to generate this plot,</p>
+</li>
+<li>
+<p>there is many data points and the picture quality is quite poor,</p>
+</li>
+<li>
+<p>the plot is in logscale, so it might be hard to get an eyeball
+estimation of the regression line.</p>
+</li>
 </ol>
-
 <p>Without at least an estimation of the data points, we cannot build a realistic model.</p>
-
 <h2 id="using-a-data-extractor">Using a Data Extractor</h2>
-
-<p>WebPlotDigitizer (<a href="http://arohatgi.info/WebPlotDigitizer/" target="_blank">here</a>) is a
+<p>WebPlotDigitizer (<a href="http://arohatgi.info/WebPlotDigitizer/">here</a>) is a
 data extractor that, among other things, allows us to calibrate the axis
-of the figure to extract in logspace. I tried it on Troncoso et al.&rsquo;s
+of the figure to extract in logspace. I tried it on Troncoso et al.&lsquo;s
 figure, without real hope of obtaining something decent because of the
 jped compression (my real hope was to manually draw a regression line in
 that jpeg fog).</p>
-
 <p>Here are the steps, recorded with ScreenToGif.</p>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif" alt="" /></p>
-
+<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif" alt=""></p>
 <p>The result is quite impressive when considering the picture quality.
 Here is what I obtained with the automatic extraction! Let see how this
 looks like once exported in CSV and plotted in R.</p>
-
 <p>We show the first lines of the file:</p>
-
-<pre><code class="language-R">df1 &lt;- read.csv(&quot;extraction1.csv&quot;, header = FALSE) 
-setnames(df1, c('amplitude', 'duration'))
-head(df1, 5)
-</code></pre>
-
-<pre><code>##    amplitude duration
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1 <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">read.csv</span>(<span style="color:#48b685">&#34;</span><span style="color:#48b685">extraction1.csv&#34;</span>, header <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">FALSE</span>) 
+<span style="color:#06b6ef">setnames</span>(df1, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">amplitude&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">duration&#39;</span>))
+<span style="color:#06b6ef">head</span>(df1, <span style="color:#f99b15">5</span>)
+</code></pre></div><pre><code>##    amplitude duration
 ## 1 0.07355096 6.124430
 ## 2 0.08775247 5.467178
 ## 3 0.08825364 6.549086
 ## 4 0.08875767 5.453267
 ## 5 0.08901076 6.557844
 </code></pre>
-
 <p>We print the number of data points that have been extracted:</p>
-
-<pre><code class="language-R">dim(df1)
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">dim</span>(df1)
+</code></pre></div><pre><code>## [1] 5725    2
 </code></pre>
-
-<pre><code>## [1] 5725    2
-</code></pre>
-
 <p>We plot the data:</p>
-
-<pre><code class="language-R">plot(df1$amplitude, df1$duration, xlim=c(0.01, 2), ylim=c(1, 30),
-     main='df1', pch='.' , log=&quot;xy&quot;)
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png" alt="" /></p>
-
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0.01</span>, <span style="color:#f99b15">2</span>), ylim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>, <span style="color:#f99b15">30</span>),
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span> , log<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;</span><span style="color:#48b685">xy&#34;</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png" alt=""></p>
 <p>That looks quite impressive for a data extraction made on a blurry jpeg!</p>
-
 <p>WebPlotDigitizer is not extracting &ldquo;real&rdquo; data points (which are almost
 invisible on the orginal figure), but still the density of the data points
 seems to correctly estimates the density of the original data. This
 should be enough to compute a good estimate of the regression line of
 the mean duration and of its standard deviation. So now, let us try to
 compute these regression lines and make a saccade duration generator.</p>
-
 <h2 id="compute-the-regression-model">Compute the Regression model</h2>
-
 <p>We should start with finding the regression line in logspace.</p>
-
-<pre><code class="language-R">df1$log_duration &lt;- log(df1$duration)
-df1$log_amplitude &lt;- log(df1$amplitude)
-log.model &lt;- lm( log_duration ~ log_amplitude, data=df1)
-new &lt;- data.frame(log_amplitude = seq(min(df1$log_amplitude), max(df1$log_amplitude), 0.01))
-y_values &lt;- predict(log.model, new, interval=&quot;predict&quot;)
-plot(df1$log_amplitude, df1$log_duration,
-     main='df1', pch='.')
-lines(new$log_amplitude, y_values[,1], lwd=2, col='red')
-lines(new$log_amplitude, y_values[,2], lwd=2, col='red')
-lines(new$log_amplitude, y_values[,3], lwd=2, col='red')
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png" alt="" /></p>
-
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1<span style="color:#5bc4bf">$</span>log_duration <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">log</span>(df1<span style="color:#5bc4bf">$</span>duration)
+df1<span style="color:#5bc4bf">$</span>log_amplitude <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">log</span>(df1<span style="color:#5bc4bf">$</span>amplitude)
+log.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>( log_duration <span style="color:#5bc4bf">~</span> log_amplitude, data<span style="color:#5bc4bf">=</span>df1)
+new <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">data.frame</span>(log_amplitude <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">seq</span>(<span style="color:#06b6ef">min</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">max</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#f99b15">0.01</span>))
+y_values <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(log.model, new, interval<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;</span><span style="color:#48b685">predict&#34;</span>)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude, df1<span style="color:#5bc4bf">$</span>log_duration,
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">1</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">2</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">3</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png" alt=""></p>
 <p>In the linear space, we get this pretty curve and increasing standard
 deviation.</p>
-
-<pre><code class="language-R">plot(df1$amplitude, df1$duration,
-     main='df1', pch='.')
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col='red')
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col='red')
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col='red')
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png" alt="" /></p>
-
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png" alt=""></p>
 <h2 id="extract-the-equations">Extract the equations</h2>
-
 <p>To be able to generate data from the regression, we must extract the
 equations that describes :</p>
-
 <ul>
 <li>the mean duration of saccades according to their amplitude,</li>
 <li>the standard deviation according to their amplitude.</li>
 </ul>
-
 <p>That is a bit more complicated as usual because of the logspace, but it
 is feasible.</p>
-
 <h3 id="estimate-the-equation-of-the-mean">Estimate the equation of the mean</h3>
-
 <p>It is easy to get the coefficients from the regression line.</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">b <span style="color:#5bc4bf">=</span> log.model<span style="color:#5bc4bf">$</span>coefficients[[1]]
+a <span style="color:#5bc4bf">=</span> log.model<span style="color:#5bc4bf">$</span>coefficients[[2]]
 
-<pre><code class="language-R">b = log.model$coefficients[[1]]
-a = log.model$coefficients[[2]]
+x <span style="color:#5bc4bf">=</span> new<span style="color:#5bc4bf">$</span>log_amplitude
+reg_eq <span style="color:#5bc4bf">=</span> a
+y <span style="color:#5bc4bf">=</span> a<span style="color:#5bc4bf">*</span>x <span style="color:#5bc4bf">+</span> b
 
-x = new$log_amplitude
-reg_eq = a
-y = a*x + b
-
-plot(df1$log_amplitude, df1$log_duration,
-     main='df1', pch='.')
-lines(x, y, lwd=2, col='red')
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png" alt="" /></p>
-
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude, df1<span style="color:#5bc4bf">$</span>log_duration,
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(x, y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png" alt=""></p>
 <p>Let pass the regression line in linear space. We got:</p>
-
 <p>$$
 y_{ \text{log} } = a x_{ \text{log} } + b
 $$</p>
-
 <p>and:</p>
-
 <p>$$
-y_{lin} = exp(y_{log}) \\<br />
+y_{lin} = exp(y_{log}) \\\<br>
 x_{lin} = exp(x_{log})
 $$</p>
-
 <p>So that, when combined, that gives:</p>
-
 <p>$$
-y_{lin} = exp(ax_{log} + b) = exp(ax_{log}) * exp(b) \\<br />
-        = exp(x_{log})^a . exp(b) \\<br />
-        = x_{lin}^a . exp(b)
+y_{lin} = exp(ax_{log} + b) = exp(ax_{log}) * exp(b) \\\<br>
+= exp(x_{log})^a . exp(b) \\\<br>
+= x_{lin}^a . exp(b)
 $$</p>
-
 <p>With we should be able to plot the regression line in linear space:</p>
-
-<pre><code class="language-R">cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-cart_y = (cart_x^a) * exp(b)
-plot(df1$amplitude, df1$duration,
-     main='df1', pch='.')
-lines(cart_x, cart_y, lwd=2, col='red')
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png" alt="" /></p>
-
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">cart_x <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">seq</span>(<span style="color:#06b6ef">min</span>(df1<span style="color:#5bc4bf">$</span>amplitude), <span style="color:#06b6ef">max</span>(df1<span style="color:#5bc4bf">$</span>amplitude), <span style="color:#f99b15">0.01</span>)
+cart_y <span style="color:#5bc4bf">=</span> (cart_x^a) <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">exp</span>(b)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png" alt=""></p>
 <p>Yeah! we got it. Now let us extract the equation for the standard
 deviation.</p>
-
 <h3 id="estimate-the-standard-deviations">Estimate the standard deviations</h3>
-
 <p>In logarithmic space, we get a standard deviation (SD) that is rather flat, althought
 there may be a small irregularity on the right hand side.</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">par</span>(mfrow<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>,<span style="color:#f99b15">2</span>))
 
-<pre><code class="language-R">par(mfrow=c(1,2))
+log_sd <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">abs</span>(log.model<span style="color:#5bc4bf">$</span>residuals)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, log_sd, ylim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">-1</span>, <span style="color:#f99b15">1</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 
-log_sd = abs(log.model$residuals)
-plot(df1$amplitude, log_sd, ylim=c(-1, 1), xlim=c(0, 1))
-
-sd_change = rollapply(log_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, ylim= c(-1, 1 ), xlim=c(0, 1))
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png" alt="" /></p>
-
+sd_change <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rollapply</span>(log_sd, width <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">200</span>, FUN <span style="color:#5bc4bf">=</span> median, fill <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">NA</span>)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">-1</span>, <span style="color:#f99b15">1</span> ), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png" alt=""></p>
 <p>Unfortunately, to find the change in variance in the cartesian space is
-not as simple as taking the exponential of the logspace&rsquo;s variance.</p>
-
+not as simple as taking the exponential of the logspace's variance.</p>
 <p>First, let us compute the standard deviation and its trends in the
 cartesian space.</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#776e71"># remember that:</span>
+<span style="color:#776e71"># cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)</span>
+<span style="color:#776e71"># cart_y = (cart_x^a) * exp(b)</span>
 
-<pre><code class="language-R"># remember that:
-# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)
-# cart_y = (cart_x^a) * exp(b)
+cart_sd <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">abs</span>(df1<span style="color:#5bc4bf">$</span>duration <span style="color:#5bc4bf">-</span> (df1<span style="color:#5bc4bf">$</span>amplitude^a)<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(b))
 
-cart_sd = abs(df1$duration - (df1$amplitude^a)*exp(b))
+<span style="color:#06b6ef">par</span>(mfrow<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>,<span style="color:#f99b15">2</span>))
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, cart_sd, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 
-par(mfrow=c(1,2))
-plot(df1$amplitude, cart_sd, xlim=c(0, 1))
+<span style="color:#776e71"># moving windows that take the median of the duration&#39;s sd over saccade amplitude</span>
+sd_change <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">rollapply</span>(cart_sd, width <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">200</span>, FUN <span style="color:#5bc4bf">=</span> median, fill <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">NA</span>)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
+df1<span style="color:#5bc4bf">$</span>sd_duration <span style="color:#5bc4bf">&lt;-</span> sd_change
 
-# moving windows that take the median of the duration's sd over saccade amplitude
-sd_change &lt;- rollapply(cart_sd, width = 200, FUN = median, fill = NA)
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-df1$sd_duration &lt;- sd_change
-
-# regression of the duration sd over amplitude
-var.model &lt;- lm(sd_duration ~ amplitude, data = df1)
-curve_y &lt;- predict(var.model, data.frame(amplitude=cart_x) )
-lines(cart_x, curve_y, lwd=2, col=2)
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png" alt="" /></p>
-
-<pre><code class="language-R">sd_b &lt;- var.model$coefficients[[1]]
-sd_a &lt;- var.model$coefficients[[2]]
-var.model$coefficients
-</code></pre>
-
-<pre><code>## (Intercept)   amplitude 
+<span style="color:#776e71"># regression of the duration sd over amplitude</span>
+var.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>(sd_duration <span style="color:#5bc4bf">~</span> amplitude, data <span style="color:#5bc4bf">=</span> df1)
+curve_y <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(var.model, <span style="color:#06b6ef">data.frame</span>(amplitude<span style="color:#5bc4bf">=</span>cart_x) )
+<span style="color:#06b6ef">lines</span>(cart_x, curve_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png" alt=""></p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sd_b <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[1]]
+sd_a <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[2]]
+var.model<span style="color:#5bc4bf">$</span>coefficients
+</code></pre></div><pre><code>## (Intercept)   amplitude 
 ##   0.5487717   3.5581414
 </code></pre>
-
 <p>From the previous plot, it seems that a linear increase of SD with
 amplitude is a good approximation. However, we may not want the SD to
 diverge too much. Let us try with a model of variance that have a
 horizontal asymptote, for instance <code>1-exp(-amplitude)</code>.</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1<span style="color:#5bc4bf">$</span>exp_amplitude <span style="color:#5bc4bf">&lt;-</span> (<span style="color:#f99b15">1</span><span style="color:#5bc4bf">-</span><span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>df1<span style="color:#5bc4bf">$</span>amplitude))
+var.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>(sd_duration <span style="color:#5bc4bf">~</span> exp_amplitude, data <span style="color:#5bc4bf">=</span> df1)
 
-<pre><code class="language-R">df1$exp_amplitude &lt;- (1-exp(-df1$amplitude))
-var.model &lt;- lm(sd_duration ~ exp_amplitude, data = df1)
-
-var.model$coefficients
-</code></pre>
-
-<pre><code>##   (Intercept) exp_amplitude 
+var.model<span style="color:#5bc4bf">$</span>coefficients
+</code></pre></div><pre><code>##   (Intercept) exp_amplitude 
 ##      0.285162      5.240037
 </code></pre>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sd_eb <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[1]]
+sd_ea <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[2]]
 
-<pre><code class="language-R">sd_eb &lt;- var.model$coefficients[[1]]
-sd_ea &lt;- var.model$coefficients[[2]]
+<span style="color:#776e71"># we do the prediction ourselve:</span>
+<span style="color:#776e71"># we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:</span>
+curve_y <span style="color:#5bc4bf">&lt;-</span> (sd_ea <span style="color:#5bc4bf">+</span> sd_eb) <span style="color:#5bc4bf">-</span> sd_ea<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>cart_x)
 
-# we do the prediction ourselve:
-# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:
-curve_y &lt;- (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-
-plot(df1$amplitude, sd_change, xlim=c(0, 1))
-lines(cart_x, curve_y, lwd=2, col=2)
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png" alt="" /></p>
-
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
+<span style="color:#06b6ef">lines</span>(cart_x, curve_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png" alt=""></p>
 <p>The asymptotic equation seems to approximate the SD as well as the linear
 equation.</p>
-
 <p>To judge which is best, let us plot both the equations we estimated
 against the regression model we made earlier. Note that the regression
 model was showing a 95% prediction interval (in red), which depends on
 the SD that we formulated (in green and purple), but it is not expected
 to be equal to it.</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
 
-<pre><code class="language-R">plot(df1$amplitude, df1$duration,
-     main='df1', pch='.')
+<span style="color:#776e71">## regression fit:</span>
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
 
-## regression fit:
-lines(exp(new$log_amplitude), exp(y_values[,1]), lwd=2, col='red')
-lines(exp(new$log_amplitude), exp(y_values[,2]), lwd=2, col='red')
-lines(exp(new$log_amplitude), exp(y_values[,3]), lwd=2, col='red')
+<span style="color:#776e71">## our equations:</span>
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 
-## our equations:
-lines(cart_x, cart_y, lwd=2, col='green', lty=2)
+<span style="color:#776e71">## linear sd</span>
+sd_y <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0.55</span> <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">3.54</span> <span style="color:#5bc4bf">*</span> cart_x
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 
-## linear sd
-sd_y = 0.55 + 3.54 * cart_x
-lines(cart_x, cart_y+sd_y, lwd=2, col='green', lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col='green', lty=2)
-
-## assymtotic sd:
-sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
-lines(cart_x, cart_y+sd_y, lwd=2, col='purple', lty=2)
-lines(cart_x, cart_y-sd_y, lwd=2, col='purple', lty=2)
-legend('bottomright', legend=c('regresssion', 'linear SD equation', 'assymptotic SD equation'),lty=1, col=c('red', 'green', 'purple'))
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png" alt="" /></p>
-
+<span style="color:#776e71">## assymtotic sd:</span>
+sd_y <span style="color:#5bc4bf">=</span> (sd_ea <span style="color:#5bc4bf">+</span> sd_eb) <span style="color:#5bc4bf">-</span> sd_ea<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>cart_x)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">bottomright&#39;</span>, legend<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">regresssion&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">linear SD equation&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">assymptotic SD equation&#39;</span>),lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>, col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>))
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png" alt=""></p>
 <p>It seems that the assymptotic equation of SD do a better job than the
 linear equation. Furthermore, it is a wished property that the SD does
 not diverge.</p>
-
 <p>Thus, to summarize, our full model of the duration of
 saccade according to duration should follows:</p>
-
 <!-- remember that:
 cart_y = (cart_x^a) * exp(b)
 sd_y = (sd_ea + sd_eb) - sd_ea*exp(-cart_x)
 -->
-
 <p>$$
-\text{E}(Duration) \approx Amplitude^{0.51} \times \exp(3.05) <br />
+\text{E}(Duration) \approx Amplitude^{0.51} \times \exp(3.05) \<br>
 $$
 $$
-\text{SD}(Duration) \approx 5.53 - 3.56 \exp(-Amplitude) <br />
+\text{SD}(Duration) \approx 5.53 - 3.56 \exp(-Amplitude) \<br>
 $$</p>
-
-<p>with $E()$ the estimation of the mean and $SD()$ the estimation fo the standard deviation.
+<p>with $E()$ the estimation of the mean and $SD()$ the estimation fo the standard deviation.</p>
 <!-- SD(Duration) = 0.55 + 3.54.Amp
     E(Duration) = Amp^0.51 * exp(3.05)
---></p>
-
+-->
 <h3 id="implement-a-stochastic-generator">Implement a Stochastic Generator</h3>
-
 <p>Let us try to generate data from these equations .</p>
-
-<pre><code class="language-R">getADuration &lt;- function(amp, n){
-  mean.Duration = (amp^a) * exp(b)
-  SD.Duration = (sd_ea + sd_eb) - sd_ea * exp(-amp)
-  return(rnorm(length(mean.Duration)*n, mean.Duration, SD.Duration))
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">getADuration <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">function</span>(amp, n){
+  mean.Duration <span style="color:#5bc4bf">=</span> (amp^a) <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">exp</span>(b)
+  SD.Duration <span style="color:#5bc4bf">=</span> (sd_ea <span style="color:#5bc4bf">+</span> sd_eb) <span style="color:#5bc4bf">-</span> sd_ea <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>amp)
+  <span style="color:#06b6ef">return</span>(<span style="color:#06b6ef">rnorm</span>(<span style="color:#06b6ef">length</span>(mean.Duration)<span style="color:#5bc4bf">*</span>n, mean.Duration, SD.Duration))
 }
 
-amp_space &lt;- runif(5000, min=min(df1$amplitude), max=1)
-gen.duration &lt;- getADuration(amp_space, 1)
+amp_space <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">runif</span>(<span style="color:#f99b15">5000</span>, min<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">min</span>(df1<span style="color:#5bc4bf">$</span>amplitude), max<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>)
+gen.duration <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">getADuration</span>(amp_space, <span style="color:#f99b15">1</span>)
 
-red_col = rgb(200,100,100,50,maxColorValue=255)
-plot(df1$amplitude, df1$duration, ylim= c(4, 30), xlim=c(0, 1.2))
-points(amp_space, gen.duration, ylim = c(4, 30), xlim=c(0, 1.2), col=red_col)
-legend(&quot;bottomright&quot;, c('extracted data', 'model'), col=c('black', red_col), pch=1)
-</code></pre>
-
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png" alt="" /></p>
-
+red_col <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rgb</span>(<span style="color:#f99b15">200</span>,<span style="color:#f99b15">100</span>,<span style="color:#f99b15">100</span>,<span style="color:#f99b15">50</span>,maxColorValue<span style="color:#5bc4bf">=</span><span style="color:#f99b15">255</span>)
+<span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>))
+<span style="color:#06b6ef">points</span>(amp_space, gen.duration, ylim <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>), col<span style="color:#5bc4bf">=</span>red_col)
+<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#34;</span><span style="color:#48b685">bottomright&#34;</span>, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">extracted data&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">model&#39;</span>), col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">black&#39;</span>, red_col), pch<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>)
+</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png" alt=""></p>
 <p>The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.</p>
-
-<p>We&rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
+<p>We've got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
 predict saccade durations for amplitudes that Troncoso et al.
 did not mesure.</p>
-
 <p>Hope this post was helpful, and see you soon!</p>
 
     </div>
@@ -587,7 +496,7 @@ did not mesure.</p>
   <div class="container2">
     <p class="powered-by">
 
-      &copy; 2016 Geoffrey Mégardon &middot; 
+      © 2016 Geoffrey Mégardon &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
@@ -641,15 +550,11 @@ did not mesure.</p>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
       
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
-      
 
       
       
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
         
       
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games &amp; Projects on NODRAGEM GAMES</title>
@@ -18,9 +18,7 @@
       <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
-      <description>Download  Release Notes You can find the detail of the last updates here:
- What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0  Summary This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.
-You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.</description>
+      <description>A multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.</description>
     </item>
     
     <item>
@@ -29,10 +27,7 @@ You are a prabbit (mix of rabbit and parrot) who wants to prove that they are th
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/proto-bubble-squad/</guid>
-      <description>Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com  Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.
-This is a multiplayer game, you can open two tabs to play it against yourselve.
-Controls This game is compatible with mobile devices and desktop computers:
- Click on the ground and drag to move the camera Click on a bubble and drag to catapult it Click on the top-left icon to enable fullscreen Collide with a friend to heal it Collide with an ennemy to hurt it  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
+      <description>A 6-days multiplayer prototype based on Adrien Lebouc&#39;s ideas and made with Phaser.io. All assets made from scratch.</description>
     </item>
     
     <item>
@@ -41,9 +36,7 @@ You are a prabbit (mix of rabbit and parrot) who wants to prove that they are th
       <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/cannon-shooter/</guid>
-      <description>Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/  It may take few seconds for the server to wake up, please wait&amp;hellip;
-Controls Click on the game to enable the keyboard inputs.
- LEFT and RIGHT to move SPACE to shoot  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
+      <description>A 6-days prototype made with Phaser.io. All assets made from scratch.</description>
     </item>
     
     <item>
@@ -52,9 +45,7 @@ Controls Click on the game to enable the keyboard inputs.
       <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/its-a-match/</guid>
-      <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space  Controls Click on the game to enable the keyboard inputs.
- KEYBOARD ARROWS to move  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
-Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:</description>
+      <description>Find your true love in this game made for Games Wales South&#39;s GameJam 2017. Made with Unity.</description>
     </item>
     
     <item>
@@ -63,9 +54,7 @@ Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) 
       <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
-      <description>Download  Windows, portable version (zip-file) Linux, portable version (zip-file) Mac OS, portable version (zip-file)  I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
-Release Notes  Relase Notes of The Prabbits: Catch the Crown  Summary The Prabbits: Catch The Crown is a local multiplayer arena platform game.
-Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.</description>
+      <description>A mutiplayer arena game featuring Prabbits. All assets made from scratch.</description>
     </item>
     
     <item>
@@ -74,7 +63,7 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
-      <description>Find the project at: https://github.com/Nodragem/DynamicNeuralField-RateBased</description>
+      <description>Small Python Library to quickly run and test 1D Neural Fields with a population rate model. Can export video.</description>
     </item>
     
     <item>
@@ -83,7 +72,7 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
-      <description>Find the project at: https://github.com/Nodragem/Model-SCtoVisualSpace</description>
+      <description>Toolset to estimate how the visual environment is transformed in the brain. Especially in the Superior Colliculus.</description>
     </item>
     
     <item>
@@ -92,7 +81,7 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
-      <description>Find the project at: https://github.com/Nodragem/Eyetracking-Analysis-tools</description>
+      <description>Toolset to extract and analyse eye movements from eye tracking recording.</description>
     </item>
     
     <item>
@@ -101,10 +90,7 @@ Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking t
       <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
-      <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space  Controls Click on the game to enable the keyboard inputs.
- LEFT and RIGHT to move SPACE to jump LEFT CONTROL to sprint  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
-Credits Made with:
- libGDX (Game Engine): https://libgdx.</description>
+      <description>John Space is a space traveller seeking adventures and galactic beers. Platformer prototype made with LibGDX. All assets made from scratch.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Research on NODRAGEM GAMES</title>
+    <title>research on NODRAGEM GAMES</title>
     <link>https://nodragem.github.io/Blog/project_type/research/</link>
-    <description>Recent content in Research on NODRAGEM GAMES</description>
+    <description>Recent content in research on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
-      <description>Find the project at: https://github.com/Nodragem/DynamicNeuralField-RateBased</description>
+      <description>Small Python Library to quickly run and test 1D Neural Fields with a population rate model. Can export video.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
-      <description>Find the project at: https://github.com/Nodragem/Model-SCtoVisualSpace</description>
+      <description>Toolset to estimate how the visual environment is transformed in the brain. Especially in the Superior Colliculus.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
-      <description>Find the project at: https://github.com/Nodragem/Eyetracking-Analysis-tools</description>
+      <description>Toolset to extract and analyse eye movements from eye tracking recording.</description>
     </item>
     
   </channel>

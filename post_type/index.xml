@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Post_type on NODRAGEM GAMES</title>
@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Gamedev</title>
+      <title>gamedev</title>
       <link>https://nodragem.github.io/Blog/post_type/gamedev/</link>
       <pubDate>Thu, 12 Dec 2019 21:27:08 +0100</pubDate>
       
@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Research</title>
+      <title>research</title>
       <link>https://nodragem.github.io/Blog/post_type/research/</link>
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
