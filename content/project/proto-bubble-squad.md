@@ -19,12 +19,12 @@ thumbnail = "bubble-troop_thumbnail.png"
 
 </iframe>
 
-{{% alert warning %}}
+{{< alert warning >}}
 Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.
-{{% /alert %}}
-{{% alert note %}}
+{{< /alert >}}
+{{< alert note >}}
 This is a multiplayer game, you can open two tabs to play it against yourselve.
-{{% /alert %}}
+{{< /alert >}}
 
 
 ## Controls

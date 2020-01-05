@@ -2,12 +2,19 @@
 {{ partial "navbar.html" . }}
 
 <article class="article" itemscope itemtype="http://schema.org/Article">
-
-  {{ if .Params.image }}
-  <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+  <hr>
+  {{ if .Params.header.image }}
+  <div class="article-header">
+    <img src="{{ "/img/" | relURL }}/{{ .Params.header.image }}" class="article-banner" itemprop="image">
+    {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+  </div>
   {{end}}
-
+  
+  {{ if (.Params.large) }}
+  <div class="article-container-large">
+  {{else}}
   <div class="article-container">
+  {{end}}
     <h1 itemprop="name">{{ .Title }}</h1>
     {{ partial "article_metadata" (dict "content" . "is_list" 0) }}
     <div class="article-style" itemprop="articleBody">
@@ -15,15 +22,15 @@
     </div>
   </div>
 
-</article>
-
-<div class="container">
+  
+<div class="article-pager"></div>
   {{ partial "section_pager.html" . }}
 </div>
 
-<div class="article-container">
+<div class="article-comment">
   {{ partial "comments.html" . }}
 </div>
+</article>
 
 {{ partial "footer_container.html" . }}
 {{ partial "footer.html" . }}

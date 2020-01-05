@@ -3,29 +3,34 @@
 
 <!-- About widget -->
 <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <div class="col-xs-12 col-md-4">
+  <div class="col-xs-12 col-md-12 section-heading">
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  <div class="col-xs-12 col-md-12">
     <div id="profile">
 
-      {{ with $.Site.Params.avatar }}
+      {{ with $page.Params.avatar }}
       <div class="portrait" itemprop="image"
            style="background-image: url('{{ "/img/" | relURL }}{{ . }}');">
       </div>
       {{ end }}
 
       <div class="portrait-title">
-        <h2 itemprop="name">{{ $.Site.Params.name }}</h2>
-        <h3 itemprop="jobTitle">{{ $.Site.Params.role }}</h3>
-        {{ if $.Site.Params.organization }}
+        <h2 itemprop="name">{{ $page.Params.name }}</h2>
+        <h3 itemprop="jobTitle">{{ $page.Params.role }}</h3>
+        {{ if $page.Params.organization }}
         <h3 itemprop="worksFor">
-          {{ with $.Site.Params.organization_url }}<a href="{{ . }}" target="_blank">{{ end }}
-          {{ $.Site.Params.organization }}
-          {{ if $.Site.Params.organization_url }}</a>{{ end }}
+          {{ with $page.Params.organization_url }}<a href="{{ . }}" target="_blank">{{ end }}
+          {{ $page.Params.organization }}
+          {{ if $page.Params.organization_url }}</a>{{ end }}
         </h3>
         {{ end }}
       </div>
 
+      {{ with $page.Params.params }}
       <ul class="social-icon" aria-hidden="true">
-        {{ range $.Site.Params.social }}
+        {{ range .social }}
         {{ $pack := or .icon_pack "fa" }}
         <li>
           <a href="{{ .link | safeURL }}" target="_blank">
@@ -34,13 +39,14 @@
         </li>
         {{ end }}
       </ul>
+      {{end}}
 
     </div>
   </div>
-  <div class="col-xs-12 col-md-8" itemprop="description">
-
+  <div class="col-xs-12 col-md-12" itemprop="description">
+    <div class="about-description">
     {{ $page.Content }}
-
+    </div>
     <div class="row">
 
       {{ with $page.Params.interests }}

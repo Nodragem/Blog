@@ -21,9 +21,9 @@ image_folder = "/gamedev/catchthecrown_release"
 - Linux, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip))
 - Mac OS, portable version ([zip-file](https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip))
 
-{{% alert note %}}
+{{< alert note >}}
 I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.
-{{% /alert %}}
+{{< /alert >}}
 
 ## Release Notes
 

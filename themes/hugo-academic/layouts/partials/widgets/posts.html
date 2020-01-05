@@ -3,36 +3,44 @@
 {{ $posts_len := len (where (where $.Site.RegularPages "Type" "post") ".Params.notonhomepage" nil) }}
 
 <!-- Blog Posts widget -->
+<div class="blog-list">
 <div class="row">
-  <div class="col-xs-12 col-md-4 section-heading">
+  <div class="col-xs-12 col-md-12 section-heading">
+      <img src="{{ "/img/" | relURL }}{{ $page.Params.logo }}" itemprop="image" class="home-section-logo">
+    <h1>
+      {{ with $page.Title }}{{ . | markdownify }}{{ end }}
+    </h1>
+      {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
 
-    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
-    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-    {{ if gt $posts_len $page.Params.count }}
-    <p class="view-all">
-      <a href="{{ "/post/" | relURL }}">
-        {{ i18n "more_posts" | markdownify }}
-        <i class="fa fa-angle-double-right"></i>
-      </a>
-    </p>
-    {{ end }}
 
+  
   </div>
-  <div class="col-xs-12 col-md-8">
 
+  </div class="row">
     {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
-    {{ if $page.Params.tags }}
-      {{ range first $page.Params.count (where (where (where $.Site.RegularPages "Type" "post") ".Params.tags" "intersect" $page.Params.tags) ".Params.notonhomepage" nil) }}
-        {{ $params := dict "post" . "page" $page }}
+    {{ if $page.Params.category }}
+      {{ range $i, $p := first $page.Params.count (where (where (where $.Site.RegularPages "Type" "post") ".Params.categories" "intersect" $page.Params.category) ".Params.notonhomepage" nil) }}
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
       {{ end }}
     {{ else }}
-      {{ range first $page.Params.count (where (where $.Site.RegularPages "Type" "post") ".Params.notonhomepage" nil) }}
-        {{ $params := dict "post" . "page" $page }}
+      {{ range $i, $p := first $page.Params.count (where (where $.Site.RegularPages "Type" "post") ".Params.notonhomepage" nil) }}
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        {{ $params := dict "post" $p "page" $page }}
         {{ partial "post_li" $params }}
+        </div>
       {{ end }}
     {{ end }}
-
   </div>
+  <a class="view-all" href="{{ $page.Params.see_more_link | relURL }}">
+      Show All
+      <i class="fa fa-plus-square"></i>
+    </a>
+
 </div>
+
+</div>
+
+

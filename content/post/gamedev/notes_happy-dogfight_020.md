@@ -13,9 +13,9 @@ image = "prabbit-aviator-banner.png"
 caption = ""
 +++
 
-{{% alert note %}}
+{{< alert note >}}
 Major Update!
-{{% /alert %}}
+{{< /alert >}}
 
 Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.
 
