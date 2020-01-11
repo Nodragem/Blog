@@ -560,6 +560,58 @@ article {
   /* background-color: #a3bac5; */
 }
 
+.side-note {
+  padding: 10px;
+  position: absolute;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transform: translateX(290%);
+  top: auto; /* default */
+  width: 300px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #467f99; /* Material LightBlue500 */
+  border-color: #bce8f1;
+  box-shadow: 3px 3px 3px #647183;
+}
+
+.side-note:hover {
+  z-index: 10;
+}
+
+.side-collapsible:before {
+  font-family: "FontAwesome";
+  font-weight: 900;
+  font-size: 1.2rem;
+  content: "\f06a";
+}
+
+.side-collapsible {
+  background-color:#2e6179;; 
+  color: white;
+  cursor: pointer;
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 0.8rem;
+}
+
+.side-collapsible:hover {
+  background-color:#63acce;; 
+}
+
+
+
+.side-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #467f99;;
+}
+
+
 .article-container {
   max-width: 900px;
   padding: 1rem 2.5rem 2.5rem 2.5rem;

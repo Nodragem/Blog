@@ -3,6 +3,26 @@
  *  https://github.com/gcushen/hugo-academic
  **************************************************/
 
+var coll = document.getElementsByClassName("side-collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    var content = this.nextElementSibling;
+    var previousState = content.style.display;
+
+    for (var j = 0; j < coll.length; j++) {
+        coll[j].nextElementSibling.style.display="none";
+    }
+    
+    if (previousState === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
 (function($){
 
   /* ---------------------------------------------------------------------------
