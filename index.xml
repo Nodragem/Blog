@@ -6,8 +6,107 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Thu, 12 Dec 2019 21:27:08 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 13:47:08 +0100</lastBuildDate>
     <atom:link href="https://nodragem.github.io/Blog/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building an AI for my game - Part 1: Breaking down the problem</title>
+      <link>https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/</link>
+      <pubDate>Sat, 11 Jan 2020 13:47:08 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/</guid>
+      <description>&lt;p&gt;I realised that my game needed a single player mode so that players can give it a try easily, or can play the game until they get some friends to come over (or to meet them online). So here we go, I am programming an AI for the prabbits; that I called the prab-bot!&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  
+NOTE: I have a Neuroscience background, but I am far from being an expert in AI!
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;transforming-inputs-into-meaningful-actions&#34;&gt;Transforming inputs into meaningful actions&lt;/h2&gt;
+&lt;p&gt;A brain, or an AI, is essentially an entity that transforms sensory information (i.e. inputs) into motor commands (i.e. outputs). To be intelligent, its sensory to motor transformation should be optimising relevant needs or goals (e.g. surviving, reproducing, etc).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Plot_Intro.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In research, there is a distinction between making a decision, selecting an action and controlling an action.&lt;/p&gt;
+&lt;p&gt;Here a real-life example: you feel thirst (sensory information) and decide you need to drink water as soon as possible (i.e. prioritisation of needs). The action selection comes afterwards: you could stand, take a glass and fill it with water, you could ask your partner to bring you water, or you could simply reach for the glass filled with water in front of you. 
+Once you decided that to reach for the glass is the best action to take comes the action control. Action control is how the goal (glass position in space) is transformed into contractions of your arm muscle so that your hand reaches it and grab it.&lt;/p&gt;
+&lt;p&gt;In some cases, as in deciding where to look at, the sensory information, decision making, action selection and action control are all really entangled and there might be several pathways in competitions; but for our game, we will keep thing simple.&lt;/p&gt;
+&lt;p&gt;In our game, we (as a brain designer) can confer the prab-bots multiple &lt;strong&gt;sensory inputs&lt;/strong&gt; and multiple &lt;strong&gt;motor commands&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Plot1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;side-note&#34;&gt;
+  &lt;button type=&#34;button&#34; class=&#34;side-collapsible&#34;&gt; Open Note&lt;/button&gt;
+  &lt;div class=&#34;side-content&#34;&gt;
+    
+We could probably make the prab-bots more human if you designed their sensors so that they cannot pay attention to all of them at the same time. For instance, a human will mainly look at one thing at a time on the screen; but let&#39;s keep thing simple for now.
+
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;To design an AI is about transforming the &lt;strong&gt;sensory inputs&lt;/strong&gt; into &lt;strong&gt;motor commands&lt;/strong&gt; so that the prab-bots achieve some goal; that we will call &lt;strong&gt;high-level goals&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;side-note&#34;&gt;
+  &lt;button type=&#34;button&#34; class=&#34;side-collapsible&#34;&gt; Open Note&lt;/button&gt;
+  &lt;div class=&#34;side-content&#34;&gt;
+    
+In Machine Learning, one could connect the **sensory inputs** to the input neurons of a deep neural network, and connect the output neurons to the **motor commands**. The *high-level goals* I am speaking about would be used to punish or reward the network during its training. We are not going to use machine learning though; we are going to design the AI ourselves.
+
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;To make decisions, you need &lt;strong&gt;high-level goals&lt;/strong&gt; to fulfill, which can be as simple as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;be the last plane flying
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Health must be kept always greater than 0&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Destroy other&#39;s plane&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/Plot2.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;side-note&#34;&gt;
+  &lt;button type=&#34;button&#34; class=&#34;side-collapsible&#34;&gt; Open Note&lt;/button&gt;
+  &lt;div class=&#34;side-content&#34;&gt;
+    
+To optimise the above needs may not &#34;mathematically&#34; lead you to win the competition; to win the competition you need to eliminate whoever is ahead with a bomb, so they lose their advantage. However, most &#34;human beginners&#34; will just focus on destroying other&#39;s planes.
+
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Based on the &lt;strong&gt;high-level goals&lt;/strong&gt; and on the &lt;em&gt;sensory inputs&lt;/em&gt;, we can design &lt;strong&gt;low-level needs&lt;/strong&gt; and &lt;em&gt;prioritisation rules&lt;/em&gt;. These &lt;strong&gt;low-level needs&lt;/strong&gt; are a step closer to actual actions, they can be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get more health&lt;/li&gt;
+&lt;li&gt;get more bullets&lt;/li&gt;
+&lt;li&gt;get more bomb&lt;/li&gt;
+&lt;li&gt;avoid something&lt;/li&gt;
+&lt;li&gt;try to attack someone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;strong&gt;high-level goals&lt;/strong&gt; will also define the sensitivity rules that link &lt;em&gt;sensory inputs&lt;/em&gt; and &lt;strong&gt;low-level needs&lt;/strong&gt;. For instance: a decrease of &lt;em&gt;&amp;ldquo;own health&amp;rdquo;&lt;/em&gt; will increase the need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Plot3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&amp;rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&#39;d need to consider that a human doesn&#39;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
+&lt;p&gt;Now that we have a target to reach, the final step is the &lt;strong&gt;action control&lt;/strong&gt;. This is about transforming the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the &lt;strong&gt;action controller&lt;/strong&gt; needs to use the &lt;strong&gt;sensory inputs&lt;/strong&gt; (e.g. the plane direction, the heart position) and &lt;strong&gt;motor commands&lt;/strong&gt; (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.&lt;/p&gt;
+&lt;p&gt;In summary, the low-level need &lt;em&gt;&amp;ldquo;get more life&amp;rdquo;&lt;/em&gt; will lead to the target selection &lt;em&gt;&amp;ldquo;selecting a heart&amp;rdquo;&lt;/em&gt; and then execute the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; using the motor commands &lt;em&gt;&amp;ldquo;rotate ACW/CW&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Plot5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Even if the above already sounds a bit complicated, it was in fact a simple case :) ! Indeed, some &lt;strong&gt;low-level needs&lt;/strong&gt; such as &lt;em&gt;get more bullets&lt;/em&gt; can lead to a series of simple actions and small decisions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;if&lt;/span&gt; (enough money):
+   execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullets&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#815ba4&#34;&gt;else&lt;/span&gt;:
+  &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;get more coins&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;:
+     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; target selection &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;selection of a coin&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;, 
+     &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; execute action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;go to target&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; 
+     &lt;span style=&#34;color:#f99b15&#34;&gt;3.&lt;/span&gt; repeat until enough coins
+  &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullet&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;:
+     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullets&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Furthermore, although the brain mostly executes one action at a time (multi-tasking is complicated), it can execute actions that account for multiple &lt;strong&gt;low-level needs&lt;/strong&gt; at the same time, or execute the current action in a way that prepares us to the second action. For instance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you can reach for a heart while avoiding a bomb: you are executing an action that optimises two constraints (an attractor and a repeller)&lt;/li&gt;
+&lt;li&gt;you can get to a heart while approaching it in a direction that aligns you with a coin, so that you ease  the execution of your next action (collecting coins)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, to add to the complexity, the environment may change (i.e. there is no heart anymore on the map) while you are executing your action. This will change the ranking of your &lt;strong&gt;low-level needs&lt;/strong&gt; and make the current action irrelevant.&lt;/p&gt;
+&lt;p&gt;I think this is it for our introduction to IA :) we had a really good think on how to model the decision making that transforms the sensory input of our prab-bots into actions that are relevant for a high-level goal (i.e. to win the round). The framework I try to put together may not be perfect but it is a good start in putting words on things and encapsulating our general AI problem into smaller parts. Our next tutorial will be on creating the action controllers. See you next time!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Release Notes: Happy Dogfight 0.2.0</title>
