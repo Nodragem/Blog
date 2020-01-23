@@ -3,5 +3,11 @@
 {{ $albumUrl := print "/static/img/" ($.Params.image_folder) }}
 {{ range readDir $albumUrl }}
     {{ $imgURL := print "img/" ($.Params.image_folder) "/" .Name | absURL }}
-    <p><img src="{{ $imgURL }}"/></p>
+    <a class="lightbox" href="#{{ .Name }}">
+        <img src="{{ $imgURL }}"/>
+    </a> 
+    <div class="lightbox-target" id="{{ .Name }}">
+        <img src="{{ $imgURL }}"/>
+        <a class="lightbox-close" href="#"></a>
+    </div>
 {{ end }}
