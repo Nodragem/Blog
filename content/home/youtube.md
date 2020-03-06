@@ -3,12 +3,12 @@
 
 date = "2016-04-20T00:00:00"
 draft = false
-title = "About"
-subtitle = "Currently, _Nodragem Games_ is a business run as a sole trader by:"
-widget = "landing"
+title = "Feature"
+subtitle = "Join the Playtesting of [<ins>Happy Dogfight on Discord</ins>](https://discord.gg/TCEKa4D) and get the FREE DEMO !"
+widget = "last_video"
 
 # Order that this section will appear in.
-weight = 1
+weight = 2
 
 # Who are you
 name = "Nodragem Games"
@@ -24,21 +24,6 @@ logo = "landing-blue.png"
   icon = "discord"
   icon_pack = "fab"
   link = "https://discord.gg/TCEKa4D"
-
-[[params.social]]
-  icon = "twitter"
-  icon_pack = "fab"
-  link = "//twitter.com/Nodragem"
-
-[[params.social]]
-  icon = "envelope"
-  icon_pack = "fa"
-  link = "mailto:geoffrey.megardon@outlook.com"
-
-[[params.social]]
-  icon = "github"
-  icon_pack = "fab"
-  link = "https://github.com/Nodragem"
 
 +++
 

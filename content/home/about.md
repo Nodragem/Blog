@@ -31,7 +31,7 @@ telegram = ""
 
 [[params.social]]
   icon = "twitter"
-  icon_pack = "fa"
+  icon_pack = "fab"
   link = "//twitter.com/Nodragem"
 
 [[params.social]]
@@ -41,7 +41,7 @@ telegram = ""
 
 [[params.social]]
   icon = "github"
-  icon_pack = "fa"
+  icon_pack = "fab"
   link = "https://github.com/Nodragem"
 
 # List your academic interests.

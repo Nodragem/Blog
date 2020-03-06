@@ -21,7 +21,7 @@
         {{ $pack := or .icon_pack "fa" }}
         <li>
           <a href="{{ .link | safeURL }}" target="_blank">
-            <i class="{{ $pack }} {{ $pack }}-{{ .icon }} big-icon"></i>
+            <i class="{{ $pack }} fa-{{ .icon }} fa-3x"></i>
           </a>
         </li>
         {{ end }}

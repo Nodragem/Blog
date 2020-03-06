@@ -1,0 +1,29 @@
+{{ $ := .root }}
+{{ $page := .page }}
+<!-- Blog Posts widget -->
+<div class="last_video">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 section-heading">
+          <div class="home-section-logo" > 
+              <i class="fab fa-youtube fa-3x"> </i> 
+          </div>
+          <h1>
+            {{ with $page.Title }}{{ . | markdownify }}{{ end }}
+          </h1>
+            {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}        
+        </div>
+    </div>
+    <div class="row">
+        <iframe width="100%" height="470px" src="https://www.youtube.com/embed/MQ2NcboYU4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="row">
+        <a class="view-all" href="https://www.youtube.com/channel/UCwNOb0bisGEMFwtPWBtEW-g">
+            More Videos
+            <i class="fa fa-plus-square"></i>
+        </a>
+      
+    </div>
+    
+</div>
+
+

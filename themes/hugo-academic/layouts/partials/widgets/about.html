@@ -4,6 +4,7 @@
 <!-- About widget -->
 <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <div class="col-xs-12 col-md-12 section-heading">
+    <div class="home-section-logo" > <i class="fa fa-user-friends fa-3x"> </i> </div>
     <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
     {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
   </div>
@@ -34,7 +35,11 @@
         {{ $pack := or .icon_pack "fa" }}
         <li>
           <a href="{{ .link | safeURL }}" target="_blank">
+            {{ if eq $pack "fab"}}
+              <i class="{{ $pack }} fa-{{ .icon }} big-icon"></i>
+            {{ else }}
             <i class="{{ $pack }} {{ $pack }}-{{ .icon }} big-icon"></i>
+            {{ end }}
           </a>
         </li>
         {{ end }}
