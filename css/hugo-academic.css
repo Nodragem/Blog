@@ -316,9 +316,10 @@ blockquote p:last-child {
 
 .home-section-logo {
   float: left;
-  margin-top:15px;
+  margin-top:5px;
   margin-right: 10px;
   margin-left: -15px;
+  color: #5FA7D1;
 }
 
 .section-heading p {
@@ -387,7 +388,6 @@ blockquote p:last-child {
 }
 
 #landing ul.social-icon {
-  
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -396,12 +396,16 @@ blockquote p:last-child {
   /* margin-top: 30px; */
   margin-top: auto;
   position: absolute;
-  bottom:1%;
-  right:45%;
+  bottom:-3%;
+  right:33.7%;
 }
 
-#landing .social-icon li {
+#landing .social-icon a {
+ /* padding: 5px;
+  border-radius: 5px; */ 
   margin-right: 10px;
+  color: #9A155D;
+  font-size: 0.9rem;
   
 }
 
@@ -411,6 +415,9 @@ blockquote p:last-child {
 
 #landing .social-icon li:hover {
   transform: scale(1.2);
+}
+#landing .social-icon a:hover {
+  color: rgb(194, 108, 154);
 }
 
 /*************************************************
