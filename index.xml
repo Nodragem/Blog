@@ -6,8 +6,102 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sat, 11 Jan 2020 13:47:08 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 10:50:01 +0100</lastBuildDate>
     <atom:link href="https://nodragem.github.io/Blog/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Baking PBR Materials to Textures from Blender to Unity</title>
+      <link>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</link>
+      <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</guid>
+      <description>&lt;h2 id=&#34;multiple-materials-to-baked-textures&#34;&gt;Multiple Materials to Baked Textures&lt;/h2&gt;
+&lt;p&gt;Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color  independently.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/4color.gif&#34; alt=&#34;4color&#34;&gt;&lt;/p&gt;
+&lt;p&gt;However, this method has its limitations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it is not optimal in terms of real-time rendering&lt;/li&gt;
+&lt;li&gt;I could not apply surface shaders VFX, like flame or electricity effects, on the plane.&lt;/li&gt;
+&lt;li&gt;the PBR parameters (e.g. color, roughness, metalness, emission) were not imported by Unity, I had to enter them manually&lt;/li&gt;
+&lt;li&gt;I could not use complex procedural materials in Blender (as I could not export them)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A better but more involved method is to unwrap the plane&amp;rsquo;s UV, and bake all the materials into PBR textures so that the plane only use one material.&lt;/p&gt;
+&lt;p&gt;This way I could benefit from:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;better performance using a unique material for the plane&lt;/li&gt;
+&lt;li&gt;an automatic import  of the PBR parameters (color, roughness, etc) as they are saved in a texture&lt;/li&gt;
+&lt;li&gt;surface shader VFX as the UV are unwrapped&lt;/li&gt;
+&lt;li&gt;I can work with multiple and procedural materials in Blender&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But for that to happen, I needed to find a way to bake the materials!&lt;/p&gt;
+&lt;p&gt;In this tutorial, I am covering that problem: how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the color of the plane when its color information is stored in a texture.&lt;/p&gt;
+&lt;h2 id=&#34;step-by-step-tutorial&#34;&gt;Step by Step Tutorial&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Get the Free and Open Source add-on of Daniel Enger.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Go to the Github repository at &lt;a href=&#34;https://github.com/danielenger/Principled-Baker:&#34;&gt;https://github.com/danielenger/Principled-Baker:&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200606152319418.png&#34; alt=&#34;image-20200606152319418&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download the repository as a zip-file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install the Add-on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In Blender, go in  &lt;code&gt;Edit &amp;gt; Preferences &amp;gt; Add-ons&lt;/code&gt;, click &lt;code&gt;Install...&lt;/code&gt;,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;find the zip file you just downloaded, click &lt;code&gt;Install Add-on&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find the Add-on:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200606154340911.png&#34; alt=&#34;image-20200606154340911&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the &lt;code&gt;Shading tab&lt;/code&gt;, hover the mouse over the Shader Editor, and press &lt;kbd&gt;N&lt;/kbd&gt; ,&lt;/li&gt;
+&lt;li&gt;Click on the tab &lt;code&gt;Principled Baker&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use the Add-on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select the object to baked&lt;img src=&#34;img/image-20200606154214947.png&#34; alt=&#34;image-20200606154214947&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deselect &lt;code&gt;Autodetect&lt;/code&gt;, tick &lt;code&gt;Color&lt;/code&gt;, &lt;code&gt;Metallic&lt;/code&gt; and &lt;code&gt;Roughness&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200606162743678.png&#34; alt=&#34;image-20200606162743678&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Additional Bake Types, tick &lt;code&gt;Glossiness&lt;/code&gt;, this is what Unity calls Smoothness (i.e. 1 - roughness)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scroll down and find &lt;code&gt;Combine Channel&lt;/code&gt;, and click &lt;code&gt;+&lt;/code&gt; (in Unity, the metal map includes the roughness map as alpha channel)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the Channels as follow:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200606163923937.png&#34; alt=&#34;image-20200606163923937&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scroll up and click bake!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the color texture as base map, the combined texture as metallic map.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200612122542943.png&#34; alt=&#34;image-20200612122542943&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You should get your object with the materials looking as they do in Blender.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/image-20200606185940453.png&#34; alt=&#34;image-20200606185940453&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;Now that the different colors of the plane are contained in a texture, it will be more complicated to change its color 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Building an AI for my game - Part 1: Breaking down the problem</title>
@@ -59,7 +153,7 @@ In Machine Learning, one could connect the **sensory inputs** to the input neuro
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Destroy other&#39;s plane&lt;/li&gt;
+&lt;li&gt;Destroy other&amp;rsquo;s plane&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -84,20 +178,20 @@ To optimise the above needs may not &#34;mathematically&#34; lead you to win the
 &lt;/ul&gt;
 &lt;p&gt;The &lt;strong&gt;high-level goals&lt;/strong&gt; will also define the sensitivity rules that link &lt;em&gt;sensory inputs&lt;/em&gt; and &lt;strong&gt;low-level needs&lt;/strong&gt;. For instance: a decrease of &lt;em&gt;&amp;ldquo;own health&amp;rdquo;&lt;/em&gt; will increase the need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/Plot3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&amp;rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&#39;d need to consider that a human doesn&#39;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
+&lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&amp;rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&amp;rsquo;d need to consider that a human doesn&amp;rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
 &lt;p&gt;Now that we have a target to reach, the final step is the &lt;strong&gt;action control&lt;/strong&gt;. This is about transforming the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the &lt;strong&gt;action controller&lt;/strong&gt; needs to use the &lt;strong&gt;sensory inputs&lt;/strong&gt; (e.g. the plane direction, the heart position) and &lt;strong&gt;motor commands&lt;/strong&gt; (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.&lt;/p&gt;
 &lt;p&gt;In summary, the low-level need &lt;em&gt;&amp;ldquo;get more life&amp;rdquo;&lt;/em&gt; will lead to the target selection &lt;em&gt;&amp;ldquo;selecting a heart&amp;rdquo;&lt;/em&gt; and then execute the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; using the motor commands &lt;em&gt;&amp;ldquo;rotate ACW/CW&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/Plot5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Even if the above already sounds a bit complicated, it was in fact a simple case :) ! Indeed, some &lt;strong&gt;low-level needs&lt;/strong&gt; such as &lt;em&gt;get more bullets&lt;/em&gt; can lead to a series of simple actions and small decisions:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;if&lt;/span&gt; (enough money):
-   execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullets&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
+   execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;buy bullets&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color:#815ba4&#34;&gt;else&lt;/span&gt;:
-  &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;get more coins&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;:
-     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; target selection &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;selection of a coin&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;, 
-     &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; execute action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;go to target&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; 
+  &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;get more coins&amp;#34;&lt;/span&gt;:
+     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; target selection &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;selection of a coin&amp;#34;&lt;/span&gt;, 
+     &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; execute action &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;go to target&amp;#34;&lt;/span&gt; 
      &lt;span style=&#34;color:#f99b15&#34;&gt;3.&lt;/span&gt; repeat until enough coins
-  &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullet&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;:
-     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;buy bullets&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#f99b15&#34;&gt;2.&lt;/span&gt; prioritise need &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;buy bullet&amp;#39;&lt;/span&gt;:
+     &lt;span style=&#34;color:#f99b15&#34;&gt;1.&lt;/span&gt; execute the action &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;buy bullets&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#776e71&#34;&gt;# which triggers the motor command &amp;#34;buy bullet&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Furthermore, although the brain mostly executes one action at a time (multi-tasking is complicated), it can execute actions that account for multiple &lt;strong&gt;low-level needs&lt;/strong&gt; at the same time, or execute the current action in a way that prepares us to the second action. For instance:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;you can reach for a heart while avoiding a bomb: you are executing an action that optimises two constraints (an attractor and a repeller)&lt;/li&gt;
@@ -122,7 +216,7 @@ Major Update!
 
 &lt;p&gt;Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.&lt;/p&gt;
 &lt;h2 id=&#34;a-new-level-and-a-newsletter&#34;&gt;A New Level and a Newsletter&lt;/h2&gt;
-&lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&#39;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
+&lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&amp;rsquo;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-level4-2.gif&#34; alt=&#34;demo-level4-2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It is inspired by ironworkers and the giant crane hook they use to raise beams of steel up to the sky. Watch for the iron ball as it will be deadly.
 I also designed an in-game form for players to join the newsletter. 
@@ -138,10 +232,10 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;p&gt;Finally the controls have changed a bit, it is now left to turn the plane anti-clockwise and right to turn the plane clockwise. The player can now control the speed of the plane with the vertical axis of the second thumbstick.&lt;/p&gt;
 &lt;h2 id=&#34;new-local-multiplayer&#34;&gt;New Local Multiplayer&lt;/h2&gt;
 &lt;p&gt;You can play locally without being connected to the internet! Sounds quite normal, but before this release the game needed to connect to internet :) !&lt;/p&gt;
-&lt;p&gt;Although that&#39;s not a new feature, note that you can play at two on the same keyboard!&lt;/p&gt;
+&lt;p&gt;Although that&amp;rsquo;s not a new feature, note that you can play at two on the same keyboard!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/image-20191208193326587.png&#34; alt=&#34;image-20191208193326587&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;updated-online-multiplayer&#34;&gt;Updated Online Multiplayer&lt;/h2&gt;
-&lt;p&gt;The online multiplayer is now much closer to what exists elsewhere, with a lobby and rooms. It is still &lt;strong&gt;experimental&lt;/strong&gt;; as I am using a free server for this free demo, &lt;em&gt;&lt;strong&gt;only 20 concurrent clients can play at the same time&lt;/strong&gt;&lt;/em&gt;. Here what&#39;s new:&lt;/p&gt;
+&lt;p&gt;The online multiplayer is now much closer to what exists elsewhere, with a lobby and rooms. It is still &lt;strong&gt;experimental&lt;/strong&gt;; as I am using a free server for this free demo, &lt;em&gt;&lt;strong&gt;only 20 concurrent clients can play at the same time&lt;/strong&gt;&lt;/em&gt;. Here what&amp;rsquo;s new:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;new Lobby and Rooms system&lt;/p&gt;
@@ -212,7 +306,7 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;/ul&gt;
 &lt;p&gt;Or directly from here:&lt;/p&gt;
 &lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
-&lt;p&gt;Don&#39;t hesitate to leave your feedback!&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t hesitate to leave your feedback!&lt;/p&gt;
 </description>
     </item>
     
@@ -228,7 +322,7 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
 &lt;p&gt;You can find the detail of the last updates here:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34;&gt;What&#39;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34;&gt;What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.&lt;/p&gt;
@@ -242,7 +336,7 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;p&gt;win 5 rounds to win a tournament&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;be killed by a bomb and you won&#39;t play the next round&lt;/p&gt;
+&lt;p&gt;be killed by a bomb and you won&amp;rsquo;t play the next round&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;collect coins to buy more bullets and bombs&lt;/p&gt;
@@ -347,7 +441,7 @@ This is a multiplayer game, you can open two tabs to play it against yourselve.
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/</guid>
       <description>&lt;h2 id=&#34;debugging-multiplayer-games-locally&#34;&gt;Debugging multiplayer games locally&lt;/h2&gt;
-&lt;p&gt;These days, I&#39;m playing around with making online multiplayer prototype games.&lt;/p&gt;
+&lt;p&gt;These days, I&amp;rsquo;m playing around with making online multiplayer prototype games.&lt;/p&gt;
 &lt;p&gt;Most of the time, when we debug our video games for online multiplayer, we run a local server on &lt;code&gt;localhost&lt;/code&gt;. This server acts as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a file server - sending the game files to the client,&lt;/li&gt;
@@ -370,7 +464,7 @@ This is a multiplayer game, you can open two tabs to play it against yourselve.
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/clumsy.png&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;What&#39;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, &lt;code&gt;clumsy&lt;/code&gt; sits next to a file &lt;code&gt;config.txt&lt;/code&gt; where you can specify exactly which part of the network you want to disrupt.&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, &lt;code&gt;clumsy&lt;/code&gt; sits next to a file &lt;code&gt;config.txt&lt;/code&gt; where you can specify exactly which part of the network you want to disrupt.&lt;/p&gt;
 &lt;p&gt;For instance, if I host my server on &lt;code&gt;localhost:5000&lt;/code&gt;, I can make a configuration that disrupt the access to &lt;code&gt;localhost:5000&lt;/code&gt;. To do so, I added the following in &lt;code&gt;config.txt&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;HTML5 games: outbound and tcp.DstPort == 5000
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After that, when you open Clumsy, you will be able to select the configuration &lt;code&gt;HTML5 games&lt;/code&gt; from the droplist menu.&lt;/p&gt;
@@ -388,7 +482,7 @@ This is a multiplayer game, you can open two tabs to play it against yourselve.
 &lt;li&gt;The server transmits the position to Client 2&lt;/li&gt;
 &lt;li&gt;Client 2 (on the bottom) applies the position&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;lsquo;s ok for our example.&lt;/p&gt;
+&lt;p&gt;Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &amp;rsquo;s ok for our example.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif&#34;/&gt; 
 &lt;/figure&gt;
@@ -549,7 +643,7 @@ Known mapping can be found &lt;a href=&#34;https://github.com/libgdx/libgdx/tree
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/research/analyse_extracted_data/</guid>
-      <description>&lt;h2 id=&#34;when-weve-only-got-a-picture-to-create-a-model&#34;&gt;When we&#39;ve only got a picture to create a model&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;when-weve-only-got-a-picture-to-create-a-model&#34;&gt;When we&amp;rsquo;ve only got a picture to create a model&lt;/h2&gt;
 &lt;p&gt;Recently, I wanted to generate realistic
 durations of fast eye movements (saccades) in a stochastic manner.&lt;/p&gt;
 &lt;p&gt;Few articles plot what we call &amp;ldquo;the main sequence&amp;rdquo; which describes the saccade
@@ -562,7 +656,7 @@ Microsaccades counteract perceptual filling-in. Journal of Vision,
 &lt;p&gt;There are 3 main problems though:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;we don&#39;t have access to the original data used to generate this plot,&lt;/p&gt;
+&lt;p&gt;we don&amp;rsquo;t have access to the original data used to generate this plot,&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;there is many data points and the picture quality is quite poor,&lt;/p&gt;
@@ -576,7 +670,7 @@ estimation of the regression line.&lt;/p&gt;
 &lt;h2 id=&#34;using-a-data-extractor&#34;&gt;Using a Data Extractor&lt;/h2&gt;
 &lt;p&gt;WebPlotDigitizer (&lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/&#34;&gt;here&lt;/a&gt;) is a
 data extractor that, among other things, allows us to calibrate the axis
-of the figure to extract in logspace. I tried it on Troncoso et al.&amp;lsquo;s
+of the figure to extract in logspace. I tried it on Troncoso et al.&amp;rsquo;s
 figure, without real hope of obtaining something decent because of the
 jped compression (my real hope was to manually draw a regression line in
 that jpeg fog).&lt;/p&gt;
@@ -586,8 +680,8 @@ that jpeg fog).&lt;/p&gt;
 Here is what I obtained with the automatic extraction! Let see how this
 looks like once exported in CSV and plotted in R.&lt;/p&gt;
 &lt;p&gt;We show the first lines of the file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;df1 &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;read.csv&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;extraction1.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;FALSE&lt;/span&gt;) 
-&lt;span style=&#34;color:#06b6ef&#34;&gt;setnames&lt;/span&gt;(df1, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;amplitude&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;duration&amp;#39;&lt;/span&gt;))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;df1 &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;read.csv&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;extraction1.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;FALSE&lt;/span&gt;) 
+&lt;span style=&#34;color:#06b6ef&#34;&gt;setnames&lt;/span&gt;(df1, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;duration&amp;#39;&lt;/span&gt;))
 &lt;span style=&#34;color:#06b6ef&#34;&gt;head&lt;/span&gt;(df1, &lt;span style=&#34;color:#f99b15&#34;&gt;5&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##    amplitude duration
 ## 1 0.07355096 6.124430
@@ -602,7 +696,7 @@ looks like once exported in CSV and plotted in R.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We plot the data:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;), ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;),
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt; , log&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;xy&amp;#34;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; , log&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;xy&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;That looks quite impressive for a data extraction made on a blurry jpeg!&lt;/p&gt;
 &lt;p&gt;WebPlotDigitizer is not extracting &amp;ldquo;real&amp;rdquo; data points (which are almost
@@ -617,20 +711,20 @@ compute these regression lines and make a saccade duration generator.&lt;/p&gt;
 df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;log&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude)
 log.model &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;lm&lt;/span&gt;( log_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;~&lt;/span&gt; log_amplitude, data&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;df1)
 new &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;data.frame&lt;/span&gt;(log_amplitude &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;seq&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;min&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;max&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;))
-y_values &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;predict&lt;/span&gt;(log.model, new, interval&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;predict&amp;#34;&lt;/span&gt;)
+y_values &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;predict&lt;/span&gt;(log.model, new, interval&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;predict&amp;#34;&lt;/span&gt;)
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_duration,
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;], lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the linear space, we get this pretty curve and increasing standard
 deviation.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;extract-the-equations&#34;&gt;Extract the equations&lt;/h2&gt;
 &lt;p&gt;To be able to generate data from the regression, we must extract the
@@ -651,8 +745,8 @@ reg_eq &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; a
 y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;x &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; b
 
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_duration,
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(x, y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(x, y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Let pass the regression line in linear space. We got:&lt;/p&gt;
 &lt;p&gt;$$
@@ -673,8 +767,8 @@ $$&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;cart_x &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;seq&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;min&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;max&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude), &lt;span style=&#34;color:#f99b15&#34;&gt;0.01&lt;/span&gt;)
 cart_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (cart_x^a) &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(b)
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Yeah! we got it. Now let us extract the equation for the standard
 deviation.&lt;/p&gt;
@@ -690,24 +784,24 @@ sd_change &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span styl
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;-1&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt; ), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Unfortunately, to find the change in variance in the cartesian space is
-not as simple as taking the exponential of the logspace&#39;s variance.&lt;/p&gt;
+not as simple as taking the exponential of the logspace&amp;rsquo;s variance.&lt;/p&gt;
 &lt;p&gt;First, let us compute the standard deviation and its trends in the
 cartesian space.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#776e71&#34;&gt;# remember that:&lt;/span&gt;
-&lt;span style=&#34;color:#776e71&#34;&gt;# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)&lt;/span&gt;
-&lt;span style=&#34;color:#776e71&#34;&gt;# cart_y = (cart_x^a) * exp(b)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#776e71&#34;&gt;# remember that:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# cart_y = (cart_x^a) * exp(b)&lt;/span&gt;
 
 cart_sd &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;abs&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; (df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude^a)&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(b))
 
 &lt;span style=&#34;color:#06b6ef&#34;&gt;par&lt;/span&gt;(mfrow&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;))
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, cart_sd, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
 
-&lt;span style=&#34;color:#776e71&#34;&gt;# moving windows that take the median of the duration&amp;#39;s sd over saccade amplitude&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# moving windows that take the median of the duration&amp;#39;s sd over saccade amplitude&lt;/span&gt;
 sd_change &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;rollapply&lt;/span&gt;(cart_sd, width &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;200&lt;/span&gt;, FUN &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; median, fill &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;NA&lt;/span&gt;)
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
 df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;sd_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; sd_change
 
-&lt;span style=&#34;color:#776e71&#34;&gt;# regression of the duration sd over amplitude&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# regression of the duration sd over amplitude&lt;/span&gt;
 var.model &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;lm&lt;/span&gt;(sd_duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;~&lt;/span&gt; amplitude, data &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; df1)
 curve_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;predict&lt;/span&gt;(var.model, &lt;span style=&#34;color:#06b6ef&#34;&gt;data.frame&lt;/span&gt;(amplitude&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;cart_x) )
 &lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, curve_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
@@ -732,8 +826,8 @@ var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;sd_eb &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[1]]
 sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; var.model&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;coefficients[[2]]
 
-&lt;span style=&#34;color:#776e71&#34;&gt;# we do the prediction ourselve:&lt;/span&gt;
-&lt;span style=&#34;color:#776e71&#34;&gt;# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# we do the prediction ourselve:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;# we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:&lt;/span&gt;
 curve_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; (sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; sd_eb) &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; sd_ea&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;cart_x)
 
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, sd_change, xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;))
@@ -747,26 +841,26 @@ model was showing a 95% prediction interval (in red), which depends on
 the SD that we formulated (in green and purple), but it is not expected
 to be equal to it.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration,
-     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;.&amp;#39;&lt;/span&gt;)
+     main&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;df1&amp;#39;&lt;/span&gt;, pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
 
-&lt;span style=&#34;color:#776e71&#34;&gt;## regression fit:&lt;/span&gt;
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#776e71&#34;&gt;## regression fit:&lt;/span&gt;
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(new&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;log_amplitude), &lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(y_values[,&lt;span style=&#34;color:#f99b15&#34;&gt;3&lt;/span&gt;]), lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;)
 
-&lt;span style=&#34;color:#776e71&#34;&gt;## our equations:&lt;/span&gt;
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#776e71&#34;&gt;## our equations:&lt;/span&gt;
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
 
-&lt;span style=&#34;color:#776e71&#34;&gt;## linear sd&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;## linear sd&lt;/span&gt;
 sd_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;0.55&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;3.54&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt; cart_x
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
 
-&lt;span style=&#34;color:#776e71&#34;&gt;## assymtotic sd:&lt;/span&gt;
+&lt;span style=&#34;color:#776e71&#34;&gt;## assymtotic sd:&lt;/span&gt;
 sd_y &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; (sd_ea &lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt; sd_eb) &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt; sd_ea&lt;span style=&#34;color:#5bc4bf&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;exp&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;cart_x)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;bottomright&amp;#39;&lt;/span&gt;, legend&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;regresssion&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;linear SD equation&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;assymptotic SD equation&amp;#39;&lt;/span&gt;),lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;red&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;green&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;purple&amp;#39;&lt;/span&gt;))
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;+&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;lines&lt;/span&gt;(cart_x, cart_y&lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;sd_y, lwd&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;purple&amp;#39;&lt;/span&gt;, lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;2&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;bottomright&amp;#39;&lt;/span&gt;, legend&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;regresssion&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;linear SD equation&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;assymptotic SD equation&amp;#39;&lt;/span&gt;),lty&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;, col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;purple&amp;#39;&lt;/span&gt;))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It seems that the assymptotic equation of SD do a better job than the
 linear equation. Furthermore, it is a wished property that the SD does
@@ -801,10 +895,10 @@ gen.duration &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;-&lt;/span&gt; &l
 red_col &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;rgb&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;100&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;100&lt;/span&gt;,&lt;span style=&#34;color:#f99b15&#34;&gt;50&lt;/span&gt;,maxColorValue&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;255&lt;/span&gt;)
 &lt;span style=&#34;color:#06b6ef&#34;&gt;plot&lt;/span&gt;(df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;amplitude, df1&lt;span style=&#34;color:#5bc4bf&#34;&gt;$&lt;/span&gt;duration, ylim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1.2&lt;/span&gt;))
 &lt;span style=&#34;color:#06b6ef&#34;&gt;points&lt;/span&gt;(amp_space, gen.duration, ylim &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;30&lt;/span&gt;), xlim&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f99b15&#34;&gt;1.2&lt;/span&gt;), col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;red_col)
-&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;bottomright&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;extracted data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;model&amp;#39;&lt;/span&gt;), col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;black&amp;#39;&lt;/span&gt;, red_col), pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;)
+&lt;span style=&#34;color:#06b6ef&#34;&gt;legend&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;bottomright&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;extracted data&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;model&amp;#39;&lt;/span&gt;), col&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;, red_col), pch&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.&lt;/p&gt;
-&lt;p&gt;We&#39;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
+&lt;p&gt;We&amp;rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
 predict saccade durations for amplitudes that Troncoso et al.
 did not mesure.&lt;/p&gt;
 &lt;p&gt;Hope this post was helpful, and see you soon!&lt;/p&gt;
@@ -818,7 +912,7 @@ did not mesure.&lt;/p&gt;
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</guid>
       <description>&lt;h2 id=&#34;release-and-then-move-on-&#34;&gt;Release and then move on &amp;hellip;&lt;/h2&gt;
-&lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&#39;s the right time to finalize and ship my first video game.&lt;/p&gt;
+&lt;p&gt;Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif&#34;
          alt=&#34;How it feels like to ship a game!&#34;/&gt; &lt;figcaption&gt;
@@ -844,7 +938,7 @@ You can download it here:&lt;/p&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;the-gameplay&#34;&gt;The Gameplay&lt;/h2&gt;
-&lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&#39;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
+&lt;p&gt;The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&amp;rsquo;s gold chest while the other part goes in the Crown itself.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/timer.gif&#34; width=&#34;100%&#34;/&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/catch_crown.gif&#34; width=&#34;100%&#34;/&gt;
@@ -857,8 +951,8 @@ You can download it here:&lt;/p&gt;
 &lt;p&gt;The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif&#34;
-         alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;#39;s why Red is not moving :P&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;Spear, Slap, Trap Combo! I was alone recording, that&#39;s why Red is not moving :P&lt;/p&gt;
+         alt=&#34;Spear, Slap, Trap Combo! I was alone recording, that&amp;amp;rsquo;s why Red is not moving :P&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Spear, Slap, Trap Combo! I was alone recording, that&amp;rsquo;s why Red is not moving :P&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 

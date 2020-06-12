@@ -35,11 +35,11 @@
   <link rel="icon" type="image/png" href="/Blog/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/Blog/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/">
+  <link rel="canonical" href="https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/">
 
   
 
-  <title>Game Release: Catch the Crow | NODRAGEM GAMES</title>
+  <title>Baking PBR Materials to Textures from Blender to Unity | NODRAGEM GAMES</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -112,22 +112,22 @@
   <hr>
   
   <div class="article-header">
-    <img src="/Blog/img//catchthecrown_release_banner.png" class="article-banner" itemprop="image">
-    <span class="article-header-caption">Catch The Crown&rsquo;s Splash Screen</span>
+    <img src="/Blog/img//thumbnails/pbr_blender_to_unity.png" class="article-banner" itemprop="image">
+    
   </div>
   
   
   
   <div class="article-container">
   
-    <h1 itemprop="name">Game Release: Catch the Crow</h1>
+    <h1 itemprop="name">Baking PBR Materials to Textures from Blender to Unity</h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-04-14 12:43:08 &#43;0100 BST" itemprop="datePublished">
-      Fri, Apr 14, 2017
+    <time datetime="2020-06-12 10:50:01 &#43;0100 BST" itemprop="datePublished">
+      Fri, Jun 12, 2020
     </time>
   </span>
 
@@ -141,35 +141,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fcatchthecrown_release%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fpbr_blender_to_unity%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Game%20Release%3a%20Catch%20the%20Crow&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fcatchthecrown_release%2f"
+         href="https://twitter.com/intent/tweet?text=Baking%20PBR%20Materials%20to%20Textures%20from%20Blender%20to%20Unity&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fpbr_blender_to_unity%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fcatchthecrown_release%2f&amp;title=Game%20Release%3a%20Catch%20the%20Crow"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fpbr_blender_to_unity%2f&amp;title=Baking%20PBR%20Materials%20to%20Textures%20from%20Blender%20to%20Unity"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fcatchthecrown_release%2f&amp;title=Game%20Release%3a%20Catch%20the%20Crow"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fpbr_blender_to_unity%2f&amp;title=Baking%20PBR%20Materials%20to%20Textures%20from%20Blender%20to%20Unity"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Game%20Release%3a%20Catch%20the%20Crow&amp;body=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fcatchthecrown_release%2f">
+         href="mailto:?subject=Baking%20PBR%20Materials%20to%20Textures%20from%20Blender%20to%20Unity&amp;body=https%3a%2f%2fnodragem.github.io%2fBlog%2fpost%2fgamedev%2fpbr_blender_to_unity%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -182,55 +182,91 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <h2 id="release-and-then-move-on-">Release and then move on &hellip;</h2>
-<p>Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&rsquo;s the right time to finalize and ship my first video game.</p>
-<figure>
-    <img src="/Blog/img/gamedev/catchthecrown_release/prabbit_winning_lowres.gif"
-         alt="How it feels like to ship a game!"/> <figcaption>
-            <p>How it feels like to ship a game!</p>
-        </figcaption>
-</figure>
-
-<p>Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!). 
-You can download it here:</p>
+      <h2 id="multiple-materials-to-baked-textures">Multiple Materials to Baked Textures</h2>
+<p>Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color  independently.</p>
+<p><img src="img/4color.gif" alt="4color"></p>
+<p>However, this method has its limitations:</p>
 <ul>
-<li>Windows, portable version (<a href="https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_win32.zip">zip-file</a>)</li>
-<li>Linux, portable version (<a href="https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_linux32.zip">zip-file</a>)</li>
-<li>Mac OS, portable version (<a href="https://github.com/Nodragem/Catch-the-Crown/releases/download/v0.9-alpha/catchthecrown_mac.zip">zip-file</a>)</li>
+<li>it is not optimal in terms of real-time rendering</li>
+<li>I could not apply surface shaders VFX, like flame or electricity effects, on the plane.</li>
+<li>the PBR parameters (e.g. color, roughness, metalness, emission) were not imported by Unity, I had to enter them manually</li>
+<li>I could not use complex procedural materials in Blender (as I could not export them)</li>
 </ul>
-<p>Please find more details about customization on the <a href="/Blog/project/catchthecrown/">Project Page</a>.</p>
-<h2 id="the-story">The Story</h2>
-<p>I made up most of the story and gameplay with one of my best friends on a 7 hours road trip to Edinburgh :). The basic idea is that in the tribe of the Prabbits - half parrot/half rabbit creatures - four teenagers are undertaking their &ldquo;Coming-of-Age&rdquo; ritual.</p>
-<figure>
-    <img src="/Blog/img/gamedev/catchthecrown_release/doing_nothing.gif"
-         alt="Three teenager Prabbits chilling out before the Coming-of-Age ritual&amp;hellip;"/> <figcaption>
-            <p>Three teenager Prabbits chilling out before the Coming-of-Age ritual&hellip;</p>
-        </figcaption>
-</figure>
-
-<h2 id="the-gameplay">The Gameplay</h2>
-<p>The Prabbits are spawned on a map where there is one Crown while a timer is running. Once the Crown is picked up by a Prabbit, coins, diamonds, and rubies appear across the level. Only the Prabbit with the Crown can collect them. When collected part of the money goes to the Prabbit&rsquo;s gold chest while the other part goes in the Crown itself.</p>
-<figure>
-    <img src="/Blog/img/gamedev/catchthecrown_release/timer.gif" width="100%"/>
-    <img src="/Blog/img/gamedev/catchthecrown_release/catch_crown.gif" width="100%"/>
-    <figcaption>
-        Only the Prabbit with the Crown can collect treasures
-    </figcaption>
-</figure>
-<p>A competition starts between Prabbits as everyone wants to catch the Crown and be able to collect gold. When the timer ends, it is the richer Prabbit that wins the turn; players need to win 3 turns to win the tournament and be declared King of the Tournament (see Screenshot1).</p>
-<h2 id="the-character-actions">The Character Actions</h2>
-<p>The Prabbits have several ways to hurt each other. They can throw lances, slap each other, pick up another Prabbit and make a lethal throw. To slap someone increases their fatigue (fatigue marks on his head), which will increase the respawning time the next time they die. Time is precious - the longer a player is waiting to respawn, the less they can collect gold or change the outcome of the game.</p>
-<figure>
-    <img src="/Blog/img/gamedev/catchthecrown_release/spear_and_slap.gif"
-         alt="Spear, Slap, Trap Combo! I was alone recording, that&amp;rsquo;s why Red is not moving :P"/> <figcaption>
-            <p>Spear, Slap, Trap Combo! I was alone recording, that&rsquo;s why Red is not moving :P</p>
-        </figcaption>
-</figure>
-
-<h2 id="what-was-not-implemented">What was not implemented</h2>
-<p>Originally, Catch The Crown was thought to be a cooperative and competitive 2D platform game. A Shaman would have explained the competition rules to the teenager Prabbits. During a round, the players would have a common gold chest in addition to their own. The next level would be unlocked only if the common chest reaches a certain amount of Gold (you can still see this chest in the GUI).</p>
-<p>The levels would have been designed to force cooperative behavior to get more common Gold. Furthermore, the Shaman would summon creatures against which the Prabbits need to fight in cooperation. Thus, to win a tournament would encourage a competitive gameplay, while to unlock a new level would encourage a cooperative gameplay.</p>
-<p>Maybe later I will do a sequel where I will implement more of the stuff I wanted originally. In any case, I will probably come back with new levels for this version of the game. Hope you enjoy the game!</p>
+<p>A better but more involved method is to unwrap the plane&rsquo;s UV, and bake all the materials into PBR textures so that the plane only use one material.</p>
+<p>This way I could benefit from:</p>
+<ul>
+<li>better performance using a unique material for the plane</li>
+<li>an automatic import  of the PBR parameters (color, roughness, etc) as they are saved in a texture</li>
+<li>surface shader VFX as the UV are unwrapped</li>
+<li>I can work with multiple and procedural materials in Blender</li>
+</ul>
+<p>But for that to happen, I needed to find a way to bake the materials!</p>
+<p>In this tutorial, I am covering that problem: how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the color of the plane when its color information is stored in a texture.</p>
+<h2 id="step-by-step-tutorial">Step by Step Tutorial</h2>
+<ol>
+<li>
+<p>Get the Free and Open Source add-on of Daniel Enger.</p>
+<ul>
+<li>
+<p>Go to the Github repository at <a href="https://github.com/danielenger/Principled-Baker:">https://github.com/danielenger/Principled-Baker:</a></p>
+<p><img src="img/image-20200606152319418.png" alt="image-20200606152319418"></p>
+</li>
+<li>
+<p>Download the repository as a zip-file.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Install the Add-on:</p>
+<ul>
+<li>
+<p>In Blender, go in  <code>Edit &gt; Preferences &gt; Add-ons</code>, click <code>Install...</code>,</p>
+</li>
+<li>
+<p>find the zip file you just downloaded, click <code>Install Add-on</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Find the Add-on:</p>
+<p><img src="img/image-20200606154340911.png" alt="image-20200606154340911"></p>
+<ul>
+<li>Go to the <code>Shading tab</code>, hover the mouse over the Shader Editor, and press <kbd>N</kbd> ,</li>
+<li>Click on the tab <code>Principled Baker</code></li>
+</ul>
+</li>
+<li>
+<p>Use the Add-on:</p>
+<ul>
+<li>
+<p>Select the object to baked<img src="img/image-20200606154214947.png" alt="image-20200606154214947"></p>
+</li>
+<li>
+<p>Deselect <code>Autodetect</code>, tick <code>Color</code>, <code>Metallic</code> and <code>Roughness</code>.</p>
+<p><img src="img/image-20200606162743678.png" alt="image-20200606162743678"></p>
+</li>
+<li>
+<p>In Additional Bake Types, tick <code>Glossiness</code>, this is what Unity calls Smoothness (i.e. 1 - roughness)</p>
+</li>
+<li>
+<p>Scroll down and find <code>Combine Channel</code>, and click <code>+</code> (in Unity, the metal map includes the roughness map as alpha channel)</p>
+</li>
+<li>
+<p>Set the Channels as follow:</p>
+<p><img src="img/image-20200606163923937.png" alt="image-20200606163923937"></p>
+</li>
+<li>
+<p>Scroll up and click bake!</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the color texture as base map, the combined texture as metallic map.</p>
+<p><img src="img/image-20200612122542943.png" alt="image-20200612122542943"></p>
+<p>You should get your object with the materials looking as they do in Blender.</p>
+<p><img src="img/image-20200606185940453.png" alt="image-20200606185940453"></p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that the different colors of the plane are contained in a texture, it will be more complicated to change its color 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!</p>
 
     </div>
   </div>
@@ -243,10 +279,10 @@ You can download it here:</p>
   <nav>
     <ul >
       
-
+      <li class="previous"><a href="https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/"><span
+        aria-hidden="true">&larr;</span> Building an AI for my game - Part 1: Breaking down the problem</a></li>
       
-      <li class="next"><a href="https://nodragem.github.io/Blog/post/research/analyse_extracted_data/">Data extraction with WebPlotDigitizer <span
-        aria-hidden="true">&rarr;</span></a></li>
+
       
     </ul>
   </nav>

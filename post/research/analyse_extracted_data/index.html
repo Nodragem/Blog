@@ -8,7 +8,7 @@
   <meta name="theme" content="hugo-academic">
   <script src="https://kit.fontawesome.com/113a503557.js" crossorigin="anonymous"></script>
   
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.72.0" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -177,7 +177,7 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <h2 id="when-weve-only-got-a-picture-to-create-a-model">When we've only got a picture to create a model</h2>
+      <h2 id="when-weve-only-got-a-picture-to-create-a-model">When we&rsquo;ve only got a picture to create a model</h2>
 <p>Recently, I wanted to generate realistic
 durations of fast eye movements (saccades) in a stochastic manner.</p>
 <p>Few articles plot what we call &ldquo;the main sequence&rdquo; which describes the saccade
@@ -190,7 +190,7 @@ Microsaccades counteract perceptual filling-in. Journal of Vision,
 <p>There are 3 main problems though:</p>
 <ol>
 <li>
-<p>we don't have access to the original data used to generate this plot,</p>
+<p>we don&rsquo;t have access to the original data used to generate this plot,</p>
 </li>
 <li>
 <p>there is many data points and the picture quality is quite poor,</p>
@@ -204,7 +204,7 @@ estimation of the regression line.</p>
 <h2 id="using-a-data-extractor">Using a Data Extractor</h2>
 <p>WebPlotDigitizer (<a href="http://arohatgi.info/WebPlotDigitizer/">here</a>) is a
 data extractor that, among other things, allows us to calibrate the axis
-of the figure to extract in logspace. I tried it on Troncoso et al.&lsquo;s
+of the figure to extract in logspace. I tried it on Troncoso et al.&rsquo;s
 figure, without real hope of obtaining something decent because of the
 jped compression (my real hope was to manually draw a regression line in
 that jpeg fog).</p>
@@ -214,8 +214,8 @@ that jpeg fog).</p>
 Here is what I obtained with the automatic extraction! Let see how this
 looks like once exported in CSV and plotted in R.</p>
 <p>We show the first lines of the file:</p>
-<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1 <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">read.csv</span>(<span style="color:#48b685">&#34;</span><span style="color:#48b685">extraction1.csv&#34;</span>, header <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">FALSE</span>) 
-<span style="color:#06b6ef">setnames</span>(df1, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">amplitude&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">duration&#39;</span>))
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1 <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">read.csv</span>(<span style="color:#48b685">&#34;extraction1.csv&#34;</span>, header <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">FALSE</span>) 
+<span style="color:#06b6ef">setnames</span>(df1, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;amplitude&#39;</span>, <span style="color:#48b685">&#39;duration&#39;</span>))
 <span style="color:#06b6ef">head</span>(df1, <span style="color:#f99b15">5</span>)
 </code></pre></div><pre><code>##    amplitude duration
 ## 1 0.07355096 6.124430
@@ -230,7 +230,7 @@ looks like once exported in CSV and plotted in R.</p>
 </code></pre>
 <p>We plot the data:</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0.01</span>, <span style="color:#f99b15">2</span>), ylim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>, <span style="color:#f99b15">30</span>),
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span> , log<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;</span><span style="color:#48b685">xy&#34;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span> , log<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;xy&#34;</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png" alt=""></p>
 <p>That looks quite impressive for a data extraction made on a blurry jpeg!</p>
 <p>WebPlotDigitizer is not extracting &ldquo;real&rdquo; data points (which are almost
@@ -245,20 +245,20 @@ compute these regression lines and make a saccade duration generator.</p>
 df1<span style="color:#5bc4bf">$</span>log_amplitude <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">log</span>(df1<span style="color:#5bc4bf">$</span>amplitude)
 log.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>( log_duration <span style="color:#5bc4bf">~</span> log_amplitude, data<span style="color:#5bc4bf">=</span>df1)
 new <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">data.frame</span>(log_amplitude <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">seq</span>(<span style="color:#06b6ef">min</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">max</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#f99b15">0.01</span>))
-y_values <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(log.model, new, interval<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;</span><span style="color:#48b685">predict&#34;</span>)
+y_values <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(log.model, new, interval<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;predict&#34;</span>)
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude, df1<span style="color:#5bc4bf">$</span>log_duration,
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
-<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">1</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">2</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">3</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">1</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">2</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">3</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png" alt=""></p>
 <p>In the linear space, we get this pretty curve and increasing standard
 deviation.</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png" alt=""></p>
 <h2 id="extract-the-equations">Extract the equations</h2>
 <p>To be able to generate data from the regression, we must extract the
@@ -279,8 +279,8 @@ reg_eq <span style="color:#5bc4bf">=</span> a
 y <span style="color:#5bc4bf">=</span> a<span style="color:#5bc4bf">*</span>x <span style="color:#5bc4bf">+</span> b
 
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude, df1<span style="color:#5bc4bf">$</span>log_duration,
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
-<span style="color:#06b6ef">lines</span>(x, y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(x, y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png" alt=""></p>
 <p>Let pass the regression line in linear space. We got:</p>
 <p>$$
@@ -301,8 +301,8 @@ $$</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">cart_x <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">seq</span>(<span style="color:#06b6ef">min</span>(df1<span style="color:#5bc4bf">$</span>amplitude), <span style="color:#06b6ef">max</span>(df1<span style="color:#5bc4bf">$</span>amplitude), <span style="color:#f99b15">0.01</span>)
 cart_y <span style="color:#5bc4bf">=</span> (cart_x^a) <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">exp</span>(b)
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png" alt=""></p>
 <p>Yeah! we got it. Now let us extract the equation for the standard
 deviation.</p>
@@ -318,24 +318,24 @@ sd_change <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rolla
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">-1</span>, <span style="color:#f99b15">1</span> ), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png" alt=""></p>
 <p>Unfortunately, to find the change in variance in the cartesian space is
-not as simple as taking the exponential of the logspace's variance.</p>
+not as simple as taking the exponential of the logspace&rsquo;s variance.</p>
 <p>First, let us compute the standard deviation and its trends in the
 cartesian space.</p>
-<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#776e71"># remember that:</span>
-<span style="color:#776e71"># cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)</span>
-<span style="color:#776e71"># cart_y = (cart_x^a) * exp(b)</span>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#776e71"># remember that:</span>
+<span style="color:#776e71"># cart_x = seq(min(df1$amplitude), max(df1$amplitude), 0.01)</span>
+<span style="color:#776e71"># cart_y = (cart_x^a) * exp(b)</span>
 
 cart_sd <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">abs</span>(df1<span style="color:#5bc4bf">$</span>duration <span style="color:#5bc4bf">-</span> (df1<span style="color:#5bc4bf">$</span>amplitude^a)<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(b))
 
 <span style="color:#06b6ef">par</span>(mfrow<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>,<span style="color:#f99b15">2</span>))
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, cart_sd, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 
-<span style="color:#776e71"># moving windows that take the median of the duration&#39;s sd over saccade amplitude</span>
+<span style="color:#776e71"># moving windows that take the median of the duration&#39;s sd over saccade amplitude</span>
 sd_change <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">rollapply</span>(cart_sd, width <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">200</span>, FUN <span style="color:#5bc4bf">=</span> median, fill <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">NA</span>)
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 df1<span style="color:#5bc4bf">$</span>sd_duration <span style="color:#5bc4bf">&lt;-</span> sd_change
 
-<span style="color:#776e71"># regression of the duration sd over amplitude</span>
+<span style="color:#776e71"># regression of the duration sd over amplitude</span>
 var.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>(sd_duration <span style="color:#5bc4bf">~</span> amplitude, data <span style="color:#5bc4bf">=</span> df1)
 curve_y <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(var.model, <span style="color:#06b6ef">data.frame</span>(amplitude<span style="color:#5bc4bf">=</span>cart_x) )
 <span style="color:#06b6ef">lines</span>(cart_x, curve_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
@@ -360,8 +360,8 @@ var.model<span style="color:#5bc4bf">$</span>coefficients
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sd_eb <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[1]]
 sd_ea <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[2]]
 
-<span style="color:#776e71"># we do the prediction ourselve:</span>
-<span style="color:#776e71"># we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:</span>
+<span style="color:#776e71"># we do the prediction ourselve:</span>
+<span style="color:#776e71"># we used SD.Duration = a * [1-exp(-amplitude)] + b, which gives:</span>
 curve_y <span style="color:#5bc4bf">&lt;-</span> (sd_ea <span style="color:#5bc4bf">+</span> sd_eb) <span style="color:#5bc4bf">-</span> sd_ea<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>cart_x)
 
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
@@ -375,26 +375,26 @@ model was showing a 95% prediction interval (in red), which depends on
 the SD that we formulated (in green and purple), but it is not expected
 to be equal to it.</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
-     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">.&#39;</span>)
+     main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
 
-<span style="color:#776e71">## regression fit:</span>
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
-<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>)
+<span style="color:#776e71">## regression fit:</span>
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
+<span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 
-<span style="color:#776e71">## our equations:</span>
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#776e71">## our equations:</span>
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 
-<span style="color:#776e71">## linear sd</span>
+<span style="color:#776e71">## linear sd</span>
 sd_y <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0.55</span> <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">3.54</span> <span style="color:#5bc4bf">*</span> cart_x
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;green&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 
-<span style="color:#776e71">## assymtotic sd:</span>
+<span style="color:#776e71">## assymtotic sd:</span>
 sd_y <span style="color:#5bc4bf">=</span> (sd_ea <span style="color:#5bc4bf">+</span> sd_eb) <span style="color:#5bc4bf">-</span> sd_ea<span style="color:#5bc4bf">*</span><span style="color:#06b6ef">exp</span>(<span style="color:#5bc4bf">-</span>cart_x)
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
-<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
-<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">bottomright&#39;</span>, legend<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">regresssion&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">linear SD equation&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">assymptotic SD equation&#39;</span>),lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>, col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">red&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">green&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">purple&#39;</span>))
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
+<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#39;bottomright&#39;</span>, legend<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;regresssion&#39;</span>, <span style="color:#48b685">&#39;linear SD equation&#39;</span>, <span style="color:#48b685">&#39;assymptotic SD equation&#39;</span>),lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>, col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;red&#39;</span>, <span style="color:#48b685">&#39;green&#39;</span>, <span style="color:#48b685">&#39;purple&#39;</span>))
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png" alt=""></p>
 <p>It seems that the assymptotic equation of SD do a better job than the
 linear equation. Furthermore, it is a wished property that the SD does
@@ -429,10 +429,10 @@ gen.duration <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef
 red_col <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rgb</span>(<span style="color:#f99b15">200</span>,<span style="color:#f99b15">100</span>,<span style="color:#f99b15">100</span>,<span style="color:#f99b15">50</span>,maxColorValue<span style="color:#5bc4bf">=</span><span style="color:#f99b15">255</span>)
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>))
 <span style="color:#06b6ef">points</span>(amp_space, gen.duration, ylim <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>), col<span style="color:#5bc4bf">=</span>red_col)
-<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#34;</span><span style="color:#48b685">bottomright&#34;</span>, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">extracted data&#39;</span>, <span style="color:#48b685">&#39;</span><span style="color:#48b685">model&#39;</span>), col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;</span><span style="color:#48b685">black&#39;</span>, red_col), pch<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>)
+<span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#34;bottomright&#34;</span>, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;extracted data&#39;</span>, <span style="color:#48b685">&#39;model&#39;</span>), col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;black&#39;</span>, red_col), pch<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>)
 </code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png" alt=""></p>
 <p>The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.</p>
-<p>We've got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
+<p>We&rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
 predict saccade durations for amplitudes that Troncoso et al.
 did not mesure.</p>
 <p>Hope this post was helpful, and see you soon!</p>

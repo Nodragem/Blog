@@ -8,7 +8,7 @@
   <meta name="theme" content="hugo-academic">
   <script src="https://kit.fontawesome.com/113a503557.js" crossorigin="anonymous"></script>
   
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.72.0" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -178,7 +178,7 @@
 
     <div class="article-style" itemprop="articleBody">
       <h2 id="debugging-multiplayer-games-locally">Debugging multiplayer games locally</h2>
-<p>These days, I'm playing around with making online multiplayer prototype games.</p>
+<p>These days, I&rsquo;m playing around with making online multiplayer prototype games.</p>
 <p>Most of the time, when we debug our video games for online multiplayer, we run a local server on <code>localhost</code>. This server acts as:</p>
 <ul>
 <li>a file server - sending the game files to the client,</li>
@@ -201,7 +201,7 @@
     <img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png"/> 
 </figure>
 
-<p>What's nice about it is that it does not require any installation and works out-of-the box. When unzipped, <code>clumsy</code> sits next to a file <code>config.txt</code> where you can specify exactly which part of the network you want to disrupt.</p>
+<p>What&rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, <code>clumsy</code> sits next to a file <code>config.txt</code> where you can specify exactly which part of the network you want to disrupt.</p>
 <p>For instance, if I host my server on <code>localhost:5000</code>, I can make a configuration that disrupt the access to <code>localhost:5000</code>. To do so, I added the following in <code>config.txt</code>:</p>
 <pre><code>HTML5 games: outbound and tcp.DstPort == 5000
 </code></pre><p>After that, when you open Clumsy, you will be able to select the configuration <code>HTML5 games</code> from the droplist menu.</p>
@@ -219,7 +219,7 @@
 <li>The server transmits the position to Client 2</li>
 <li>Client 2 (on the bottom) applies the position</li>
 </ul>
-<p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &lsquo;s ok for our example.</p>
+<p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &rsquo;s ok for our example.</p>
 <figure>
     <img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif"/> 
 </figure>

@@ -8,7 +8,7 @@
   <meta name="theme" content="hugo-academic">
   <script src="https://kit.fontawesome.com/113a503557.js" crossorigin="anonymous"></script>
   
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.72.0" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -226,7 +226,7 @@ In Machine Learning, one could connect the **sensory inputs** to the input neuro
 </li>
 <li>
 <ol start="2">
-<li>Destroy other's plane</li>
+<li>Destroy other&rsquo;s plane</li>
 </ol>
 </li>
 </ul>
@@ -251,20 +251,20 @@ To optimise the above needs may not "mathematically" lead you to win the competi
 </ul>
 <p>The <strong>high-level goals</strong> will also define the sensitivity rules that link <em>sensory inputs</em> and <strong>low-level needs</strong>. For instance: a decrease of <em>&ldquo;own health&rdquo;</em> will increase the need <em>&ldquo;get more health&rdquo;</em>.</p>
 <p><img src="img/Plot3.jpg" alt=""></p>
-<p>In practice, some of these <strong>low-level needs</strong> can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need <em>&ldquo;get more health&rdquo;</em>, the next question is which <em>&ldquo;heart&rdquo;</em> to go to? this step is the <strong>target selection</strong>: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you'd need to consider that a human doesn't always pay attention to everything that happens on the screen, and it is a bit more complicated.</p>
+<p>In practice, some of these <strong>low-level needs</strong> can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need <em>&ldquo;get more health&rdquo;</em>, the next question is which <em>&ldquo;heart&rdquo;</em> to go to? this step is the <strong>target selection</strong>: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&rsquo;d need to consider that a human doesn&rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.</p>
 <p>Now that we have a target to reach, the final step is the <strong>action control</strong>. This is about transforming the action <em>&ldquo;go to target&rdquo;</em> into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the <strong>action controller</strong> needs to use the <strong>sensory inputs</strong> (e.g. the plane direction, the heart position) and <strong>motor commands</strong> (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.</p>
 <p>In summary, the low-level need <em>&ldquo;get more life&rdquo;</em> will lead to the target selection <em>&ldquo;selecting a heart&rdquo;</em> and then execute the action <em>&ldquo;go to target&rdquo;</em> using the motor commands <em>&ldquo;rotate ACW/CW&rdquo;</em>.</p>
 <p><img src="img/Plot5.jpg" alt=""></p>
 <p>Even if the above already sounds a bit complicated, it was in fact a simple case :) ! Indeed, some <strong>low-level needs</strong> such as <em>get more bullets</em> can lead to a series of simple actions and small decisions:</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#815ba4">if</span> (enough money):
-   execute the action <span style="color:#48b685"></span><span style="color:#48b685">&#34;</span><span style="color:#48b685">buy bullets</span><span style="color:#48b685">&#34;</span> <span style="color:#776e71"># which triggers the motor command &#34;buy bullet&#34;</span>
+   execute the action <span style="color:#48b685">&#34;buy bullets&#34;</span> <span style="color:#776e71"># which triggers the motor command &#34;buy bullet&#34;</span>
 <span style="color:#815ba4">else</span>:
-  <span style="color:#f99b15">1.</span> prioritise need <span style="color:#48b685"></span><span style="color:#48b685">&#34;</span><span style="color:#48b685">get more coins</span><span style="color:#48b685">&#34;</span>:
-     <span style="color:#f99b15">1.</span> target selection <span style="color:#48b685"></span><span style="color:#48b685">&#34;</span><span style="color:#48b685">selection of a coin</span><span style="color:#48b685">&#34;</span>, 
-     <span style="color:#f99b15">2.</span> execute action <span style="color:#48b685"></span><span style="color:#48b685">&#34;</span><span style="color:#48b685">go to target</span><span style="color:#48b685">&#34;</span> 
+  <span style="color:#f99b15">1.</span> prioritise need <span style="color:#48b685">&#34;get more coins&#34;</span>:
+     <span style="color:#f99b15">1.</span> target selection <span style="color:#48b685">&#34;selection of a coin&#34;</span>, 
+     <span style="color:#f99b15">2.</span> execute action <span style="color:#48b685">&#34;go to target&#34;</span> 
      <span style="color:#f99b15">3.</span> repeat until enough coins
-  <span style="color:#f99b15">2.</span> prioritise need <span style="color:#48b685"></span><span style="color:#48b685">&#39;</span><span style="color:#48b685">buy bullet</span><span style="color:#48b685">&#39;</span>:
-     <span style="color:#f99b15">1.</span> execute the action <span style="color:#48b685"></span><span style="color:#48b685">&#34;</span><span style="color:#48b685">buy bullets</span><span style="color:#48b685">&#34;</span> <span style="color:#776e71"># which triggers the motor command &#34;buy bullet&#34;</span>
+  <span style="color:#f99b15">2.</span> prioritise need <span style="color:#48b685">&#39;buy bullet&#39;</span>:
+     <span style="color:#f99b15">1.</span> execute the action <span style="color:#48b685">&#34;buy bullets&#34;</span> <span style="color:#776e71"># which triggers the motor command &#34;buy bullet&#34;</span>
 </code></pre></div><p>Furthermore, although the brain mostly executes one action at a time (multi-tasking is complicated), it can execute actions that account for multiple <strong>low-level needs</strong> at the same time, or execute the current action in a way that prepares us to the second action. For instance:</p>
 <ul>
 <li>you can reach for a heart while avoiding a bomb: you are executing an action that optimises two constraints (an attractor and a repeller)</li>
@@ -288,6 +288,9 @@ To optimise the above needs may not "mathematically" lead you to win the competi
         aria-hidden="true">&larr;</span> Release Notes: Happy Dogfight 0.2.0</a></li>
       
 
+      
+      <li class="next"><a href="https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/">Baking PBR Materials to Textures from Blender to Unity <span
+        aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
   </nav>
