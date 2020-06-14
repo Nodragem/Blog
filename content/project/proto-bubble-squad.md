@@ -1,7 +1,7 @@
 +++
 title = "Bubble Troop"
 highlight = true
-summary = "A 6-days multiplayer prototype based on Adrien Lebouc's ideas and made with Phaser.io. All assets made from scratch."
+description = "A 6-days multiplayer prototype based on Adrien Lebouc's ideas and made with Phaser.io. All assets made from scratch."
 project_type = ["experimental"]
 date = "2018-03-12T14:50:11Z"
 math = false

@@ -2,7 +2,7 @@
 title = "Data extraction with WebPlotDigitizer"
 highlight = true
 math = true
-summary = " "
+description = " "
 image = ""
 post_type = ["research"]
 highlight_languages = ["r"]

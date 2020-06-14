@@ -2,12 +2,13 @@
 title = "Release Notes: Happy Dogfight 0.2.0"
 highlight = true
 math = false
-summary = " "
+description = " "
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2019-12-12T21:27:08+01:00"
 thumbnail = "thumbnails/prabbit-aviator-thumbnail.png"
+images = ["thumbnails/prabbit-aviator-thumbnail.png"]
 [header]
 image = "prabbit-aviator-banner.png"
 caption = ""
@@ -17,7 +18,7 @@ caption = ""
 Major Update!
 {{< /alert >}}
 
-Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.
+Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In description, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.
 
 ## A New Level and a Newsletter
 

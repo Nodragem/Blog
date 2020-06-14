@@ -4,7 +4,7 @@ external_link = ""
 thumbnail = "happy-dogfight-thumbnail.gif"
 date = "2019-12-08T14:51:57+01:00"
 title = "The Prabbits: Happy Dogfights!"
-summary = "A multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online."
+description = "A multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online."
 project_type = ["released"]
 highlight = true
 image_folder = "gamedev/release_happydogfigths"
@@ -21,29 +21,28 @@ image_folder = "gamedev/release_happydogfigths"
 
 <iframe src="https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM" frameborder="0" width="500" height="145"></iframe>
 
+## Follow us:
+Watch couchplay sessions with my friends on **[Youtube](https://www.youtube.com/channel/UCwNOb0bisGEMFwtPWBtEW-g)**.
+
+Come play with us and get the latest news on **[Discord](https://discord.gg/TCEKa4D)**.
+
+You can also follow the development on **[Twitter](https://twitter.com/Nodragem)**.
+
 ## Release Notes
 
 You can find the detail of the last updates here:
 
  - [What's New in the Free Version of Happy Dogfigths 0.2.0]({{< relref "/post/gamedev/notes_happy-dogfight_020.md" >}})
 
-## Summary
+## Description
 
-This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.
+Happy Dogfight is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.
 
-You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.
+You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe.
 
-The rules are:
+You will dive into explosive dogfights, blast your way to the podium in fast-paced rounds, and bomb your friends to kick them out the next round. 
 
-- be the last prabbit standing to win a round
-
-- win 5 rounds to win a tournament
-
-- be killed by a bomb and you won't play the next round
-
-- collect coins to buy more bullets and bombs
-
-Make temporary alliances and plot against the tournament leader to avoid a premature defeat. Use your bombs wisely to send a player away for one round and dash to victory!
+Can you blow all your friends up at once to claim a **smashing victory**?
 
 ## Credits
 

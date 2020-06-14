@@ -2,12 +2,13 @@
 title = "Baking PBR Materials to Textures from Blender to Unity"
 highlight = true
 math = false
-summary = " "
+description = " "
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2020-06-12T10:50:01+01:00"
 thumbnail = "thumbnails/pbr_blender_to_unity.png"
+images = ["thumbnails/pbr_blender_to_unity.png"]
 [header]
 image = "thumbnails/pbr_blender_to_unity.png"
 caption = ""

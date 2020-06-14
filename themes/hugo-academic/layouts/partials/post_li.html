@@ -22,11 +22,11 @@ if $post.Params.external_link
         <a href="{{ $post.Params.external_link }}" itemprop="url">{{ $post.Title }}</a>
       </h3>
       {{ partial "article_metadata" (dict "content" $post "is_list" 1) }}
-      <div class="article-list-summary" itemprop="articleBody">
-        {{ if $post.Params.summary }}
-        <p>{{ printf "%s" $post.Params.summary | markdownify }}</p>
+      <div class="article-list-description" itemprop="articleBody">
+        {{ if $post.Params.description }}
+        <p>{{ printf "%s" $post.Params.description | markdownify }}</p>
         {{ else if $post.Truncated }}
-        {{ $post.Summary }}
+        {{ $post.description }}
         {{ else }}
         {{ $post.Content }}
         {{ end }}
@@ -45,11 +45,11 @@ if $post.Params.external_link
       <a href="{{ $post.Permalink }}" itemprop="url">{{ $post.Title }}</a>
     </h3>
     {{ partial "article_metadata" (dict "content" $post "is_list" 1) }}
-    <div class="article-list-summary" itemprop="articleBody">
-      {{ if $post.Params.summary }}
-      <p>{{ printf "%s" $post.Params.summary | markdownify }}</p>
+    <div class="article-list-description" itemprop="articleBody">
+      {{ if $post.Params.description }}
+      <p>{{ printf "%s" $post.Params.description | markdownify }}</p>
       {{ else if $post.Truncated }}
-      {{ $post.Summary }}
+      {{ $post.description }}
       {{ else }}
       {{ $post.Content }}
       {{ end }}

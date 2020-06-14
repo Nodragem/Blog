@@ -1,7 +1,7 @@
 +++
 image = ""
 math = false
-summary = true
+description = true
 highlight = true
 see_more_link = "/post/"
 tags = []

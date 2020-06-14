@@ -44,6 +44,8 @@
 
   <link rel="canonical" href="{{ .Permalink }}">
 
+  {{ template "_internal/opengraph.html" . }}
+
   {{ partial "head_custom" . }}
 
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>

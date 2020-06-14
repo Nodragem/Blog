@@ -4,7 +4,7 @@ external_link = ""
 thumbnail = "catchthecrown_release.png"
 date = "2017-04-15T14:51:57+01:00"
 title = "Catch The Crown!"
-summary = "A mutiplayer arena game featuring Prabbits. All assets made from scratch."
+description = "A mutiplayer arena game featuring Prabbits. All assets made from scratch."
 project_type = ["released"]
 highlight = true
 image_folder = "/gamedev/catchthecrown_release"
@@ -30,7 +30,7 @@ I could not actually test the Mac / Linux versions. Please let me know if the ga
  - [Relase Notes of The Prabbits: Catch the Crown]({{< relref "/post/gamedev/catchthecrown_release.md" >}})
 
 
-## Summary
+## description
 
 **The Prabbits: Catch The Crown** is a local multiplayer arena platform game.
 

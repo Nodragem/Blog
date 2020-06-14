@@ -941,7 +941,7 @@ hr {
   margin-bottom: 5px;
 }
 
-.article-list-summary p {
+.article-list-description p {
   font-size: 0.75rem;
 }
 
@@ -1063,7 +1063,7 @@ hr {
   margin-bottom: 6px;
 }
 
-#projects.home-section .project-summary {
+#projects.home-section .project-description {
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
 }

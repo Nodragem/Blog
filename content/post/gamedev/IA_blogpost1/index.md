@@ -2,12 +2,13 @@
 title = "Building an AI for my game - Part 1: Breaking down the problem"
 highlight = true
 math = false
-summary = " "
+description = " "
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2020-01-11T13:47:08+01:00"
 thumbnail = "thumbnails/ai_blogpost1.jpg"
+images = ["thumbnails/ai_blogpost1.jpg"]
 [header]
 image = "prabbit-aviator-banner.png"
 caption = ""
@@ -74,7 +75,7 @@ In practice, some of these **low-level needs** can translate directly into a sim
 
 Now that we have a target to reach, the final step is the **action control**. This is about transforming the action *"go to target"* into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the **action controller** needs to use the **sensory inputs** (e.g. the plane direction, the heart position) and **motor commands** (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.
 
-In summary, the low-level need *"get more life"* will lead to the target selection *"selecting a heart"* and then execute the action *"go to target"* using the motor commands *"rotate ACW/CW"*. 
+In description, the low-level need *"get more life"* will lead to the target selection *"selecting a heart"* and then execute the action *"go to target"* using the motor commands *"rotate ACW/CW"*. 
 
 ![](img/Plot5.jpg)
 

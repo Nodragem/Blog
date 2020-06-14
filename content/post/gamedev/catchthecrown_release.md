@@ -2,7 +2,7 @@
 title = "Game Release: Catch the Crow"
 highlight = true
 math = false
-summary = " "
+description = " "
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"

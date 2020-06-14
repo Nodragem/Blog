@@ -5,8 +5,8 @@ date = "2017-03-12"
 # Project title.
 title = "Eye tracking toolset"
 
-# Project summary to display on homepage.
-summary = "Toolset to extract and analyse eye movements from eye tracking recording."
+# Project description to display on homepage.
+description = "Toolset to extract and analyse eye movements from eye tracking recording."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 thumbnail = "DataCleaningWindow.png"

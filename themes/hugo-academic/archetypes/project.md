@@ -3,8 +3,8 @@
 # Example: `tags = ["machine-learning", "deep-learning"]`
 tags = []
 
-# Project summary to display on homepage.
-summary = ""
+# Project description to display on homepage.
+description = ""
 
 # Optional image to display on homepage.
 image_preview = ""

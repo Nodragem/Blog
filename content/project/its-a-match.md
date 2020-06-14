@@ -1,7 +1,7 @@
 +++
 title = "It's a Match!"
 highlight = true
-summary = "Find your true love in this game made for Games Wales South's GameJam 2017. Made with Unity."
+description = "Find your true love in this game made for Games Wales South's GameJam 2017. Made with Unity."
 project_type = ["experimental"]
 date = "2017-12-12T13:48:11Z"
 math = false
