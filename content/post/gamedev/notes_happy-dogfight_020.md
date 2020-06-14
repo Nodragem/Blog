@@ -8,7 +8,7 @@ post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2019-12-12T21:27:08+01:00"
 thumbnail = "thumbnails/prabbit-aviator-thumbnail.png"
-images = ["thumbnails/prabbit-aviator-thumbnail.png"]
+images = ["img/thumbnails/prabbit-aviator-thumbnail.png"]
 [header]
 image = "prabbit-aviator-banner.png"
 caption = ""

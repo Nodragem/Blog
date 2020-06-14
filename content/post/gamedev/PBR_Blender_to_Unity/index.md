@@ -2,13 +2,13 @@
 title = "Baking PBR Materials to Textures from Blender to Unity"
 highlight = true
 math = false
-description = " "
+description = "In this tutorial, I am covering how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity."
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"
 date = "2020-06-12T10:50:01+01:00"
 thumbnail = "thumbnails/pbr_blender_to_unity.png"
-images = ["thumbnails/pbr_blender_to_unity.png"]
+images = ["img/thumbnails/pbr_blender_to_unity.png"]
 [header]
 image = "thumbnails/pbr_blender_to_unity.png"
 caption = ""
