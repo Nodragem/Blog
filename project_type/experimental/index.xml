@@ -18,7 +18,8 @@
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/proto-bubble-squad/</guid>
-      <description>A 6-days multiplayer prototype based on Adrien Lebouc&amp;rsquo;s ideas and made with Phaser.io. All assets made from scratch.</description>
+      <description>Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.This is a multiplayer game, you can open two tabs to play it against yourselve.Controls This game is compatible with mobile devices and desktop computers:
+ Click on the ground and drag to move the camera Click on a bubble and drag to catapult it Click on the top-left icon to enable fullscreen Collide with a friend to heal it Collide with an ennemy to hurt it  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
     </item>
     
     <item>
@@ -27,7 +28,9 @@
       <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/cannon-shooter/</guid>
-      <description>A 6-days prototype made with Phaser.io. All assets made from scratch.</description>
+      <description>Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/ It may take few seconds for the server to wake up, please wait&amp;hellip;
+Controls Click on the game to enable the keyboard inputs.
+ LEFT and RIGHT to move SPACE to shoot  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
     </item>
     
     <item>
@@ -36,7 +39,9 @@
       <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/its-a-match/</guid>
-      <description>Find your true love in this game made for Games Wales South&amp;rsquo;s GameJam 2017. Made with Unity.</description>
+      <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
+ KEYBOARD ARROWS to move  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
+Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:</description>
     </item>
     
     <item>
@@ -45,7 +50,10 @@
       <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
-      <description>John Space is a space traveller seeking adventures and galactic beers. Platformer prototype made with LibGDX. All assets made from scratch.</description>
+      <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
+ LEFT and RIGHT to move SPACE to jump LEFT CONTROL to sprint  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
+Credits Made with:
+ libGDX (Game Engine): https://libgdx.</description>
     </item>
     
   </channel>

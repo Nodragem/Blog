@@ -180,7 +180,7 @@ To optimise the above needs may not &#34;mathematically&#34; lead you to win the
 &lt;p&gt;&lt;img src=&#34;img/Plot3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&amp;rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&amp;rsquo;d need to consider that a human doesn&amp;rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
 &lt;p&gt;Now that we have a target to reach, the final step is the &lt;strong&gt;action control&lt;/strong&gt;. This is about transforming the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the &lt;strong&gt;action controller&lt;/strong&gt; needs to use the &lt;strong&gt;sensory inputs&lt;/strong&gt; (e.g. the plane direction, the heart position) and &lt;strong&gt;motor commands&lt;/strong&gt; (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.&lt;/p&gt;
-&lt;p&gt;In summary, the low-level need &lt;em&gt;&amp;ldquo;get more life&amp;rdquo;&lt;/em&gt; will lead to the target selection &lt;em&gt;&amp;ldquo;selecting a heart&amp;rdquo;&lt;/em&gt; and then execute the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; using the motor commands &lt;em&gt;&amp;ldquo;rotate ACW/CW&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In description, the low-level need &lt;em&gt;&amp;ldquo;get more life&amp;rdquo;&lt;/em&gt; will lead to the target selection &lt;em&gt;&amp;ldquo;selecting a heart&amp;rdquo;&lt;/em&gt; and then execute the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; using the motor commands &lt;em&gt;&amp;ldquo;rotate ACW/CW&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/Plot5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Even if the above already sounds a bit complicated, it was in fact a simple case :) ! Indeed, some &lt;strong&gt;low-level needs&lt;/strong&gt; such as &lt;em&gt;get more bullets&lt;/em&gt; can lead to a series of simple actions and small decisions:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;if&lt;/span&gt; (enough money):
@@ -214,7 +214,7 @@ Major Update!
 
 &lt;/div&gt;
 
-&lt;p&gt;Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In summary, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.&lt;/p&gt;
+&lt;p&gt;Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In description, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.&lt;/p&gt;
 &lt;h2 id=&#34;a-new-level-and-a-newsletter&#34;&gt;A New Level and a Newsletter&lt;/h2&gt;
 &lt;p&gt;I wanted to make a valuable gift to players who may like the game and want to join the newsletter I am planning to start (already part of my new year&amp;rsquo;s resolutions). So I developed an additional level especially for the occasion!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-level4-2.gif&#34; alt=&#34;demo-level4-2&#34;&gt;&lt;/p&gt;
@@ -319,30 +319,20 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       <description>&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/level4-demo.gif&#34; alt=&#34;wrong link&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 &lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;follow-us&#34;&gt;Follow us:&lt;/h2&gt;
+&lt;p&gt;Watch couchplay sessions with my friends on &lt;strong&gt;&lt;a href=&#34;https://www.youtube.com/channel/UCwNOb0bisGEMFwtPWBtEW-g&#34;&gt;Youtube&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Come play with us and get the latest news on &lt;strong&gt;&lt;a href=&#34;https://discord.gg/TCEKa4D&#34;&gt;Discord&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You can also follow the development on &lt;strong&gt;&lt;a href=&#34;https://twitter.com/Nodragem&#34;&gt;Twitter&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h2&gt;
 &lt;p&gt;You can find the detail of the last updates here:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/notes_happy-dogfight_020/&#34;&gt;What&amp;rsquo;s New in the Free Version of Happy Dogfigths 0.2.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;p&gt;This game is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.&lt;/p&gt;
-&lt;p&gt;You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe by winning a series of intense dogfights.&lt;/p&gt;
-&lt;p&gt;The rules are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;be the last prabbit standing to win a round&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;win 5 rounds to win a tournament&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;be killed by a bomb and you won&amp;rsquo;t play the next round&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;collect coins to buy more bullets and bombs&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Make temporary alliances and plot against the tournament leader to avoid a premature defeat. Use your bombs wisely to send a player away for one round and dash to victory!&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Happy Dogfight is a multiplayer 2D dogfight game to play with friends (2-4 players) on a couch or online.&lt;/p&gt;
+&lt;p&gt;You are a prabbit (mix of rabbit and parrot) who wants to prove that they are the best pilot in their tribe.&lt;/p&gt;
+&lt;p&gt;You will dive into explosive dogfights, blast your way to the podium in fast-paced rounds, and bomb your friends to kick them out the next round.&lt;/p&gt;
+&lt;p&gt;Can you blow all your friends up at once to claim a &lt;strong&gt;smashing victory&lt;/strong&gt;?&lt;/p&gt;
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
 &lt;p&gt;Software used:&lt;/p&gt;
 &lt;ul&gt;
@@ -571,7 +561,7 @@ I could not actually test the Mac / Linux versions. Please let me know if the ga
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://nodragem.github.io/Blog/Blog/post/gamedev/catchthecrown_release/&#34;&gt;Relase Notes of The Prabbits: Catch the Crown&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;h2 id=&#34;description&#34;&gt;description&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;The Prabbits: Catch The Crown&lt;/strong&gt; is a local multiplayer arena platform game.&lt;/p&gt;
 &lt;p&gt;Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual. They are spawned in an arena with a crown and a timer. Once the crown is picked up by a Prabbit, coins, diamonds and rubies appear across the level. Only the Prabbit with the crown can collect them.&lt;/p&gt;
 &lt;p&gt;A competition starts between Prabbits to catch the crown and collect gold. When the timer ends, the richer Prabbit wins.&lt;/p&gt;

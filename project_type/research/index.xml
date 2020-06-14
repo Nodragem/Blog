@@ -18,7 +18,7 @@
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
-      <description>Small Python Library to quickly run and test 1D Neural Fields with a population rate model. Can export video.</description>
+      <description>Find the project at: https://github.com/Nodragem/DynamicNeuralField-RateBased</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
-      <description>Toolset to estimate how the visual environment is transformed in the brain. Especially in the Superior Colliculus.</description>
+      <description>Find the project at: https://github.com/Nodragem/Model-SCtoVisualSpace</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
-      <description>Toolset to extract and analyse eye movements from eye tracking recording.</description>
+      <description>Find the project at: https://github.com/Nodragem/Eyetracking-Analysis-tools</description>
     </item>
     
   </channel>

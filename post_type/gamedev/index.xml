@@ -18,7 +18,7 @@
       <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</guid>
-      <description></description>
+      <description>Multiple Materials to Baked Textures Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color independently.</description>
     </item>
     
     <item>
@@ -27,7 +27,8 @@
       <pubDate>Sat, 11 Jan 2020 13:47:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/</guid>
-      <description></description>
+      <description>I realised that my game needed a single player mode so that players can give it a try easily, or can play the game until they get some friends to come over (or to meet them online). So here we go, I am programming an AI for the prabbits; that I called the prab-bot!
+NOTE: I have a Neuroscience background, but I am far from being an expert in AI!Transforming inputs into meaningful actions A brain, or an AI, is essentially an entity that transforms sensory information (i.</description>
     </item>
     
     <item>
@@ -36,7 +37,7 @@
       <pubDate>Thu, 12 Dec 2019 21:27:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</guid>
-      <description></description>
+      <description>Major Update!Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In description, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.</description>
     </item>
     
     <item>
@@ -45,7 +46,9 @@
       <pubDate>Sun, 18 Feb 2018 17:14:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/</guid>
-      <description></description>
+      <description>Debugging multiplayer games locally These days, I&amp;rsquo;m playing around with making online multiplayer prototype games.
+Most of the time, when we debug our video games for online multiplayer, we run a local server on localhost. This server acts as:
+ a file server - sending the game files to the client, a game server - transferring information between clients, authorizing transactions, etc.  You can debug your code logic on server side and client side very easily nowadays.</description>
     </item>
     
     <item>
@@ -54,7 +57,9 @@
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</guid>
-      <description></description>
+      <description>Release and then move on &amp;hellip; Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.
+  How it feels like to ship a game!
+  Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!</description>
     </item>
     
   </channel>
