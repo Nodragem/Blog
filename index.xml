@@ -16,25 +16,25 @@
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</guid>
       <description>&lt;h2 id=&#34;multiple-materials-to-baked-textures&#34;&gt;Multiple Materials to Baked Textures&lt;/h2&gt;
-&lt;p&gt;Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color  independently.&lt;/p&gt;
+&lt;p&gt;Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the colour of the plane in Unity. When a player selects a colour, I just modify the colour of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and colour independently.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/4color.gif&#34; alt=&#34;4color&#34;&gt;&lt;/p&gt;
 &lt;p&gt;However, this method has its limitations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;it is not optimal in terms of real-time rendering&lt;/li&gt;
 &lt;li&gt;I could not apply surface shaders VFX, like flame or electricity effects, on the plane.&lt;/li&gt;
-&lt;li&gt;the PBR parameters (e.g. color, roughness, metalness, emission) were not imported by Unity, I had to enter them manually&lt;/li&gt;
+&lt;li&gt;the PBR parameters (e.g. colour, roughness, metalness, emission) were not imported by Unity, I had to enter them manually&lt;/li&gt;
 &lt;li&gt;I could not use complex procedural materials in Blender (as I could not export them)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A better but more involved method is to unwrap the plane&amp;rsquo;s UV, and bake all the materials into PBR textures so that the plane only use one material.&lt;/p&gt;
+&lt;p&gt;A better but more involved method is to unwrap the plane&amp;rsquo;s UV and bake all the materials into PBR textures so that the plane only use one material.&lt;/p&gt;
 &lt;p&gt;This way I could benefit from:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;better performance using a unique material for the plane&lt;/li&gt;
-&lt;li&gt;an automatic import  of the PBR parameters (color, roughness, etc) as they are saved in a texture&lt;/li&gt;
-&lt;li&gt;surface shader VFX as the UV are unwrapped&lt;/li&gt;
+&lt;li&gt;an automatic import  of the PBR parameters (colour, roughness, etc) as they are saved in a texture&lt;/li&gt;
+&lt;li&gt;surface shader VFX as the UVs are unwrapped&lt;/li&gt;
 &lt;li&gt;I can work with multiple and procedural materials in Blender&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;But for that to happen, I needed to find a way to bake the materials!&lt;/p&gt;
-&lt;p&gt;In this tutorial, I am covering that problem: how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the color of the plane when its color information is stored in a texture.&lt;/p&gt;
+&lt;p&gt;In this tutorial, I am covering that problem: how to bake multiple procedural materials into textures in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the colour of the plane when its colour information is stored in a texture.&lt;/p&gt;
 &lt;h2 id=&#34;step-by-step-tutorial&#34;&gt;Step by Step Tutorial&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -94,12 +94,12 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the color texture as base map, the combined texture as metallic map.&lt;/p&gt;
+&lt;p&gt;Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the colour texture as a base map, and the combined texture as a metallic map.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/image-20200612122542943.png&#34; alt=&#34;image-20200612122542943&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You should get your object with the materials looking as they do in Blender.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/image-20200606185940453.png&#34; alt=&#34;image-20200606185940453&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;Now that the different colors of the plane are contained in a texture, it will be more complicated to change its color 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!&lt;/p&gt;
+&lt;p&gt;Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!&lt;/p&gt;
 </description>
     </item>
     

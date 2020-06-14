@@ -18,7 +18,7 @@
       <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</guid>
-      <description>Multiple Materials to Baked Textures Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color independently.</description>
+      <description>Multiple Materials to Baked Textures Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the colour of the plane in Unity. When a player selects a colour, I just modify the colour of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and colour independently.</description>
     </item>
     
     <item>

@@ -38,7 +38,7 @@
   <link rel="canonical" href="https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/">
 
   <meta property="og:title" content="Baking PBR Materials to Textures from Blender to Unity" />
-<meta property="og:description" content="In this tutorial, I am covering how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity." />
+<meta property="og:description" content="In this tutorial, I am covering how to bake multiple procedural materials into textures in Blender, in a way that is compatible with Unity." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/" />
 <meta property="og:image" content="https://nodragem.github.io/Blog/img/thumbnails/pbr_blender_to_unity.png" />
@@ -49,7 +49,7 @@
 <meta name="twitter:image" content="https://nodragem.github.io/Blog/img/thumbnails/pbr_blender_to_unity.png"/>
 
 <meta name="twitter:title" content="Baking PBR Materials to Textures from Blender to Unity"/>
-<meta name="twitter:description" content="In this tutorial, I am covering how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity."/>
+<meta name="twitter:description" content="In this tutorial, I am covering how to bake multiple procedural materials into textures in Blender, in a way that is compatible with Unity."/>
 
 
   
@@ -198,25 +198,25 @@
 
     <div class="article-style" itemprop="articleBody">
       <h2 id="multiple-materials-to-baked-textures">Multiple Materials to Baked Textures</h2>
-<p>Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the color of the plane in Unity. When a player select a color, I just modify the color of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and color  independently.</p>
+<p>Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the colour of the plane in Unity. When a player selects a colour, I just modify the colour of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and colour independently.</p>
 <p><img src="img/4color.gif" alt="4color"></p>
 <p>However, this method has its limitations:</p>
 <ul>
 <li>it is not optimal in terms of real-time rendering</li>
 <li>I could not apply surface shaders VFX, like flame or electricity effects, on the plane.</li>
-<li>the PBR parameters (e.g. color, roughness, metalness, emission) were not imported by Unity, I had to enter them manually</li>
+<li>the PBR parameters (e.g. colour, roughness, metalness, emission) were not imported by Unity, I had to enter them manually</li>
 <li>I could not use complex procedural materials in Blender (as I could not export them)</li>
 </ul>
-<p>A better but more involved method is to unwrap the plane&rsquo;s UV, and bake all the materials into PBR textures so that the plane only use one material.</p>
+<p>A better but more involved method is to unwrap the plane&rsquo;s UV and bake all the materials into PBR textures so that the plane only use one material.</p>
 <p>This way I could benefit from:</p>
 <ul>
 <li>better performance using a unique material for the plane</li>
-<li>an automatic import  of the PBR parameters (color, roughness, etc) as they are saved in a texture</li>
-<li>surface shader VFX as the UV are unwrapped</li>
+<li>an automatic import  of the PBR parameters (colour, roughness, etc) as they are saved in a texture</li>
+<li>surface shader VFX as the UVs are unwrapped</li>
 <li>I can work with multiple and procedural materials in Blender</li>
 </ul>
 <p>But for that to happen, I needed to find a way to bake the materials!</p>
-<p>In this tutorial, I am covering that problem: how to bake multiple procedural material into texture in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the color of the plane when its color information is stored in a texture.</p>
+<p>In this tutorial, I am covering that problem: how to bake multiple procedural materials into textures in Blender, in a way that is compatible with Unity. In a future tutorial, I will cover how to change the colour of the plane when its colour information is stored in a texture.</p>
 <h2 id="step-by-step-tutorial">Step by Step Tutorial</h2>
 <ol>
 <li>
@@ -276,12 +276,12 @@
 </ul>
 </li>
 </ol>
-<p>Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the color texture as base map, the combined texture as metallic map.</p>
+<p>Now if you export the plane as FBX without materials and import it in Unity. Create a material where you use the colour texture as a base map, and the combined texture as a metallic map.</p>
 <p><img src="img/image-20200612122542943.png" alt="image-20200612122542943"></p>
 <p>You should get your object with the materials looking as they do in Blender.</p>
 <p><img src="img/image-20200606185940453.png" alt="image-20200606185940453"></p>
 <h2 id="next-steps">Next Steps</h2>
-<p>Now that the different colors of the plane are contained in a texture, it will be more complicated to change its color 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!</p>
+<p>Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!</p>
 
     </div>
   </div>
