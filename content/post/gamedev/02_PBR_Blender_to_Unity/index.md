@@ -2,7 +2,7 @@
 title = "Baking PBR Materials to Textures from Blender to Unity"
 highlight = true
 math = false
-description = "In this tutorial, I am covering how to bake multiple procedural materials into textures in Blender, in a way that is compatible with Unity."
+description = " "
 image = ""
 post_type = ["gamedev"]
 see_more_link = "/post/"
@@ -102,4 +102,4 @@ You should get your object with the materials looking as they do in Blender.
 
 ## Next Steps
 
-Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour :sweat_smile: but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!
+Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour :sweat_smile: but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you around!
