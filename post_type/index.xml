@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 10:50:01 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 18:03:01 +0100</lastBuildDate>
     
 	<atom:link href="https://nodragem.github.io/Blog/post_type/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>gamedev</title>
       <link>https://nodragem.github.io/Blog/post_type/gamedev/</link>
-      <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
+      <pubDate>Thu, 03 Sep 2020 18:03:01 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post_type/gamedev/</guid>
       <description></description>

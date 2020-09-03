@@ -6,15 +6,81 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 10:50:01 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 18:03:01 +0100</lastBuildDate>
     <atom:link href="https://nodragem.github.io/Blog/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Unity: Controlling the Color of Parts of a Texture with a Color Mask</title>
+      <link>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</link>
+      <pubDate>Thu, 03 Sep 2020 18:03:01 +0100</pubDate>
+      
+      <guid>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</guid>
+      <description>&lt;h2 id=&#34;what-you-will-learn&#34;&gt;What you will learn&lt;/h2&gt;
+&lt;p&gt;In this tutorial you will learn how to make a shader with the Shader Graph so you can modify the color of part of a texture like this:
+&lt;img src=&#34;./img/demo-color-change.gif&#34; alt=&#34;demo-color-change&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I used this methods to control the colors of the plane and of the bombs&amp;rsquo; fin in my recent game &lt;a href=&#34;https://gamejolt.com/games/prabbits-dogfights/433068&#34;&gt;The Prabbits: Happy Dogfights!&lt;/a&gt; Here you see myself playing around with the newly colored bomb :)&lt;/p&gt;
+&lt;iframe width=&#34;800&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/5-uObavYhvw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;color-mask-with-unity-shader-graph&#34;&gt;Color Mask with Unity Shader Graph&lt;/h2&gt;
+&lt;p&gt;When your object is made of multiple materials, it is easy to change the colour of its parts. However, most of the time, we try to keep the number of materials on screen low for performance reason. In that case the color information is within a texture and if you want to offer &lt;strong&gt;several colors&lt;/strong&gt; of a same object, you might be tempted to make &lt;strong&gt;several textures&lt;/strong&gt; altogether.&lt;/p&gt;
+&lt;p&gt;If you plan to support few colors, it is totally fine, but what if you want the player to be able to pick &lt;strong&gt;any color&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;As the colour information of my bomb (or plane) is contained in a texture, we need to solve the problem with a custom shader, and it is actually easier than what I thought it would be to implement, thanks to &lt;strong&gt;Unity Graph Shader&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;steps&#34;&gt;Steps:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;In your 2D software make sure that the texture is in black and white where you want the color to be applied&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Before:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/death_bomb_texture.png&#34; alt=&#34;death_bomb_texture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/bomb_color_texture.png&#34; alt=&#34;bomb_color_texture&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;In your 2D software, create a new image (or layer) with a black background and paint in white where the color should be applied:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/ColorMask.png&#34; alt=&#34;ColorMask&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;In Unity&amp;rsquo;s Project panel, right click in one of your asset folders and select &lt;code&gt;Create &amp;gt; Shader &amp;gt; PBR Graph&lt;/code&gt;, then double-click on the newly created asset. That should open up the Graph Shader.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cliking on the + button, create the following exposed variables:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/Unity_2020-09-03_17-20-58.png&#34; alt=&#34;Unity_2020-09-03_17-20-58&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Create a Sample Texture 2D node and attach it to the ColorTexture (i.e. hitting &amp;ldquo;spacebar&amp;rdquo;, start writing &amp;ldquo;Sample Text&amp;hellip;&amp;rdquo; and select the node).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/Unity_2020-09-03_17-23-25.png&#34; alt=&#34;Unity_2020-09-03_17-23-25&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Create a Sample Texture 2D node and attach it to the ColorMask,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a Multiply node and attach the DecorationColor node and Sample Texture 2D to it,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/Unity_2020-09-03_17-23-15.png&#34; alt=&#34;Unity_2020-09-03_17-23-15&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Combine the two branches with a Add node and connect the result to the Albedo channel of the PBR Master node:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/Unity_2020-09-03_17-24-36.png&#34; alt=&#34;Unity_2020-09-03_17-24-36&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And you are done!&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;em&gt;[Optional]&lt;/em&gt; You can also add a Smoothness and Roughness texture to the PBR Master node as I did below (note that I stored the Smoothness information in the alpha channel of my texture):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/Unity_2020-09-03_17-25-27.png&#34; alt=&#34;Unity_2020-09-03_17-25-27&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So, that&amp;rsquo;s it! You should be able to control the color of your object using the DecorationColor variable!&lt;/p&gt;
+&lt;p&gt;In a script, assuming that your color is stored in &lt;code&gt;m_PlayerColor&lt;/code&gt;, you will need to do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.gameObject.GetComponent&amp;lt;Renderer&amp;gt;().material.SetColor(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;_DecorationColor&amp;#34;&lt;/span&gt;, m_PlayerColor);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I hope this helps you in your game development, don&amp;rsquo;t hesitate to share other methods in the comment below 🙂&lt;/p&gt;
+&lt;p&gt;See you around!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Baking PBR Materials to Textures from Blender to Unity</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</link>
+      <link>https://nodragem.github.io/Blog/post/gamedev/02_pbr_blender_to_unity/</link>
       <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/pbr_blender_to_unity/</guid>
+      <guid>https://nodragem.github.io/Blog/post/gamedev/02_pbr_blender_to_unity/</guid>
       <description>&lt;h2 id=&#34;multiple-materials-to-baked-textures&#34;&gt;Multiple Materials to Baked Textures&lt;/h2&gt;
 &lt;p&gt;Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the colour of the plane in Unity. When a player selects a colour, I just modify the colour of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and colour independently.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/4color.gif&#34; alt=&#34;4color&#34;&gt;&lt;/p&gt;
@@ -99,16 +165,16 @@
 &lt;p&gt;You should get your object with the materials looking as they do in Blender.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/image-20200606185940453.png&#34; alt=&#34;image-20200606185940453&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you next week!&lt;/p&gt;
+&lt;p&gt;Now that the different colours of the plane are contained in a texture, it will be more complicated to change its colour 😅 but worry not, the problem can be solved with a custom shader, and it is easy to implement with the Graph Shader. See you around!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Building an AI for my game - Part 1: Breaking down the problem</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/</link>
+      <link>https://nodragem.github.io/Blog/post/gamedev/01_ia_blogpost1/</link>
       <pubDate>Sat, 11 Jan 2020 13:47:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/ia_blogpost1/</guid>
+      <guid>https://nodragem.github.io/Blog/post/gamedev/01_ia_blogpost1/</guid>
       <description>&lt;p&gt;I realised that my game needed a single player mode so that players can give it a try easily, or can play the game until they get some friends to come over (or to meet them online). So here we go, I am programming an AI for the prabbits; that I called the prab-bot!&lt;/p&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   
@@ -980,34 +1046,6 @@ You can download it here:&lt;/p&gt;
       
       <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
       <description>&lt;p&gt;Find the project at: &lt;a href=&#34;https://github.com/Nodragem/Eyetracking-Analysis-tools&#34;&gt;https://github.com/Nodragem/Eyetracking-Analysis-tools&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>John Space</title>
-      <link>https://nodragem.github.io/Blog/project/john-space/</link>
-      <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
-      
-      <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
-      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed-upload/822796?color=333333&#34; allowfullscreen=&#34;&#34; width=&#34;968&#34; height=&#34;540&#34;&gt;
- &lt;p&gt;Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space &lt;/p&gt;
-&lt;/iframe&gt;
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-&lt;p&gt;Click on the game to enable the keyboard inputs.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LEFT and RIGHT to move&lt;/li&gt;
-&lt;li&gt;SPACE to jump&lt;/li&gt;
-&lt;li&gt;LEFT CONTROL to sprint&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.&lt;/p&gt;
-&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
-&lt;p&gt;Made with:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;libGDX&lt;/strong&gt; (Game Engine): &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34;&gt;https://libgdx.badlogicgames.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gimp&lt;/strong&gt; (2D Graphics): &lt;a href=&#34;https://www.gimp.org/&#34;&gt;https://www.gimp.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sfxr/bfxr&lt;/strong&gt; (Sound FX): &lt;a href=&#34;https://www.bfxr.net/&#34;&gt;https://www.bfxr.net/&lt;/a&gt; &lt;a href=&#34;http://www.drpetter.se/project_sfxr.html&#34;&gt;http://www.drpetter.se/project_sfxr.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LMMS&lt;/strong&gt; (Music): &lt;a href=&#34;https://lmms.io/&#34;&gt;https://lmms.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
