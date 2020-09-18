@@ -8,7 +8,7 @@
   <meta name="theme" content="hugo-academic">
   <script src="https://kit.fontawesome.com/113a503557.js" crossorigin="anonymous"></script>
   
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.75.1" />
   <meta name="author" content="Nodragem Games">
   
 
@@ -266,7 +266,7 @@ To optimise the above needs may not "mathematically" lead you to win the competi
 </ul>
 <p>The <strong>high-level goals</strong> will also define the sensitivity rules that link <em>sensory inputs</em> and <strong>low-level needs</strong>. For instance: a decrease of <em>&ldquo;own health&rdquo;</em> will increase the need <em>&ldquo;get more health&rdquo;</em>.</p>
 <p><img src="img/Plot3.jpg" alt=""></p>
-<p>In practice, some of these <strong>low-level needs</strong> can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need <em>&ldquo;get more health&rdquo;</em>, the next question is which <em>&ldquo;heart&rdquo;</em> to go to? this step is the <strong>target selection</strong>: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&rsquo;d need to consider that a human doesn&rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.</p>
+<p>In practice, some of these <strong>low-level needs</strong> can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need <em>&ldquo;get more health&rdquo;</em>, the next question is which <em>&ldquo;heart&rdquo;</em> to go to? this step is the <strong>target selection</strong>: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts' position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&rsquo;d need to consider that a human doesn&rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.</p>
 <p>Now that we have a target to reach, the final step is the <strong>action control</strong>. This is about transforming the action <em>&ldquo;go to target&rdquo;</em> into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the <strong>action controller</strong> needs to use the <strong>sensory inputs</strong> (e.g. the plane direction, the heart position) and <strong>motor commands</strong> (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.</p>
 <p>In description, the low-level need <em>&ldquo;get more life&rdquo;</em> will lead to the target selection <em>&ldquo;selecting a heart&rdquo;</em> and then execute the action <em>&ldquo;go to target&rdquo;</em> using the motor commands <em>&ldquo;rotate ACW/CW&rdquo;</em>.</p>
 <p><img src="img/Plot5.jpg" alt=""></p>

@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 18:03:01 +0100</lastBuildDate>
-    
-	<atom:link href="https://nodragem.github.io/Blog/post_type/gamedev/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Sep 2020 18:03:01 +0100</lastBuildDate><atom:link href="https://nodragem.github.io/Blog/post_type/gamedev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity: Controlling the Color of Parts of a Texture with a Color Mask</title>
       <link>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</link>
       <pubDate>Thu, 03 Sep 2020 18:03:01 +0100</pubDate>
       
       <guid>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</guid>
-      <description>What you will learn In this tutorial you will learn how to make a shader with the Shader Graph so you can modify the color of part of a texture like this: I used this methods to control the colors of the plane and of the bombs&amp;rsquo; fin in my recent game The Prabbits: Happy Dogfights! Here you see myself playing around with the newly colored bomb :)
+      <description>What you will learn In this tutorial you will learn how to make a shader with the Shader Graph so you can modify the color of part of a texture like this: I used this methods to control the colors of the plane and of the bombs&#39; fin in my recent game The Prabbits: Happy Dogfights! Here you see myself playing around with the newly colored bomb :)
 Color Mask with Unity Shader Graph When your object is made of multiple materials, it is easy to change the colour of its parts.</description>
     </item>
     

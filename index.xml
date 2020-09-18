@@ -18,7 +18,7 @@
       <description>&lt;h2 id=&#34;what-you-will-learn&#34;&gt;What you will learn&lt;/h2&gt;
 &lt;p&gt;In this tutorial you will learn how to make a shader with the Shader Graph so you can modify the color of part of a texture like this:
 &lt;img src=&#34;./img/demo-color-change.gif&#34; alt=&#34;demo-color-change&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I used this methods to control the colors of the plane and of the bombs&amp;rsquo; fin in my recent game &lt;a href=&#34;https://gamejolt.com/games/prabbits-dogfights/433068&#34;&gt;The Prabbits: Happy Dogfights!&lt;/a&gt; Here you see myself playing around with the newly colored bomb :)&lt;/p&gt;
+&lt;p&gt;I used this methods to control the colors of the plane and of the bombs&#39; fin in my recent game &lt;a href=&#34;https://gamejolt.com/games/prabbits-dogfights/433068&#34;&gt;The Prabbits: Happy Dogfights!&lt;/a&gt; Here you see myself playing around with the newly colored bomb :)&lt;/p&gt;
 &lt;iframe width=&#34;800&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/5-uObavYhvw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;color-mask-with-unity-shader-graph&#34;&gt;Color Mask with Unity Shader Graph&lt;/h2&gt;
 &lt;p&gt;When your object is made of multiple materials, it is easy to change the colour of its parts. However, most of the time, we try to keep the number of materials on screen low for performance reason. In that case the color information is within a texture and if you want to offer &lt;strong&gt;several colors&lt;/strong&gt; of a same object, you might be tempted to make &lt;strong&gt;several textures&lt;/strong&gt; altogether.&lt;/p&gt;
@@ -244,7 +244,7 @@ To optimise the above needs may not &#34;mathematically&#34; lead you to win the
 &lt;/ul&gt;
 &lt;p&gt;The &lt;strong&gt;high-level goals&lt;/strong&gt; will also define the sensitivity rules that link &lt;em&gt;sensory inputs&lt;/em&gt; and &lt;strong&gt;low-level needs&lt;/strong&gt;. For instance: a decrease of &lt;em&gt;&amp;ldquo;own health&amp;rdquo;&lt;/em&gt; will increase the need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/Plot3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&amp;rsquo; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&amp;rsquo;d need to consider that a human doesn&amp;rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
+&lt;p&gt;In practice, some of these &lt;strong&gt;low-level needs&lt;/strong&gt; can translate directly into a simple action. For instance, if our prab-bot decided to prioritise the low-level need &lt;em&gt;&amp;ldquo;get more health&amp;rdquo;&lt;/em&gt;, the next question is which &lt;em&gt;&amp;ldquo;heart&amp;rdquo;&lt;/em&gt; to go to? this step is the &lt;strong&gt;target selection&lt;/strong&gt;: based on its sensory-motor information, the prab-bot will select which heart is the most beneficial to go to; this is the final step before an actual movement can start. As our prab-bot has access to its position and the hearts&#39; position, the target selection can be as simple as finding the closest heart. For a human-like behaviour, you&amp;rsquo;d need to consider that a human doesn&amp;rsquo;t always pay attention to everything that happens on the screen, and it is a bit more complicated.&lt;/p&gt;
 &lt;p&gt;Now that we have a target to reach, the final step is the &lt;strong&gt;action control&lt;/strong&gt;. This is about transforming the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; into motor commands (i.e. movements) that achieve the goal of that action. For instance, to get a heart, the &lt;strong&gt;action controller&lt;/strong&gt; needs to use the &lt;strong&gt;sensory inputs&lt;/strong&gt; (e.g. the plane direction, the heart position) and &lt;strong&gt;motor commands&lt;/strong&gt; (i.e. rotate the plane CCW/ACW) in order to align the plane with the heart position, then the action controller will wait until the plane reaches it. If there is no obstacle, these rules should do great.&lt;/p&gt;
 &lt;p&gt;In description, the low-level need &lt;em&gt;&amp;ldquo;get more life&amp;rdquo;&lt;/em&gt; will lead to the target selection &lt;em&gt;&amp;ldquo;selecting a heart&amp;rdquo;&lt;/em&gt; and then execute the action &lt;em&gt;&amp;ldquo;go to target&amp;rdquo;&lt;/em&gt; using the motor commands &lt;em&gt;&amp;ldquo;rotate ACW/CW&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/Plot5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -314,7 +314,7 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
 &lt;p&gt;use the search button to find the room of your friend&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/notes_happydogfights_020/demo-lobby.gif&#34; alt=&#34;demo-lobby&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Master client needs to wait for other clients&amp;rsquo; players to be ready&lt;/p&gt;
+&lt;p&gt;Master client needs to wait for other clients&#39; players to be ready&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;the game still allows several players to play from the same machine&lt;/p&gt;
@@ -383,8 +383,8 @@ The bomb will explode at the end of its timer (instead of simply disappearing); 
       
       <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/level4-demo.gif&#34; alt=&#34;wrong link&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
-&lt;iframe src=&#34;https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM&#34; frameborder=&#34;0&#34; width=&#34;500&#34; height=&#34;145&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;join-the-beta-on-steam&#34;&gt;Join the Beta on Steam&lt;/h2&gt;
+&lt;p&gt;We will be distributing beta keys regularly, go to register on &lt;a href=&#34;https://nodragem.github.io/happy-dogfights-website/#join-the-beta&#34;&gt;Happy Dogfights&#39; Website&lt;/a&gt; to get your chance!&lt;/p&gt;
 &lt;h2 id=&#34;follow-us&#34;&gt;Follow us:&lt;/h2&gt;
 &lt;p&gt;Watch couchplay sessions with my friends on &lt;strong&gt;&lt;a href=&#34;https://www.youtube.com/channel/UCwNOb0bisGEMFwtPWBtEW-g&#34;&gt;Youtube&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Come play with us and get the latest news on &lt;strong&gt;&lt;a href=&#34;https://discord.gg/TCEKa4D&#34;&gt;Discord&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -548,7 +548,7 @@ This is a multiplayer game, you can open two tabs to play it against yourselve.
     &lt;img src=&#34;https://nodragem.github.io/Blog/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, &lt;code&gt;clumsy&lt;/code&gt;&#39;s delays seem to be &lt;em&gt;fixed&lt;/em&gt;, as opposed to be &lt;em&gt;random&lt;/em&gt;, which is most probably the case in real network.&lt;/p&gt;
+&lt;p&gt;When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, &lt;code&gt;clumsy&lt;/code&gt;&amp;rsquo;s delays seem to be &lt;em&gt;fixed&lt;/em&gt;, as opposed to be &lt;em&gt;random&lt;/em&gt;, which is most probably the case in real network.&lt;/p&gt;
 &lt;p&gt;With &lt;em&gt;random&lt;/em&gt; delays, you would experience bugs if your code relies on messages arriving to the server in the order they have been sent. For instance, something like that would lead to bugs:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;[&lt;span style=&#34;color:#06b6ef&#34;&gt;Client&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;Side&lt;/span&gt;]
 

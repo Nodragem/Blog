@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate>
-    
-	<atom:link href="https://nodragem.github.io/Blog/project_type/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate><atom:link href="https://nodragem.github.io/Blog/project_type/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>released</title>
       <link>https://nodragem.github.io/Blog/project_type/released/</link>
