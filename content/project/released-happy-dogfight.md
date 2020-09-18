@@ -1,6 +1,5 @@
 +++
 math = false
-external_link = ""
 thumbnail = "happy-dogfight-thumbnail.gif"
 date = "2019-12-08T14:51:57+01:00"
 title = "The Prabbits: Happy Dogfights!"
@@ -8,6 +7,7 @@ description = "A multiplayer 2D dogfight game to play with friends (2-4 players)
 project_type = ["released"]
 highlight = true
 image_folder = "gamedev/release_happydogfigths"
+external_link = "https://nodragem.github.io/happy-dogfights-website/"
 
 [header]
   image = "prabbit-aviator-banner.png"
@@ -17,9 +17,9 @@ image_folder = "gamedev/release_happydogfigths"
 
 ![wrong link](/Blog/img/gamedev/level4-demo.gif)
 
-## Download
+## Join the Beta on Steam
 
-<iframe src="https://widgets.gamejolt.com/package/v1?key=Z8cUgjHM" frameborder="0" width="500" height="145"></iframe>
+We will be distributing beta keys regularly, go to register on [Happy Dogfights' Website](https://nodragem.github.io/happy-dogfights-website/#join-the-beta) to get your chance!
 
 ## Follow us:
 Watch couchplay sessions with my friends on **[Youtube](https://www.youtube.com/channel/UCwNOb0bisGEMFwtPWBtEW-g)**.

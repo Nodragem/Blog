@@ -73,12 +73,10 @@ telegram = ""
 
 _Hi, there!_
 
-I am currently part-time data scientist at the Office for National Statistics (UK) and I am running *Nodragem Games* as a sole trader the rest of the time.
+I am French and living in Wales for 7.5 years now. I came here to do a PhD in Psychology (Computational Neuroscience to be more precise). 
 
-Before to start my own business, I was research associate at Cardiff University where I developped computational neural networks that replicates human behariours in motor decision making.
+I always liked to create and learn new stuffs, and I decided that to make games was a good hobby to express my creativity, cause I could code, draw, do 3d art, animation and even start composing a little. 
 
-In this life, I was lacking creativity and an immediate impact on the world. When I make a game, I can paint, compose music, program, animate characters... Importantly, when I show it to a friend or potential client, I get an immediate feedback on whether they enjoy it or not.
+I started to make a game in my free time during my PhD, **Catch the crown**. It all started as a "training playground frankestein game" where I would just learn stuffs from tutorials, adapt them and put them together into something I like. I came up with the main characters (named *prabbits*) while playing around with Aseprite.
 
-One of my dream is to use the skills I gathered in Game Development, Psychology and Data Science to help predict mental diseases. Imagine yourself playing to monitor your health.
-
-But for now, I am focusing on making games and I hope that you will enjoy them!
+One day, during a BBQ, I told my friends what I was doing in my free time, and they wanted to see the game. Thirty minutes later they were still playing and laughing. It was one of the most emotional moment of my life, I was like "f*** I, I made a gaaame!!". A year later or so, I felt that I needed more space for my creativity and, I decided to work part time to be able to develop games. I am now trading as **Nodragem Games**; which is the reflection of my last name :) !

@@ -4,7 +4,7 @@
 date = "2016-04-20T00:00:00"
 draft = false
 title = "Feature"
-subtitle = "Join the Playtesting of [<ins>Happy Dogfight on Discord</ins>](https://discord.gg/TCEKa4D) and get the FREE DEMO !"
+subtitle = "Join the [Closed Beta of The Prabbits: Happy Dogfights!](https://nodragem.github.io/happy-dogfights-website/) on Steam !"
 widget = "last_video"
 
 # Order that this section will appear in.
