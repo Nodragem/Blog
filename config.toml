@@ -1,4 +1,4 @@
-baseurl = "https://nodragem.github.io/Blog/"
+baseurl = "www.nodragemgames.com/Blog/"
 title = "NODRAGEM GAMES"
 copyright = "&copy; 2016 Geoffrey Mégardon"
 theme = "hugo-academic"
