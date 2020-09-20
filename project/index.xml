@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games &amp; Projects on NODRAGEM GAMES</title>
-    <link>https://nodragem.github.io/Blog/project/</link>
+    <link>www.nodragemgames.com/Blog/project/</link>
     <description>Recent content in Games &amp; Projects on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://nodragem.github.io/Blog/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Prabbits: Happy Dogfights!</title>
-      <link>https://nodragem.github.io/Blog/project/released-happy-dogfight/</link>
+      <link>www.nodragemgames.com/Blog/project/released-happy-dogfight/</link>
       <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/released-happy-dogfight/</guid>
+      <guid>www.nodragemgames.com/Blog/project/released-happy-dogfight/</guid>
       <description>Join the Beta on Steam We will be distributing beta keys regularly, go to register on Happy Dogfights&#39; Website to get your chance!
 Follow us: Watch couchplay sessions with my friends on Youtube.
 Come play with us and get the latest news on Discord.
@@ -24,20 +24,20 @@ Release Notes You can find the detail of the last updates here:
     
     <item>
       <title>Bubble Troop</title>
-      <link>https://nodragem.github.io/Blog/project/proto-bubble-squad/</link>
+      <link>www.nodragemgames.com/Blog/project/proto-bubble-squad/</link>
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/proto-bubble-squad/</guid>
+      <guid>www.nodragemgames.com/Blog/project/proto-bubble-squad/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.This is a multiplayer game, you can open two tabs to play it against yourselve.Controls This game is compatible with mobile devices and desktop computers:
  Click on the ground and drag to move the camera Click on a bubble and drag to catapult it Click on the top-left icon to enable fullscreen Collide with a friend to heal it Collide with an ennemy to hurt it  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
     </item>
     
     <item>
       <title>Cannon Shooter</title>
-      <link>https://nodragem.github.io/Blog/project/cannon-shooter/</link>
+      <link>www.nodragemgames.com/Blog/project/cannon-shooter/</link>
       <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/cannon-shooter/</guid>
+      <guid>www.nodragemgames.com/Blog/project/cannon-shooter/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/ It may take few seconds for the server to wake up, please wait&amp;hellip;
 Controls Click on the game to enable the keyboard inputs.
  LEFT and RIGHT to move SPACE to shoot  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
@@ -45,10 +45,10 @@ Controls Click on the game to enable the keyboard inputs.
     
     <item>
       <title>It&#39;s a Match!</title>
-      <link>https://nodragem.github.io/Blog/project/its-a-match/</link>
+      <link>www.nodragemgames.com/Blog/project/its-a-match/</link>
       <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/its-a-match/</guid>
+      <guid>www.nodragemgames.com/Blog/project/its-a-match/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
  KEYBOARD ARROWS to move  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
 Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:</description>
@@ -56,47 +56,47 @@ Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) 
     
     <item>
       <title>Catch The Crown!</title>
-      <link>https://nodragem.github.io/Blog/project/catchthecrown/</link>
+      <link>www.nodragemgames.com/Blog/project/catchthecrown/</link>
       <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/catchthecrown/</guid>
+      <guid>www.nodragemgames.com/Blog/project/catchthecrown/</guid>
       <description>Download  Windows, portable version (zip-file) Linux, portable version (zip-file) Mac OS, portable version (zip-file)  I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.Release Notes  Relase Notes of The Prabbits: Catch the Crown  description The Prabbits: Catch The Crown is a local multiplayer arena platform game.
 Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.</description>
     </item>
     
     <item>
       <title>Dynamic Neural Field toolset</title>
-      <link>https://nodragem.github.io/Blog/project/dnftool/</link>
+      <link>www.nodragemgames.com/Blog/project/dnftool/</link>
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/dnftool/</guid>
+      <guid>www.nodragemgames.com/Blog/project/dnftool/</guid>
       <description>Find the project at: https://github.com/Nodragem/DynamicNeuralField-RateBased</description>
     </item>
     
     <item>
       <title>Brain Visual Space toolset</title>
-      <link>https://nodragem.github.io/Blog/project/sctovisualtrans/</link>
+      <link>www.nodragemgames.com/Blog/project/sctovisualtrans/</link>
       <pubDate>Sun, 12 Mar 2017 15:20:11 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/sctovisualtrans/</guid>
+      <guid>www.nodragemgames.com/Blog/project/sctovisualtrans/</guid>
       <description>Find the project at: https://github.com/Nodragem/Model-SCtoVisualSpace</description>
     </item>
     
     <item>
       <title>Eye tracking toolset</title>
-      <link>https://nodragem.github.io/Blog/project/eyetracking_toolset/</link>
+      <link>www.nodragemgames.com/Blog/project/eyetracking_toolset/</link>
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/eyetracking_toolset/</guid>
+      <guid>www.nodragemgames.com/Blog/project/eyetracking_toolset/</guid>
       <description>Find the project at: https://github.com/Nodragem/Eyetracking-Analysis-tools</description>
     </item>
     
     <item>
       <title>John Space</title>
-      <link>https://nodragem.github.io/Blog/project/john-space/</link>
+      <link>www.nodragemgames.com/Blog/project/john-space/</link>
       <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/project/john-space/</guid>
+      <guid>www.nodragemgames.com/Blog/project/john-space/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
  LEFT and RIGHT to move SPACE to jump LEFT CONTROL to sprint  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
 Credits Made with:

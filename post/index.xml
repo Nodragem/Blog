@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent Posts on NODRAGEM GAMES</title>
-    <link>https://nodragem.github.io/Blog/post/</link>
+    <link>www.nodragemgames.com/Blog/post/</link>
     <description>Recent content in Recent Posts on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://nodragem.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity: Controlling the Color of Parts of a Texture with a Color Mask</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/03_shader_graph_change_color/</link>
       <pubDate>Thu, 03 Sep 2020 18:03:01 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/03_shader_graph_change_color/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/03_shader_graph_change_color/</guid>
       <description>What you will learn In this tutorial you will learn how to make a shader with the Shader Graph so you can modify the color of part of a texture like this: I used this methods to control the colors of the plane and of the bombs&#39; fin in my recent game The Prabbits: Happy Dogfights! Here you see myself playing around with the newly colored bomb :)
 Color Mask with Unity Shader Graph When your object is made of multiple materials, it is easy to change the colour of its parts.</description>
     </item>
     
     <item>
       <title>Baking PBR Materials to Textures from Blender to Unity</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/02_pbr_blender_to_unity/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/02_pbr_blender_to_unity/</link>
       <pubDate>Fri, 12 Jun 2020 10:50:01 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/02_pbr_blender_to_unity/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/02_pbr_blender_to_unity/</guid>
       <description>Multiple Materials to Baked Textures Until now the planes in Happy Dogfights were made of multiple materials so that it was easy to change the colour of the plane in Unity. When a player selects a colour, I just modify the colour of the material used for the body of the plane. It also made sense when working in Blender to have a different material for the tyres, the body, the engine, etc, so that I could control their metalness, roughness, and colour independently.</description>
     </item>
     
     <item>
       <title>Building an AI for my game - Part 1: Breaking down the problem</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/01_ia_blogpost1/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/01_ia_blogpost1/</link>
       <pubDate>Sat, 11 Jan 2020 13:47:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/01_ia_blogpost1/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/01_ia_blogpost1/</guid>
       <description>I realised that my game needed a single player mode so that players can give it a try easily, or can play the game until they get some friends to come over (or to meet them online). So here we go, I am programming an AI for the prabbits; that I called the prab-bot!
 NOTE: I have a Neuroscience background, but I am far from being an expert in AI!Transforming inputs into meaningful actions A brain, or an AI, is essentially an entity that transforms sensory information (i.</description>
     </item>
     
     <item>
       <title>Release Notes: Happy Dogfight 0.2.0</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/notes_happy-dogfight_020/</link>
       <pubDate>Thu, 12 Dec 2019 21:27:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/notes_happy-dogfight_020/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/notes_happy-dogfight_020/</guid>
       <description>Major Update!Finally updating the demo of my next game, just in time for you to enjoy with some friends during the festive season :) Hope you like it! A lot of love and time has gone into it. In description, it is much more fun and less buggy :) with a new level to unlock. But for those who wants to know more, I prepared a detailed changelog you can read below.</description>
     </item>
     
     <item>
       <title>Simulating Lag and Drop when Debugging Multiplayer Games</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/18022018_clumsy/</link>
       <pubDate>Sun, 18 Feb 2018 17:14:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/18022018_clumsy/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/18022018_clumsy/</guid>
       <description>Debugging multiplayer games locally These days, I&amp;rsquo;m playing around with making online multiplayer prototype games.
 Most of the time, when we debug our video games for online multiplayer, we run a local server on localhost. This server acts as:
  a file server - sending the game files to the client, a game server - transferring information between clients, authorizing transactions, etc.  You can debug your code logic on server side and client side very easily nowadays.</description>
@@ -59,10 +59,10 @@ Most of the time, when we debug our video games for online multiplayer, we run a
     
     <item>
       <title>Data extraction with WebPlotDigitizer</title>
-      <link>https://nodragem.github.io/Blog/post/research/analyse_extracted_data/</link>
+      <link>www.nodragemgames.com/Blog/post/research/analyse_extracted_data/</link>
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/research/analyse_extracted_data/</guid>
+      <guid>www.nodragemgames.com/Blog/post/research/analyse_extracted_data/</guid>
       <description>When we&amp;rsquo;ve only got a picture to create a model Recently, I wanted to generate realistic durations of fast eye movements (saccades) in a stochastic manner.
 Few articles plot what we call &amp;ldquo;the main sequence&amp;rdquo; which describes the saccade duration against saccade magnitude (i.e. amplitude), such as in Troncoso et al. (2008):
 Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008).Microsaccades counteract perceptual filling-in. Journal of Vision,8(14):15, 1-9 [ARVO is the copyright holder]</description>
@@ -70,10 +70,10 @@ Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008).Micr
     
     <item>
       <title>Game Release: Catch the Crow</title>
-      <link>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</link>
+      <link>www.nodragemgames.com/Blog/post/gamedev/catchthecrown_release/</link>
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
-      <guid>https://nodragem.github.io/Blog/post/gamedev/catchthecrown_release/</guid>
+      <guid>www.nodragemgames.com/Blog/post/gamedev/catchthecrown_release/</guid>
       <description>Release and then move on &amp;hellip; Finally! After 3 years of uneven and chaotic development (partly due to a PhD), it feels like that&amp;rsquo;s the right time to finalize and ship my first video game.
   How it feels like to ship a game!
   Catch the Crown is the first game I made with libGDX. It is a multiplayer arena platform game. My pride is that it feels like I am shipping an actual game: it can be run, played and it delivers fun (to my friends at least!</description>
