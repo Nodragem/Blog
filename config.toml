@@ -1,4 +1,4 @@
-baseurl = "www.nodragemgames.com/Blog/"
+baseurl = ""
 title = "NODRAGEM GAMES"
 copyright = "&copy; 2016 Geoffrey Mégardon"
 theme = "hugo-academic"
