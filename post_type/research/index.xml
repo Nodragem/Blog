@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>research on NODRAGEM GAMES</title>
-    <link>www.nodragemgames.com/Blog/post_type/research/</link>
+    <link>/post_type/research/</link>
     <description>Recent content in research on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Fri, 14 Apr 2017 12:43:08 +0100</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/post_type/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Apr 2017 12:43:08 +0100</lastBuildDate><atom:link href="/post_type/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data extraction with WebPlotDigitizer</title>
-      <link>www.nodragemgames.com/Blog/post/research/analyse_extracted_data/</link>
+      <link>/post/research/analyse_extracted_data/</link>
       <pubDate>Fri, 14 Apr 2017 12:43:08 +0100</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/post/research/analyse_extracted_data/</guid>
+      <guid>/post/research/analyse_extracted_data/</guid>
       <description>When we&amp;rsquo;ve only got a picture to create a model Recently, I wanted to generate realistic durations of fast eye movements (saccades) in a stochastic manner.
 Few articles plot what we call &amp;ldquo;the main sequence&amp;rdquo; which describes the saccade duration against saccade magnitude (i.e. amplitude), such as in Troncoso et al. (2008):
 Data from Troncoso, X. G., Macknik, S. L., &amp; Martinez-Conde, S. (2008).Microsaccades counteract perceptual filling-in. Journal of Vision,8(14):15, 1-9 [ARVO is the copyright holder]</description>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>released on NODRAGEM GAMES</title>
-    <link>www.nodragemgames.com/Blog/project_type/released/</link>
+    <link>/project_type/released/</link>
     <description>Recent content in released on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/project_type/released/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate><atom:link href="/project_type/released/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Prabbits: Happy Dogfights!</title>
-      <link>www.nodragemgames.com/Blog/project/released-happy-dogfight/</link>
+      <link>/project/released-happy-dogfight/</link>
       <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/released-happy-dogfight/</guid>
+      <guid>/project/released-happy-dogfight/</guid>
       <description>Join the Beta on Steam We will be distributing beta keys regularly, go to register on Happy Dogfights&#39; Website to get your chance!
 Follow us: Watch couchplay sessions with my friends on Youtube.
 Come play with us and get the latest news on Discord.
@@ -24,10 +24,10 @@ Release Notes You can find the detail of the last updates here:
     
     <item>
       <title>Catch The Crown!</title>
-      <link>www.nodragemgames.com/Blog/project/catchthecrown/</link>
+      <link>/project/catchthecrown/</link>
       <pubDate>Sat, 15 Apr 2017 14:51:57 +0100</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/catchthecrown/</guid>
+      <guid>/project/catchthecrown/</guid>
       <description>Download  Windows, portable version (zip-file) Linux, portable version (zip-file) Mac OS, portable version (zip-file)  I could not actually test the Mac / Linux versions. Please let me know if the game does not run on your platform.Release Notes  Relase Notes of The Prabbits: Catch the Crown  description The Prabbits: Catch The Crown is a local multiplayer arena platform game.
 Four teenager Prabbits - half parrot / half rabbit creatures - are undertaking their &amp;ldquo;Coming-of-Age&amp;rdquo; ritual.</description>
     </item>

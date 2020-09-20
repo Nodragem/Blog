@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home Page on NODRAGEM GAMES</title>
-    <link>www.nodragemgames.com/Blog/home/</link>
+    <link>/home/</link>
     <description>Recent content in Home Page on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/home/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>www.nodragemgames.com/Blog/home/landing/</link>
+      <link>/home/landing/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/home/landing/</guid>
+      <guid>/home/landing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Feature</title>
-      <link>www.nodragemgames.com/Blog/home/youtube/</link>
+      <link>/home/youtube/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/home/youtube/</guid>
+      <guid>/home/youtube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Games &amp; Projects</title>
-      <link>www.nodragemgames.com/Blog/home/projects/</link>
+      <link>/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/home/projects/</guid>
+      <guid>/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Posts</title>
-      <link>www.nodragemgames.com/Blog/home/posts/</link>
+      <link>/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/home/posts/</guid>
+      <guid>/home/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>www.nodragemgames.com/Blog/home/about/</link>
+      <link>/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/home/about/</guid>
+      <guid>/home/about/</guid>
       <description>Hi, there!
 I am French and living in Wales for 7.5 years now. I came here to do a PhD in Psychology (Computational Neuroscience to be more precise).
 I always liked to create and learn new stuffs, and I decided that to make games was a good hobby to express my creativity, cause I could code, draw, do 3d art, animation and even start composing a little.

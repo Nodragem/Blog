@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>experimental on NODRAGEM GAMES</title>
-    <link>www.nodragemgames.com/Blog/project_type/experimental/</link>
+    <link>/project_type/experimental/</link>
     <description>Recent content in experimental on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Mon, 12 Mar 2018 14:50:11 +0000</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/project_type/experimental/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Mar 2018 14:50:11 +0000</lastBuildDate><atom:link href="/project_type/experimental/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bubble Troop</title>
-      <link>www.nodragemgames.com/Blog/project/proto-bubble-squad/</link>
+      <link>/project/proto-bubble-squad/</link>
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/proto-bubble-squad/</guid>
+      <guid>/project/proto-bubble-squad/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://proto-bubble-squad.herokuapp.com Camera movement could not be implemented in this version, you may need to drag the camera around to find your bubble troop.This is a multiplayer game, you can open two tabs to play it against yourselve.Controls This game is compatible with mobile devices and desktop computers:
  Click on the ground and drag to move the camera Click on a bubble and drag to catapult it Click on the top-left icon to enable fullscreen Collide with a friend to heal it Collide with an ennemy to hurt it  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
     </item>
     
     <item>
       <title>Cannon Shooter</title>
-      <link>www.nodragemgames.com/Blog/project/cannon-shooter/</link>
+      <link>/project/cannon-shooter/</link>
       <pubDate>Mon, 12 Mar 2018 13:48:11 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/cannon-shooter/</guid>
+      <guid>/project/cannon-shooter/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://proto-cannon-shooter.herokuapp.com/ It may take few seconds for the server to wake up, please wait&amp;hellip;
 Controls Click on the game to enable the keyboard inputs.
  LEFT and RIGHT to move SPACE to shoot  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.</description>
@@ -31,10 +31,10 @@ Controls Click on the game to enable the keyboard inputs.
     
     <item>
       <title>It&#39;s a Match!</title>
-      <link>www.nodragemgames.com/Blog/project/its-a-match/</link>
+      <link>/project/its-a-match/</link>
       <pubDate>Tue, 12 Dec 2017 13:48:11 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/its-a-match/</guid>
+      <guid>/project/its-a-match/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
  KEYBOARD ARROWS to move  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
 Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) in collaboration with:</description>
@@ -42,10 +42,10 @@ Credits Extract of the game made for the GWJam 2017 (Theme: 2 is better than 1) 
     
     <item>
       <title>John Space</title>
-      <link>www.nodragemgames.com/Blog/project/john-space/</link>
+      <link>/project/john-space/</link>
       <pubDate>Wed, 09 Nov 2016 11:42:01 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project/john-space/</guid>
+      <guid>/project/john-space/</guid>
       <description>Your browser does not support iframes. Please try the game here: https://nodragem.itch.io/john-space Controls Click on the game to enable the keyboard inputs.
  LEFT and RIGHT to move SPACE to jump LEFT CONTROL to sprint  If for some reason the controls are still not working try refresh the page or go back to the previous page and click on the link again.
 Credits Made with:

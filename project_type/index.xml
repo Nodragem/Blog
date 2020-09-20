@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project_type on NODRAGEM GAMES</title>
-    <link>www.nodragemgames.com/Blog/project_type/</link>
+    <link>/project_type/</link>
     <description>Recent content in Project_type on NODRAGEM GAMES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Geoffrey Mégardon</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate><atom:link href="www.nodragemgames.com/Blog/project_type/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2019 14:51:57 +0100</lastBuildDate><atom:link href="/project_type/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>released</title>
-      <link>www.nodragemgames.com/Blog/project_type/released/</link>
+      <link>/project_type/released/</link>
       <pubDate>Sun, 08 Dec 2019 14:51:57 +0100</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project_type/released/</guid>
+      <guid>/project_type/released/</guid>
       <description></description>
     </item>
     
     <item>
       <title>experimental</title>
-      <link>www.nodragemgames.com/Blog/project_type/experimental/</link>
+      <link>/project_type/experimental/</link>
       <pubDate>Mon, 12 Mar 2018 14:50:11 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project_type/experimental/</guid>
+      <guid>/project_type/experimental/</guid>
       <description></description>
     </item>
     
     <item>
       <title>research</title>
-      <link>www.nodragemgames.com/Blog/project_type/research/</link>
+      <link>/project_type/research/</link>
       <pubDate>Sun, 12 Mar 2017 20:22:11 +0000</pubDate>
       
-      <guid>www.nodragemgames.com/Blog/project_type/research/</guid>
+      <guid>/project_type/research/</guid>
       <description></description>
     </item>
     
