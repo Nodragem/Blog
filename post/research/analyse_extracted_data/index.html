@@ -198,7 +198,7 @@ durations of fast eye movements (saccades) in a stochastic manner.</p>
 <p>Few articles plot what we call &ldquo;the main sequence&rdquo; which describes the saccade
 duration against saccade magnitude (i.e. amplitude), such as in
 Troncoso et al. (2008):</p>
-<img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png" width="500px" height="500px"/>
+<img src="/img/research/analyseExtractedData_files/figure-markdown/main_sequence.png" width="500px" height="500px"/>
 <p style="font-size:0.6rem;"><i>Data from Troncoso, X. G., Macknik, S. L., & Martinez-Conde, S. (2008).
 Microsaccades counteract perceptual filling-in. Journal of Vision,
 8(14):15, 1-9</i> [ARVO is the copyright holder]</p>
@@ -224,7 +224,7 @@ figure, without real hope of obtaining something decent because of the
 jped compression (my real hope was to manually draw a regression line in
 that jpeg fog).</p>
 <p>Here are the steps, recorded with ScreenToGif.</p>
-<p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif" alt=""></p>
+<p><img src="/img/research/analyseExtractedData_files/figure-markdown/webplotdigitizer.gif" alt=""></p>
 <p>The result is quite impressive when considering the picture quality.
 Here is what I obtained with the automatic extraction! Let see how this
 looks like once exported in CSV and plotted in R.</p>
@@ -246,7 +246,7 @@ looks like once exported in CSV and plotted in R.</p>
 <p>We plot the data:</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0.01</span>, <span style="color:#f99b15">2</span>), ylim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">1</span>, <span style="color:#f99b15">30</span>),
      main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span> , log<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;xy&#34;</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-1-1.png" alt=""></p>
 <p>That looks quite impressive for a data extraction made on a blurry jpeg!</p>
 <p>WebPlotDigitizer is not extracting &ldquo;real&rdquo; data points (which are almost
 invisible on the orginal figure), but still the density of the data points
@@ -266,7 +266,7 @@ y_values <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">pr
 <span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">1</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 <span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">2</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 <span style="color:#06b6ef">lines</span>(new<span style="color:#5bc4bf">$</span>log_amplitude, y_values[,<span style="color:#f99b15">3</span>], lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-2-1.png" alt=""></p>
 <p>In the linear space, we get this pretty curve and increasing standard
 deviation.</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
@@ -274,7 +274,7 @@ deviation.</p>
 <span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">1</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 <span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">2</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
 <span style="color:#06b6ef">lines</span>(<span style="color:#06b6ef">exp</span>(new<span style="color:#5bc4bf">$</span>log_amplitude), <span style="color:#06b6ef">exp</span>(y_values[,<span style="color:#f99b15">3</span>]), lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-3-1.png" alt=""></p>
 <h2 id="extract-the-equations">Extract the equations</h2>
 <p>To be able to generate data from the regression, we must extract the
 equations that describes :</p>
@@ -296,7 +296,7 @@ y <span style="color:#5bc4bf">=</span> a<span style="color:#5bc4bf">*</span>x <s
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>log_amplitude, df1<span style="color:#5bc4bf">$</span>log_duration,
      main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
 <span style="color:#06b6ef">lines</span>(x, y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-4-1.png" alt=""></p>
 <p>Let pass the regression line in linear space. We got:</p>
 <p>$$
 y_{ \text{log} } = a x_{ \text{log} } + b
@@ -318,7 +318,7 @@ cart_y <span style="color:#5bc4bf">=</span> (cart_x^a) <span style="color:#5bc4b
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration,
      main<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;df1&#39;</span>, pch<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;.&#39;</span>)
 <span style="color:#06b6ef">lines</span>(cart_x, cart_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;red&#39;</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-5-1.png" alt=""></p>
 <p>Yeah! we got it. Now let us extract the equation for the standard
 deviation.</p>
 <h3 id="estimate-the-standard-deviations">Estimate the standard deviations</h3>
@@ -331,7 +331,7 @@ log_sd <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">abs</spa
 
 sd_change <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rollapply</span>(log_sd, width <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">200</span>, FUN <span style="color:#5bc4bf">=</span> median, fill <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">NA</span>)
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">-1</span>, <span style="color:#f99b15">1</span> ), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-6-1.png" alt=""></p>
 <p>Unfortunately, to find the change in variance in the cartesian space is
 not as simple as taking the exponential of the logspace&rsquo;s variance.</p>
 <p>First, let us compute the standard deviation and its trends in the
@@ -354,7 +354,7 @@ df1<span style="color:#5bc4bf">$</span>sd_duration <span style="color:#5bc4bf">&
 var.model <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">lm</span>(sd_duration <span style="color:#5bc4bf">~</span> amplitude, data <span style="color:#5bc4bf">=</span> df1)
 curve_y <span style="color:#5bc4bf">&lt;-</span> <span style="color:#06b6ef">predict</span>(var.model, <span style="color:#06b6ef">data.frame</span>(amplitude<span style="color:#5bc4bf">=</span>cart_x) )
 <span style="color:#06b6ef">lines</span>(cart_x, curve_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-7-1.png" alt=""></p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sd_b <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[1]]
 sd_a <span style="color:#5bc4bf">&lt;-</span> var.model<span style="color:#5bc4bf">$</span>coefficients[[2]]
 var.model<span style="color:#5bc4bf">$</span>coefficients
@@ -381,7 +381,7 @@ curve_y <span style="color:#5bc4bf">&lt;-</span> (sd_ea <span style="color:#5bc4
 
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, sd_change, xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1</span>))
 <span style="color:#06b6ef">lines</span>(cart_x, curve_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-8-1.png" alt=""></p>
 <p>The asymptotic equation seems to approximate the SD as well as the linear
 equation.</p>
 <p>To judge which is best, let us plot both the equations we estimated
@@ -410,7 +410,7 @@ sd_y <span style="color:#5bc4bf">=</span> (sd_ea <span style="color:#5bc4bf">+</
 <span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">+</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 <span style="color:#06b6ef">lines</span>(cart_x, cart_y<span style="color:#5bc4bf">-</span>sd_y, lwd<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>, col<span style="color:#5bc4bf">=</span><span style="color:#48b685">&#39;purple&#39;</span>, lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">2</span>)
 <span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#39;bottomright&#39;</span>, legend<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;regresssion&#39;</span>, <span style="color:#48b685">&#39;linear SD equation&#39;</span>, <span style="color:#48b685">&#39;assymptotic SD equation&#39;</span>),lty<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>, col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;red&#39;</span>, <span style="color:#48b685">&#39;green&#39;</span>, <span style="color:#48b685">&#39;purple&#39;</span>))
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-9-1.png" alt=""></p>
 <p>It seems that the assymptotic equation of SD do a better job than the
 linear equation. Furthermore, it is a wished property that the SD does
 not diverge.</p>
@@ -445,7 +445,7 @@ red_col <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">rgb</sp
 <span style="color:#06b6ef">plot</span>(df1<span style="color:#5bc4bf">$</span>amplitude, df1<span style="color:#5bc4bf">$</span>duration, ylim<span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>))
 <span style="color:#06b6ef">points</span>(amp_space, gen.duration, ylim <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>(<span style="color:#f99b15">4</span>, <span style="color:#f99b15">30</span>), xlim<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#f99b15">0</span>, <span style="color:#f99b15">1.2</span>), col<span style="color:#5bc4bf">=</span>red_col)
 <span style="color:#06b6ef">legend</span>(<span style="color:#48b685">&#34;bottomright&#34;</span>, <span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;extracted data&#39;</span>, <span style="color:#48b685">&#39;model&#39;</span>), col<span style="color:#5bc4bf">=</span><span style="color:#06b6ef">c</span>(<span style="color:#48b685">&#39;black&#39;</span>, red_col), pch<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>)
-</code></pre></div><p><img src="/Blog/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png" alt=""></p>
+</code></pre></div><p><img src="/img/research/analyseExtractedData_files/figure-markdown/unnamed-chunk-10-1.png" alt=""></p>
 <p>The data we generated with the stochastic model (red dots) look pretty close to the real data we extracted from Troncoso et al. 2008.</p>
 <p>We&rsquo;ve got a pretty cool stochastic generator of saccade durations from a poor quality jpeg! With this generator, we can
 predict saccade durations for amplitudes that Troncoso et al.

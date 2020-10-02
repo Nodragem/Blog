@@ -213,7 +213,7 @@
 <p>clumsy makes your network condition on Windows significantly worse, but in a managed and interactive manner.</p>
 </blockquote>
 <figure>
-    <img src="/Blog/img/gamedev/18022018_clumsy/clumsy.png"/> 
+    <img src="/img/gamedev/18022018_clumsy/clumsy.png"/> 
 </figure>
 
 <p>What&rsquo;s nice about it is that it does not require any installation and works out-of-the box. When unzipped, <code>clumsy</code> sits next to a file <code>config.txt</code> where you can specify exactly which part of the network you want to disrupt.</p>
@@ -221,7 +221,7 @@
 <pre><code>HTML5 games: outbound and tcp.DstPort == 5000
 </code></pre><p>After that, when you open Clumsy, you will be able to select the configuration <code>HTML5 games</code> from the droplist menu.</p>
 <figure>
-    <img src="/Blog/img/gamedev/18022018_clumsy/clumsy_html5games.png"/> 
+    <img src="/img/gamedev/18022018_clumsy/clumsy_html5games.png"/> 
 </figure>
 
 <p>Note that the configuration <code>localhost ipv4 all</code> does roughlythe same as my config except that it disrupts <em>any</em> local hosts.</p>
@@ -236,12 +236,12 @@
 </ul>
 <p>Basically, the server does not nothing but transmitting information between Client 1 and Client 2. Obviously, in practice, you would not do that to avoid cheating, but that &rsquo;s ok for our example.</p>
 <figure>
-    <img src="/Blog/img/gamedev/18022018_clumsy/all_0lag_0drop.gif"/> 
+    <img src="/img/gamedev/18022018_clumsy/all_0lag_0drop.gif"/> 
 </figure>
 
 <p>Without delay and with 0% of dropped packages, the game works like a charm. However, we have no feel of what the players will be experiencing.</p>
 <figure>
-    <img src="/Blog/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif"/> 
+    <img src="/img/gamedev/18022018_clumsy/all_1000lag_0drop.gif"/> 
 </figure>
 
 <p>When we add some delays (1000 ms), the game still works, and we can test how the game feels with the server-to-client delay.  However, <code>clumsy</code>&rsquo;s delays seem to be <em>fixed</em>, as opposed to be <em>random</em>, which is most probably the case in real network.</p>
@@ -262,7 +262,7 @@
 
 </code></pre></div><p>In this code, the spawning positions must be received from the server before that the new player is received. While we requested the spawning positions first, a real network would not guarantee that you will receive the spawning points first. If I understand well, in <code>clumsy</code>, you can emulate that behaviour with the <code>Out of order</code> option.</p>
 <figure>
-    <img src="/Blog/img/gamedev/18022018_clumsy/all_50lag_20drop.gif"/> 
+    <img src="/img/gamedev/18022018_clumsy/all_50lag_20drop.gif"/> 
 </figure>
 
 <p>Finally, when we add dropped packages, things can become a big mess. In our example, Client 2 (bottom) always succeeds to catch up with Client 1 (top)  because Client 1 sends the <em>position</em> of the character and not the change in position.</p>
