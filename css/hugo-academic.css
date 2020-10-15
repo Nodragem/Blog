@@ -334,41 +334,30 @@ blockquote p:last-child {
  **************************************************/
 
 #landing-container {
-  background-image: url('../img/landing-blue.jpg');
-  text-align: center;
-  padding: 30px 10px;
+  
+  padding: 0px 0px;
   width: 100%;
-  height: 500px;
-  /* Center and scale the image nicely */
-  /* background-attachment: fixed; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* position: relative; */
+  height: 100%;
+  
 }
 
-#landing-content {
-  /* background-image: url('../img/final.jpg'); */
-  /* padding: 30px 10px;
-  margin: 0px 0px;*/
-  width: 100%;
-  height: 400px;
-  /* Center and scale the image nicely */
-  /* background-attachment: fixed; */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-  position: relative;
+#landing-content { 
+  width:100%;
+  height: 600px;
 }
 
 #landing .background {
-  background-image: url('../img/portrait2.jpg');
+  
+  background-image: url('../img/cover-logo.jpg');
   width: 100%;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 0%;
-  background-position: center -100px;
+  height: 500px;
+  
+  margin: auto;
+  
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  
   -webkit-background-size: cover;
   -moz-background-size: cover;
 }
@@ -388,16 +377,26 @@ blockquote p:last-child {
 }
 
 #landing ul.social-icon {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: block;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
   list-style: none;
+  width:100%;
+  text-align: center;
+  margin-left: auto;
   padding: 0;
-  /* margin-top: 30px; */
   margin-top: auto;
   position: absolute;
-  bottom:-3%;
-  right:33.7%;
+  /* left:-40%; */
+  /* top:0%; */
+  bottom:0%;
+  /* right:3%; */
+}
+
+#landing li {
+  display: inline;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 #landing .social-icon a {
@@ -405,18 +404,19 @@ blockquote p:last-child {
   border-radius: 5px; */ 
   margin-right: 10px;
   color: #9A155D;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   
 }
 
-#landing .social-icon li:last-of-type {
+/* #landing .social-icon li:last-of-type {
   margin-right: 0;
-}
+} */
 
 #landing .social-icon li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 #landing .social-icon a:hover {
+  transform: scale(1.2);
   color: rgb(194, 108, 154);
 }
 
